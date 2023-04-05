@@ -36,6 +36,7 @@
                         <li><a href="N_list.jsp">고객센터</a></li>
                         <li class="login_false">
                         <%
+                        String mem_id = (String)session.getAttribute("mem_id");
 						if(session.getAttribute("mem_id") == null){  %>
                         <a href="login001.jsp">로그인</a>
                        
@@ -43,7 +44,6 @@
                         <li class="login_false"><a href="join001.jsp">회원가입</a></li>    
                         <li class="login_true">
                          <%} else{ 
-                        	 String mem_id = (String)session.getAttribute("mem_id");
                         	 out.println(mem_id+"님 접속&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp");
                          %>
                         <a href="header_logout_success.jsp">로그아웃</a>

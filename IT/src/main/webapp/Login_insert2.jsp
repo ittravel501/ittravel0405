@@ -1,4 +1,4 @@
- <%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="dao.UserDao" %>
 <%@ page import="java.io.PrintWriter" %>
@@ -11,60 +11,44 @@
 <meta charset="UTF-8">
 <title>로그인 확인</title>
 </head>
-<body> 
+<body>
 
-<% 
-String mem_id = null;
-if (session.getAttribute("mem_id") != null){
-	mem_id = (String) session.getAttribute("mem_id");
-}
-if (mem_id != null){
-    PrintWriter script = response.getWriter();
-    script.println("<script>");
-    script.println("alert('이미 로그인되었습니다.')");
-    script.println("location.href = 'main.jsp'");    // 메인 페이지로 이동
-    script.println("</script>");
-}
-
-UserDao ud = new UserDao();
-int result = ud.login(user.getMem_id(),user.getMem_pw()); 
-
-/* response.sendRedirect("header.jsp");  */
-
-/* if(mem_id != null){
-	 PrintWriter script = response.getWriter();
-	 script.println("<script>");
-	 script.println("alert('이미 로그인 되어있는 사용자입니다.' + mem_id +')'");
-	 script.println("location.href = 'header.jsp'");
-	 script.println("</script>");
-}  */
- 
- if(result == 1){
-	 PrintWriter script = response.getWriter();
-	 script.println("<script>");	
-	 script.println("location.href = 'Mainindex.jsp'");
-	 script.println("</script>");
-	 
- }else if(result == 0){
-	 PrintWriter script = response.getWriter();
-	 script.println("<script>");
-	 script.println("alert('비밀번호가 일치하지 않습니다.')");
-	 script.println("history.back()");
-	 script.println("</script>");
- }else if(result == -1){
-	 PrintWriter script = response.getWriter();
-	 script.println("<script>");
-	 script.println("alert('존재하지 않는 아이디입니다.')");
-	 script.println("history.back()");
-	 script.println("</script>");
- }else if(result == -2){
-	 PrintWriter script = response.getWriter();
-	 script.println("<script>");
-	 script.println("alert('데이터베이스 오류가 발생했습니다.')");
-	 script.println("history.back()");
-	 script.println("</script>");
- }
- 
-%>
+	<% 
+		request.setCharacterEncoding("UTF-8");
+	
+		String mem_id = request.getParameter("mem_id");
+		String mem_pw = request.getParameter("mem_pw");
+		//회원 아이디와 패스워드가 일치하는지 비교
+ 		
+		UserDao ud = new UserDao();
+ 		int result = ud.login(user.getMem_id(),user.getMem_pw()); 
+ 		
+ 		if(result == 1){
+ 			session.setAttribute("mem_id",mem_id);
+			response.sendRedirect("Mainindex.jsp");
+ 		} else if(result ==0){
+ 		%>	
+ 		<script>
+			alert("회원 아이디 또는 패스워드가 틀립니다.");
+			location.href="login001.jsp";
+			history.back();
+		</script>	
+		<%
+ 		} else if(result == -1){
+		%>
+		<script>
+			alert("존재하지 않는 아이디입니다.");
+			history.back();
+		</script>	
+		<%
+ 		}else if(result == -2){
+		%>
+		<script>
+			alert("데이터베이스 오류입니다.");
+			history.back();
+		</script>
+		<% 
+ 		}
+		%>
 </body>
 </html>

@@ -14,7 +14,7 @@
 </head>
 
 <body>
-<jsp:include page="header.jsp"></jsp:include>
+
 
 	<div class="loginBox01">
 	<div class="loginBox_line">
@@ -60,6 +60,5 @@
 		</div>
 		</div>
 	</div>
-	   <jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
