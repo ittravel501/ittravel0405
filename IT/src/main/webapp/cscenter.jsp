@@ -20,6 +20,16 @@
 	 <script src="js/slick-1.8.1/slick/slick.min.js"></script>
 
 	 <script src="js/shopping_bn.js"></script>
+	 
+	 <style type="text/css">
+    
+	    	.cscenter_menu_wrap .cscenter_menu:first-child {
+	      background-color: rgba(126, 125, 203, 0.26);
+	    }
+	    
+
+    
+    </style>
 
 </head>
 
@@ -38,12 +48,6 @@
 
 		<div class="cscenter" >
 		
-		<div id="cs_title_wrap" >
-		
-			<h1>고객센터&nbsp;1577-5177</h1>
-			
-		
-		</div>
 		
 			<div class="cscenter_menu_wrap" >
 			
@@ -52,14 +56,13 @@
 						<div class="cscenter_menu_txt">			
 							<p><a href="N_list.jsp" >공지사항</a></p>
 						</div>	
-						
-						<div class="cscenter_menu_con" >				
-							<ul>							
-								<li>월~금 10:00~17:30</li>
-								<li>점심시간 12:00~13:30</li>
-								<li>토,일,공휴일 휴무</li>
-								<li><h3><a href="N_list.jsp" >공지사항</a></h3></li>								
-							</ul>
+					
+					</div>
+					
+					<div class="cscenter_menu" >
+					
+						<div class="cscenter_menu_txt">			
+							<p><a href="cscenter_faq.jsp">자주하는 질문</a></p>
 						</div>
 					
 					</div>
@@ -67,42 +70,10 @@
 					<div class="cscenter_menu" >
 					
 						<div class="cscenter_menu_txt">			
-							<p><a href="cscenter_faq.jsp">FAQ</a></p>
-							<p>자주하는 질문</p>
+							<p><a href="">직접 문의하기</a></p>
+
 						</div>
-						
-						<div class="cscenter_menu_con" >
-							<ul>
-								<li><a href="">전체보기</a></li>
-								<li><a href="">주문/입금/결제</a></li>
-								<li><a href="">항공권</a></li>
-								<li><a href="">투어티켓</a></li>
-								<li><a href="">쇼핑</a></li>
-							</ul>
-						</div>
-					
-					</div>
-					
-					<div class="cscenter_menu" >
-					
-						<div class="cscenter_menu_txt">			
-							<p><a href="">Q&A</a></p>
-							<p>직접 문의하기</p>
-						</div>
-						
-						<div class="cscenter_menu_con" >
-							<ul>
-								<li><a href="">상품 문의 게시판</a></li>
-								<li><a href="">문의 게시판</a></li>
-								<li><a href="">배송전 변경/취소 문의</a></li>
-								<li><a href="">교환/반품 문의</a></li>
-								<li><a href="">A/S문의</a></li>
-								<li><a href="">대량구매문의</a></li>
-								<li><a href="">1:1문의하기</a></li>
-								<li><a href="">나의 문의 확인하기</a></li>
-							</ul>
-						</div>
-					
+
 					</div>
 				
 				</div>

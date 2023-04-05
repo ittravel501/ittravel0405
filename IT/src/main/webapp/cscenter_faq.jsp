@@ -9,12 +9,21 @@
 	 
 	 <link rel="stylesheet" type="text/css" href="css/header_footer.css">
 	 <link rel="stylesheet" type="text/css" href="css/cscenter_faq.css">
+	 <link rel="stylesheet" type="text/css" href="css/cscenter.css">
 	 
 	 
 	 <!-- faq js -->
 	 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	 <script src="js/cscenter_faq.js" ></script>
 	 
+	 
+	 <style type="text/css">
+    
+	    	section .cscenter_menu_wrap .cscenter_menu:nth-child(2) {
+	      background-color: rgba(126, 125, 203, 0.26);
+	    }
+    
+    </style>
 
 
 </head>
@@ -31,6 +40,39 @@
 
 
 	<section>
+	
+	<div class="cscenter" >
+
+			<div class="cscenter_menu_wrap" >
+			
+					<div class="cscenter_menu" >
+					
+						<div class="cscenter_menu_txt">			
+							<p><a href="N_list.jsp" >공지사항</a></p>
+						</div>	
+					
+					</div>
+					
+					<div class="cscenter_menu" >
+					
+						<div class="cscenter_menu_txt">			
+							<p><a href="cscenter_faq.jsp">자주하는 질문</a></p>
+						</div>
+					
+					</div>
+					
+					<div class="cscenter_menu" >
+					
+						<div class="cscenter_menu_txt">			
+							<p><a href="cscenter_qna_list.jsp">직접 문의하기</a></p>
+
+						</div>
+
+					</div>
+				
+				</div>
+							
+		</div>
 
 		<div class="cscenter_faq" >
 		
@@ -40,17 +82,7 @@
 				<h3>자주 하는 질문</h3>
 			
 			</div>
-			
-			<div class="cs_quickmenu" >
-				
-				<h2>CS CENTER</h2>
-			
-				<ul>
-					<li><a href="N_list.jsp">공지사항</a> </li>
-					<li><a href="cscenter_faq.jsp">FAQ</a>
-					<li><a href="csecenter_qna.jsp">공지사항</a></li>
-				</ul>
-			</div>
+		
 		
 			<div class="faq_list_wrap" >
 			

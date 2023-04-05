@@ -28,7 +28,7 @@ user.N_delete(not_num);
 
 <script type="text/javascript">
 	alert("삭제되었습니다.");
-</script> >
+</script> 
 
 <%
 	response.sendRedirect("N_list.jsp");
