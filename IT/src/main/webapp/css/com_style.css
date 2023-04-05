@@ -29,7 +29,7 @@ a {
 
 .btall2{
 	display: flex;
-
+	
 }
 .btdiv1{
 	border: 1px solid black;
@@ -39,7 +39,7 @@ a {
 	text-align: center;
 	line-height:40px;
 	font-size:12pt;
-	margin-right: auto;
+margin-right: 10px;
 	background: #000;
     color: #fff;
 }
@@ -49,7 +49,7 @@ a {
 /* 	border: 1px solid black; */
 	width: 360px;
 	height: 40px;
-	margin-left: auto;
+	margin-right: 10px;
 }
 
 .btdiv3 input[type="search"]{
@@ -124,6 +124,47 @@ a {
        background: #000;
     color: #fff;
 }
+
+/* 검색 버튼  */
+.bt_wrap1 {
+    text-align: center;
+    font-size: 0;
+
+
+}
+
+.bt_wrap1 a {
+    display: inline-block;
+    min-width: 50px;	
+    margin-left: 10px;
+    padding: 12px;
+    border: 1px solid #000;
+    border-radius: 2px;
+    font-size: 1.4rem;
+    
+}
+
+.bt_wrap1 a:first-child {
+    margin-left: 0;
+}
+
+.bt_wrap1 .on {
+    background: #000;
+    color: #fff;
+}
+
+.bt_wrap1 .on1{
+	display: inline-block;
+    min-width: 50px;	
+    margin-left: 10px;
+    padding: 12px;
+    border: 1px solid #000;
+    border-radius: 2px;
+    font-size: 1.4rem;
+       background: #000;
+    color: #fff;
+}
+
 
 .board_list {
     width: 100%;

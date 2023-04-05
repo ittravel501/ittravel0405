@@ -6,7 +6,7 @@
 <%@ page import="java.io.PrintWriter" %> <!-- 자바스크립트 문장사용 -->
 <% request.setCharacterEncoding("UTF-8"); %> <!-- 건너오는 모든 파일을 UTF-8로 -->
    <jsp:useBean id="info" class="dto.Cominfo" scope="page"></jsp:useBean>
-	<jsp:setProperty property="*" name="info"/>
+<%-- 	<jsp:setProperty property="*" name="info"/> --%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,36 +15,65 @@
 </head>
 <body>
   <%
-        String com_mem_id = null;
-        // 로그인 된 사람은 회원가입페이지에 들어갈수 없다
-        if(session.getAttribute("com_mem_id") != null )
-        {
-        	com_mem_id = (String) session.getAttribute("com_mem_id");
-        }
-        
-        if(com_mem_id == null)
-        {
-            PrintWriter script = response.getWriter();
-            script.println("<script>");
-            script.println("alert('로그인을 하세요')");
-            script.println("location.href = 'login_je.jsp'");
-            script.println("</script>");
-        } 
-        int com_num = 0;
-        if (request.getParameter("com_num") != null)
-        {
-        	com_num = Integer.parseInt(request.getParameter("com_num"));
-        }
-        if (com_num == 0)
-        {
-            PrintWriter script = response.getWriter();
-            script.println("<script>");
-            script.println("alert('유효하지 않은 글입니다')");
-            script.println("location.href = 'board_list.jsp'");
-            script.println("</script>");
-        }
-        Cominfo ci = new BoardDao().getBoard(com_num);
-        if (!com_mem_id.equals(ci.getCom_mem_id()))
+  
+ 
+  
+  String mem_id = request.getParameter("mem_id");
+
+  String com_bct = request.getParameter("com_bct");
+  String com_name = request.getParameter("com_name");
+  String com_con = request.getParameter("com_con");
+
+  // 로그인 된 사람은 회원가입페이지에 들어갈수 없다
+  /*if(session.getAttribute("mem_id") != null )
+  {
+      mem_id = (String) session.getAttribute("mem_id");
+  } */
+
+  if(mem_id != null){
+
+      session.setAttribute("mem_id",mem_id);
+
+      session.setAttribute("com_name",com_name);
+      session.setAttribute("com_bct",com_bct);
+      session.setAttribute("com_con",com_con);
+
+      response.sendRedirect("board_list.jsp");
+  }
+  
+  /* String com_mem_id = null; */
+  // 로그인 된 사람은 회원가입페이지에 들어갈수 없다
+  if(session.getAttribute("mem_id") != null )
+  {
+      mem_id = (String) session.getAttribute("mem_id");
+  }
+      
+  if(mem_id == null)
+  {
+      PrintWriter script = response.getWriter();
+      script.println("<script>");
+      script.println("alert('로그인을 하세요')");
+      script.println("location.href = 'login_001.jsp'");
+      script.println("</script>");
+  } 
+  
+  int com_num = 0; 
+  if (request.getParameter("com_num") != null)
+  {
+      com_num = Integer.parseInt(request.getParameter("com_num"));
+  }
+  
+  if (com_num == 0)
+  {
+      PrintWriter script = response.getWriter();
+      script.println("<script>");
+      script.println("alert('유효하지 않은 글입니다')");
+      script.println("location.href = 'board_list.jsp'");
+      script.println("</script>");
+  } 
+  
+  Cominfo ci = new BoardDao().getBoard(com_num);
+        if (!mem_id.equals(ci.getCom_mem_id()))
         {
             PrintWriter script = response.getWriter();
             script.println("<script>");

@@ -39,7 +39,6 @@
                         <dt>카테고리</dt>
                         <dd>
                       	<select class="catediv1" name="com_bct">
-                      	<option value="전체" selected>전체</option>
                       	<option value="동행구인" >동행구인</option>
                       	<option value="중고장터">중고장터</option>
                       	</select>
