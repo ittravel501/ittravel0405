@@ -57,7 +57,7 @@
                     </dl>
                       
                 </div>
-                <div class="cont">
+                <div class="cont"> 
                     <textarea placeholder="내용 입력" name="com_con"></textarea>
                 </div>
             </div>

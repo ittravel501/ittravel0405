@@ -2,7 +2,7 @@ package dto;
 
 public class Joininfo {
 	private String mem_id;
-	private String mem_pw;
+	private String mem_pw; 
 	private String mem_name;
 	private String mem_nick;
 	private String mem_email1;

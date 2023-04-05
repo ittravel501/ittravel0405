@@ -12,12 +12,12 @@ public class BoardDao{
 	Connection conn;
 	ResultSet rs;
 	
-	public BoardDao() {
+	public BoardDao() { 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			String dbURL = "jdbc:mysql://localhost:3306/teamproject?useUnicode=true&characterEncoding=utf8";
 			String dbID = "root";
-			String dbPW = "eogkrrksek!1";
+			String dbPW = "1234";
 			conn = DriverManager.getConnection(dbURL, dbID, dbPW);
 		} catch (Exception e) {
 			e.printStackTrace();

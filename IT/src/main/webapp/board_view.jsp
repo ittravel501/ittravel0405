@@ -16,7 +16,7 @@
 <% 
 String com_mem_id = null; // 로그인이 된 사람들은 로그인정보를 담을 수 있도록한다
 if (session.getAttribute("com_mem_id") != null)
-{
+{ 
 	com_mem_id = (String)session.getAttribute("com_mem_id");
 }
 int com_num = 0;

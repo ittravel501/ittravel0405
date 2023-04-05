@@ -15,7 +15,7 @@
 <body>
 <jsp:include page="header.jsp"></jsp:include>
 <%
-// 로그인이 된 사람들은 로그인 정보를 담을 수 있도록 한다.
+// 로그인이 된 사람들은 로그인 정보를 담을 수 있도록 한다. 
  String com_mem_id =null;
 if(session.getAttribute(com_mem_id) != null){
 	com_mem_id =(String)session.getAttribute("com_mem_id");

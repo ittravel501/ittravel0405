@@ -13,7 +13,7 @@
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
-<%
+<% 
     String com_mem_id = null; // 로그인이 된 사람들은 로그인정보를 담을 수 있도록한다
     if (session.getAttribute("com_mem_id") != null)
     {

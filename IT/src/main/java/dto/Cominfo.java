@@ -8,7 +8,7 @@ public class Cominfo {
 	private String com_name;
 	private String com_con;
 	private String com_date;
-	
+	 
 	public int getCom_num() {
 		return com_num;
 	}
