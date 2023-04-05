@@ -288,6 +288,24 @@ public Integer update_view (String num) {
 	
 }
 
+public void N_delete(String not_num) { //delete 메소드,반환값이 없어 void...
+
+
+	try{ //실행
+		
+		conn();
+
+		stmt.executeUpdate("delete from notice_info where not_num='"+ not_num +"';"); 
+		
+	}
+		catch(Exception e) {			
+			
+		}finally{
+			
+				diconn(); //데이터베이스 연결 종료
+		}			
+	}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 public void Q_insert(QNA_MD md) {	 //select 메소드, 리턴 해서 반환값이 list ArrayList<md>해서 void는 못쓰다..		
@@ -361,7 +379,7 @@ try {
 		n_list.setQna_con(rs.getString("qna_con"));
 		n_list.setQna_img(rs.getString("qna_img"));
 		n_list.setQna_date(rs.getString("qna_date"));
-		n_list.setQna_reply(rs.getString("qna_reply"));
+		n_list.setQna_num(rs.getInt("qna_num"));
 		n_list.setQna_mem_id(rs.getString("qna_mem_id"));
 		
 		
