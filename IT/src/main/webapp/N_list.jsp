@@ -13,8 +13,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공지사항</title>
     <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="css/cscenter.css">
+    
+    <style type="text/css">
+    
+	    	section .cscenter_menu_wrap .cscenter_menu:first-child {
+	      background-color: rgba(126, 125, 203, 0.26);
+	    }
+    
+    </style>
     
 </head>
+
 
 <jsp:useBean id="user" class="dao.N_controller"/> 
 
@@ -27,22 +37,46 @@
 </header> 
 <section>
 
+
+	<div class="cscenter" >
+
+			<div class="cscenter_menu_wrap" >
+			
+					<div class="cscenter_menu" >
+					
+						<div class="cscenter_menu_txt">			
+							<p><a href="N_list.jsp" >공지사항</a></p>
+						</div>	
+					
+					</div>
+					
+					<div class="cscenter_menu" >
+					
+						<div class="cscenter_menu_txt">			
+							<p><a href="cscenter_faq.jsp">자주하는 질문</a></p>
+						</div>
+					
+					</div>
+					
+					<div class="cscenter_menu" >
+					
+						<div class="cscenter_menu_txt">			
+							<p><a href="cscenter_qna_list.jsp">직접 문의하기</a></p>
+
+						</div>
+
+					</div>
+				
+				</div>
+							
+		</div>
+
+
     <div class="board_wrap">
         <div class="board_title">
             <strong>공지사항</strong>
            <!-- <p>공지사항을 빠르고 정확하게 안내해드립니다.</p>  --> 
         </div>
-        
-        <div class="cs_quickmenu" >
-				
-				<h2>CS CENTER</h2>
-			
-				<ul>
-					<li><a href="N_list.jsp">공지사항</a> </li>
-					<li><a href="cscenter_faq.jsp">FAQ</a>
-					<li><a href="csecenter_qna.jsp">공지사항</a></li>
-				</ul>
-			</div>
         
         <div class="board_list_wrap">
             <div class="board_list">

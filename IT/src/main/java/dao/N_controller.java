@@ -11,6 +11,7 @@ import java.util.Date;
 
 import dto.Join_MD;
 import dto.N_MD;
+import dto.QNA_MD;
 
 public class N_controller {
 	
@@ -286,6 +287,236 @@ public Integer update_view (String num) {
 	return n_view;
 	
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+public void Q_insert(QNA_MD md) {	 //select 메소드, 리턴 해서 반환값이 list ArrayList<md>해서 void는 못쓰다..		
+	
+	try { //실행
+
+		conn();
+		
+		//ResultSet rs = null;
+		//rs = stmt.executeQuery("SELECT MAX(num) From notice");
+		
+		//int num = 1;			
+		//if(rs.next()) {
+		//	num = rs.getInt(1)+1;
+		//}
+		
+		int qna_num = 0 ; //문의 번호 
+		
+		String qna_fil = md.getQna_fil(); //문의 카테고리
+		String qna_title = md.getQna_title(); //문의 제목
+		String qna_con = md.getQna_con(); //문의 내용
+		String qna_img = md.getQna_img(); //문의 첨부파일
+		String qna_reply = "답변대기"; //답변 상황 - 답변대기 or 답변완료 >이제 등록해서 그냥 답변대기로 설정해놓음
+		String qna_mem_id = md.getQna_mem_id(); //문의한 아이디 
+
+		Date currentDate = new Date();
+		java.sql.Date qna_date = new java.sql.Date(currentDate.getTime()); //문의일
+		
+		//큐엔에이 8개 넣어야 함.
+		
+		String ss = String.format("insert into qna_info values ( %s ,'%s','%s','%s','%s','%s','%s','%s' )",qna_num, qna_fil ,qna_title, qna_con,qna_img, qna_date,qna_reply,qna_mem_id);
+		
+		int rowNum = stmt.executeUpdate(ss);
+		if(rowNum <1) {
+			throw new Exception("데이터를 DB에 입력할 수 없습니다");
+		}
+		
+		System.out.println("됐냥??");
+	}
+		
+		catch(Exception e) {	//예외처리
+			
+			System.out.println(e);	
+			//System.out.println(qnamng.getPostdate());
+			System.out.println("아 한글이 나오긴 하는구나");
+			
+			
+		}finally{
+			
+			diconn(); //데이터베이스 연결 종료
+		}
+}
+
+public ArrayList<QNA_MD> Q_select() {
+
+conn();
+ArrayList<QNA_MD> N_list = new ArrayList<> ();
+
+try {
+	
+	ResultSet rs = stmt.executeQuery("select*from qna_info;");
+	
+	while(rs.next()) {
+		
+		QNA_MD n_list = new QNA_MD();
+		
+		n_list.setQna_num(rs.getInt("qna_num"));
+		n_list.setQna_fil(rs.getString("qna_fil"));
+		n_list.setQna_title(rs.getString("qna_title"));
+		//n_list.setPw(rs.getString("pw"));
+		n_list.setQna_con(rs.getString("qna_con"));
+		n_list.setQna_img(rs.getString("qna_img"));
+		n_list.setQna_date(rs.getString("qna_date"));
+		n_list.setQna_reply(rs.getString("qna_reply"));
+		n_list.setQna_mem_id(rs.getString("qna_mem_id"));
+		
+		
+		N_list.add(n_list); //arraylist에 한 줄 저장 함.		
+		
+		
+	}
+	
+	
+}catch (Exception e) {
+	System.out.println("외않되");
+	
+	// TODO: handle exception
+	
+}finally {
+	
+	diconn();
+	
+}
+return N_list;
+
+}
+
+public N_MD Q_selectone(String i) { /*N_view에서 받아온 String iii 값을 새로 정의한다. 똑같이 맞춰줘도 되는데, 값을 새로 정의할 수 있다는 걸 표시하기 위해서 일부러 다르게 줬다. 
+											값은 이동이 되지만 변수명은 그 메소드 안에서만 활용된다. 그래서 다르게 줘도 됨. !값은 이동된거임! */
+//num을 받아와서 String i라는 변수로 다시 정했다. 
+
+conn();	
+N_MD n_list = new N_MD();
+
+try {
+	
+	ResultSet rs = stmt.executeQuery("select*from qna_info where not_num= '"+ i +"' ;"); //num값을 String i으로 받았기 때문에 i를 쓴다. 
+	
+	if(rs.next()) { //rs의 next가 있으면 
+		n_list.setNot_num(rs.getInt("not_num"));
+		n_list.setNot_title(rs.getString("not_title"));
+		//n_list.setPw(rs.getString("pw"));
+		n_list.setNot_con(rs.getString("not_con"));
+		n_list.setNot_writer(rs.getString("not_writer"));
+		n_list.setNot_date(rs.getString("not_date"));
+		n_list.setNot_view(rs.getInt("not_view"));
+	}
+		//N_list.add(n_list); //arraylist에 한 줄 저장 함.		
+
+	
+	
+}catch (Exception e) {
+	System.out.println(e);
+	
+	// TODO: handle exception
+	
+}finally {
+	
+	diconn();
+	
+}
+return n_list;
+
+}
+
+
+public void Q_update(String i, String ii , String iii) {
+conn();
+
+try { //실행
+
+	//System.out.println(i);
+	//System.out.println(ii);
+//	System.out.println(iii);
+	//System.out.println(iiii);
+	
+	//String ss = String.format("update notice set title= '" + i + "', con= '" + ii + "', n_view = '" + iiii +"' where num= '"+ iii +"' ;"  );
+	String ss = String.format("update qna_info set title= '" + i + "', not_con= '" + ii + "' where not_num= '"+ iii +"' ;"  );
+	
+	System.out.println(ss);
+	
+	int rowNum = stmt.executeUpdate(ss);
+	if(rowNum <1) {
+		throw new Exception("데이터를 DB에 입력할 수 없습니다");
+	}
+	
+	System.out.println("됐냥??");
+
+}
+	
+	catch(Exception e) {	//예외처리
+		
+		System.out.println(e);	
+		//System.out.println(qnamng.getPostdate());
+		System.out.println("아 한글이 나오긴 하는구나 여기인가");
+		
+		
+	}finally{
+		
+		diconn(); //데이터베이스 연결 종료
+	}
+
+
+
+}
+
+public Integer Q_update_view (String num) {
+
+conn();
+
+int n_view = 0 ;
+
+try { //실행
+	
+	
+	ResultSet rs = stmt.executeQuery("select*from qna_info where not_num= '"+ num +"' ;");
+	// 글번호가 num인 데이터들을 select한다. 
+	
+	
+	if(rs.next()) {
+		int vv = rs.getInt("not_view"); //rs에 저장된 int 이름이 not_veiw인 것을 int vv라고 정한다. 
+									  //이 ("not_view")는 필드명으로 지정한 것으로 하는 것인가?? 어디서 저한 name이지??!
+		
+		n_view = vv + 1; //가져온 조회수에 1을 더하여 조회수값에 저장한다. 
+		
+	}
+	
+	//System.out.println(n_view);
+	
+	String ss = String.format("update notice_info set not_view= '" + n_view + "' where not_num= '"+ num +"' ;"  ); //글번호가 num인 레코드를 조회수 n_view로 수정한다.  
+	
+	System.out.println(ss);
+	
+	int rowNum = stmt.executeUpdate(ss);
+	
+	if(rowNum <1) {
+		throw new Exception("데이터를 DB에 입력할 수 없습니다");
+	}
+	
+	System.out.println("됐냥??");
+
+}
+	
+	catch(Exception e) {	//예외처리
+		
+		System.out.println(e);	
+		//System.out.println(qnamng.getPostdate());
+		System.out.println("조회수 수정 결과 저장이,,,");
+					
+	}finally{
+		
+		diconn(); //데이터베이스 연결 종료
+	}
+return n_view;
+
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 public void join_insert(Join_MD md) {	 //select 메소드, 리턴 해서 반환값이 list ArrayList<md>해서 void는 못쓰다..		
 	

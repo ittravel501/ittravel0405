@@ -1,92 +1,84 @@
-<%@ page contentType="text/html; charset=UTF-8" %>
-
-<%@page import ="dto.QNA_MD" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+    <%@page import ="dto.QNA_MD" %>
 <%@page import="dao.N_controller" %>
 
 
+
+    
+    
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>공지사항</title>
-    <link rel="stylesheet" href="css/css.css">
+<meta charset="UTF-8">
+<title>MVC 게시판</title>
+
+<link rel="stylesheet" href="css/cscenter_qna.css">
+
 </head>
 <body>
-
-<header>
+	<!-- 게시판 등록 -->
+	
+	<header>
  <jsp:include page="header.jsp" />
 </header>
 
+	<section>
+	
+	<div id="cs_qna_wrap" >
+		<h2>직접 문의하기</h2>
+		<form action="cscenter_qna_write2.jsp" method="post"
+			enctype="multipart/form-data" name="boardform">
+			<table>
+			
+				<tr>
+					<td class="td_left">카테고리 설정
+					
+						
+					</td>
+					
+					<td class="td_right">
+						<select name="qna_fil" id="qna_fil" required="required">
+						
+							<option>문의내용 선택</option>
+							<option>항공예약</option>
+							<option>투어예약</option>
+							<option>쇼핑</option>
+							<option>교환/환불</option>
+							<option>기타</option>
+							
+						</select></td>
+				</tr>
 
-<%
-        
-        String mem_nick = (String)session.getAttribute("NICK"); //session으로 가져오면 무조건 String으로 받으로 형변환해야 한다.
-        													//리턴값을 오브젝트로 받기 때문이다. 오브젝트는 int와 String를 받을 수 있기 때문에 정확히 변수의 타입을 확실히 정해주어야한다.
-             													
-        if(mem_nick==null) {
-        	
-        	%>
-        	
-        	<script>
-			    alert("로그인을 해주세요.");
-			    location.href = "login001.jsp";
-			</script>
-        	
-        	<% 
-        }
-        %>
 
-
-	<section style="height: 700px">
-    <div class="board_wrap">
-        <div class="board_title">
-        
-            <h2>공지사항 입력ㅁddㅁ</h2>
-
-        </div>
-        
-        <jsp:useBean id="user" class="dao.N_controller"/>
-        
-        <form action="N_write2.jsp" method="post">
-        
-        <div class="board_write_wrap">
-            <div class="board_write">
-                <div class="title">
-                    <dl>
-                        <dt>제목</dt>
-                        <dd><input type="text" placeholder="제목 입력" name="title" required="required" ></dd>
-                    </dl>
-                </div>
-                <div class="info">
-                    <dl>
-                        <dt>글쓴이</dt>
-                        <dd><input type="text" value="관리자" name="writer" readonly="readonly" ></dd>
-                    </dl>
-
-                </div>
-                
-                <div class="cont">
-                    <textarea placeholder="내용 입력" name="con" required="required"  ></textarea>
-                </div>
-            </div>
-            
-            <div class="bt_wrap">           
-                <input class="on" type="submit" value="등록">      
-                
-            </div>
-            
-        </div>
-        </form>
-    </div>
-   
-    </section>
-    
-    <footer>
-    	<jsp:include page="footer.jsp"/>
-	</footer>
-    
-
-    
+				<tr>
+					<td class="td_left"><label for="BOARD_SUBJECT">제 목</label></td>
+					<td class="td_right"><input name="qna_title" type="text"
+						id="qna_title" required="required" /></td>
+				</tr>
+				<tr>
+					<td class="td_left"><label for="BOARD_CONTENT">내 용</label></td>
+					<td><textarea id="qna_con" name="qna_con"
+							cols="40" rows="15" required="required"></textarea></td>
+				</tr>
+				<tr>
+					<td class="td_left"><label for="BOARD_FILE"> 파일 첨부 </label></td>
+					<td class="td_right"><input name="qna_img" type="file"
+						id="qna_img" /></td>
+				</tr>
+			</table>
+			<section id="commandCell">
+				<input type="submit" value="등록">
+			</section>
+		</form>
+		
+		</div>
+	</section>
+	<!-- 게시판 등록 -->
+	
+	<header>
+ <jsp:include page="footer.jsp" />
+</header>
 </body>
 </html>

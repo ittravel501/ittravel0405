@@ -1,88 +1,136 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-    <%@page import ="dto.QNA_MD" %>
-<%@page import="dao.N_controller" %>
-
+    <%@ page import = "java.util.ArrayList" %>
     
+    <%@page import="dto.QNA_MD" %>
+    <%@page import="dao.N_controller" %>
     
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>MVC 게시판</title>
-<style type="text/css">
-#registForm {
-	width: 500px;
-	height: 610px;
-	border: 1px solid red;
-	margin: auto;
-}
-
-h2 {
-	text-align: center;
-}
-
-table {
-	margin: auto;
-	width: 450px;
-}
-
-.td_left {
-	width: 150px;
-	background: white;
-}
-
-.td_right {
-	width: 300px;
-	background: white;
-}
-
-#commandCell {
-	text-align: center;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&A</title>
+    <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="css/cscenter.css">
+    
+    <style type="text/css">
+    
+	    	section .cscenter_menu_wrap .cscenter_menu:nth-child(3) {
+	      background-color: rgba(126, 125, 203, 0.26);
+	    }
+    
+    </style>
+    
 </head>
+
+
+<jsp:useBean id="user" class="dao.N_controller"/> 
+
+
+
 <body>
-	<!-- 게시판 등록 -->
+
+<header>
+   <jsp:include page="header.jsp" />
+</header> 
+<section>
+
+
+	<div class="cscenter" >
+
+			<div class="cscenter_menu_wrap" >
+			
+					<div class="cscenter_menu" >
+					
+						<div class="cscenter_menu_txt">			
+							<p><a href="N_list.jsp" >공지사항</a></p>
+						</div>	
+					
+					</div>
+					
+					<div class="cscenter_menu" >
+					
+						<div class="cscenter_menu_txt">			
+							<p><a href="cscenter_faq.jsp">자주하는 질문</a></p>
+						</div>
+					
+					</div>
+					
+					<div class="cscenter_menu" >
+					
+						<div class="cscenter_menu_txt">			
+							<p><a href="cscenter_qna_list.jsp">직접 문의하기</a></p>
+
+						</div>
+
+					</div>
+				
+				</div>
+							
+		</div>
+
+
+    <div class="board_wrap">
+        <div class="board_title">
+            <strong>직접 문의하기</strong>
+           <!-- <p>공지사항을 빠르고 정확하게 안내해드립니다.</p>  --> 
+        </div>
+        
+        <div class="board_list_wrap">
+            <div class="board_list">
+                <div class="top">
+                 <!-- <div class="num">번호</div> -->   
+                 	<div class="num">카테고리</div>
+                    <div class="title">제목</div>
+                    <div class="writer">질문자</div>
+                    <div class="count">답변상황</div>
+                    <div class="date">문의일</div>
+                </div>
+                
+               
+                <div >
+               <%
+               
+               ArrayList<QNA_MD> N_arr = user.Q_select(); 
+               
+               //int i = N_arr.size();
+               
+                for(int i=0 ; i <N_arr.size(); i++) {  
+                	
+                %>
+                	
+                    <div class="num"><%=N_arr.get(i).getQna_fil() %></div>
+                    <div class="title"><a href="N_view.jsp?not_num=<%=N_arr.get(i).getQna_num()%>"><%=N_arr.get(i).getQna_title()%></a></div>
+                    <div class="writer"><%=N_arr.get(i).getQna_mem_id() %></div>
+                    <div class="writer"><%=N_arr.get(i).getQna_reply() %></div>
+                    <div class="date"><%=N_arr.get(i).getQna_date() %></div>
+                                 
+                <%    
+                }
+                %>
+                </div>
+                
+            </div>
+            
+            
+       
+            <div class="bt_wrap">
+                <a href="N_wirte.jsp" class="on">등록</a>
+                <!--<a href="#">수정</a>-->
+            </div>
+            
+            
+          
+            
+        </div>
+    </div>
+    </section>
+    
+    <footer>
+   <jsp:include page="footer.jsp"/>
+	</footer>
 	
-	<header>
- <jsp:include page="header.jsp" />
-</header>
-
-	<section id="writeForm">
-		<h2>게시판글등록</h2>
-		<form action="boardWritePro.bo" method="post"
-			enctype="multipart/form-data" name="boardform">
-			<table>
-
-
-				<tr>
-					<td class="td_left"><label for="BOARD_SUBJECT">제 목</label></td>
-					<td class="td_right"><input name="BOARD_SUBJECT" type="text"
-						id="BOARD_SUBJECT" required="required" /></td>
-				</tr>
-				<tr>
-					<td class="td_left"><label for="BOARD_CONTENT">내 용</label></td>
-					<td><textarea id="BOARD_CONTENT" name="BOARD_CONTENT"
-							cols="40" rows="15" required="required"></textarea></td>
-				</tr>
-				<tr>
-					<td class="td_left"><label for="BOARD_FILE"> 파일 첨부 </label></td>
-					<td class="td_right"><input name="BOARD_FILE" type="file"
-						id="BOARD_FILE" required="required" /></td>
-				</tr>
-			</table>
-			<section id="commandCell">
-				<input type="submit" value="등록">&nbsp;&nbsp; <input
-					type="reset" value="다시쓰기" />
-			</section>
-		</form>
-	</section>
-	<!-- 게시판 등록 -->
-	
-	<header>
- <jsp:include page="footer.jsp" />
-</header>
 </body>
-</html>
+</html> 
