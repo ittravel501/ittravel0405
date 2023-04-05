@@ -26,23 +26,25 @@ public class BoardDao{
 	
 	// 글쓰기 insert
 	public int write(Cominfo info) {
-		String SQL = "insert into com_info(com_num, com_mem_id, com_name, com_con, com_available, com_date) values(?,?,?,?,1,NOW())";
-		
-		
-		try {
-			PreparedStatement  pstat = conn.prepareStatement(SQL);
-			pstat.setInt(1, getNext());
-			pstat.setString(2, info.getCom_mem_id());
-			pstat.setString(3, info.getCom_name());
-			pstat.setString(4, info.getCom_con());
+	    String SQL = "INSERT INTO com_info (com_num, com_bct, com_mem_id, com_name, com_con, com_available, com_date) "
+	            + "VALUES (?, ?, ?, ?, ?, 1, NOW())";
+	    
+	    try {
+	        PreparedStatement pstat = conn.prepareStatement(SQL);
+	        pstat.setInt(1, getNext());
+	        pstat.setString(2, info.getCom_bct() != null ? info.getCom_bct() : "전체");
+	        pstat.setString(3, info.getCom_mem_id());
+	        pstat.setString(4, info.getCom_name());
+	        pstat.setString(5, info.getCom_con());
+	        
+	        return pstat.executeUpdate();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    return -1; // db 오류
 
-		 return pstat.executeUpdate();// 성공했을 경우 0 이상의 숫자를 반환
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return -1; // db 오류
 	}
-	
+
 
     //수정
     public int update(Cominfo info){
@@ -94,11 +96,12 @@ public class BoardDao{
 			 while (rs.next()) {
 				 Cominfo ci = new Cominfo();
 				 	ci.setCom_num(rs.getInt(1));
-				 	ci.setCom_mem_id(rs.getString(2));
-				 	ci.setCom_name(rs.getString(3));
-				 	ci.setCom_con(rs.getString(4));
-				 	ci.setCom_available(rs.getInt(5));
-				 	ci.setCom_date(rs.getString(6));
+				 	ci.setCom_bct(rs.getString(2));
+				 	ci.setCom_mem_id(rs.getString(3));
+				 	ci.setCom_name(rs.getString(4));
+				 	ci.setCom_con(rs.getString(5));
+				 	ci.setCom_available(rs.getInt(6));
+				 	ci.setCom_date(rs.getString(7));
 	                list1.add(ci);
 	            }
 	        } catch (Exception e) {

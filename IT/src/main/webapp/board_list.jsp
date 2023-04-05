@@ -68,6 +68,7 @@ if(request.getParameter("pageNumber") != null){
            	  for(int i = 0; i < list1.size(); i++){
            	%>
 				<div>
+				<div class="num"><%=list1.get(i).getCom_bct()%></div>  
     			<div class="num"><%=list1.get(i).getCom_num()%></div> 
     			<div class="title" style="text-align:center;">
         		<a href="board_view.jsp?com_num=<%=list1.get(i).getCom_num()%>">

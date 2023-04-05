@@ -17,13 +17,13 @@
         </div>
   	<% 	
   	
-  	request.setCharacterEncoding("UTF-8");
-  				// 로그인한 사용자들이라면 , mem_id에 값이 담기게 될 것.
-				String com_mem_id = null;
-  				if(session.getAttribute("com_mem_id") != null){
-  					com_mem_id = (String)session.getAttribute("com_mem_id");
+  			request.setCharacterEncoding("UTF-8");
+  			// 로그인한 사용자들이라면 , mem_id에 값이 담기게 될 것.
+				String mem_id = null;
+  				if(session.getAttribute("mem_id") != null){
+  					mem_id = (String)session.getAttribute("mem_id");
   				}
-  				
+  				 
   			%> 
         <form action="writeAction.jsp" method="post">
         <div class="board_write_wrap">
@@ -38,10 +38,10 @@
                    <dl>
                         <dt>카테고리</dt>
                         <dd>
-                      	<select class="catediv1">
-                      	<option>전체</option>
-                      	<option>동행구인</option>
-                      	<option>중고장터</option>
+                      	<select class="catediv1" name="com_bct">
+                      	<option value="전체" selected>전체</option>
+                      	<option value="동행구인" >동행구인</option>
+                      	<option value="중고장터">중고장터</option>
                       	</select>
                         </dd>
                     </dl>
@@ -49,11 +49,10 @@
                         <dt>글쓴이</dt>
                         <dd>
                         <% 
-                        String mem_id = (String)session.getAttribute("mem_id");
                         out.println(mem_id+"님");
                         %>
-                        <input type="hidden" name="com_mem_id" value="<%=com_mem_id%>">
-
+                        <input type="hidden" name="com_mem_id" value="<%=mem_id%>">
+						<!-- hidden으로 값을 넘겨줘야 db에서 막히지 않음 fk 요소라서 민감 중요 -->
                         </dd>
                     </dl>
                       

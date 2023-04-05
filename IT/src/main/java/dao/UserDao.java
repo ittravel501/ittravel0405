@@ -29,7 +29,7 @@ public class UserDao {
 	
 	// 로그인 가능 유무
 	public int login(String mem_id, String mem_pw) {
-	    String SQL = "select mem_pw from mem_account where mem_id = ? ";
+	    String SQL = "select mem_pw from mem_account where mem_id = ?";
 	 
 	    try {
 	        PreparedStatement pstat = conn.prepareStatement(SQL);
@@ -40,7 +40,7 @@ public class UserDao {
 	        	if(rs.getString(1).equals(mem_pw)) {
 	        		return 1; // 로그인 성공
 	        	} else
-	        		return 0;
+	        		return 0; //
 	        }
 	        return -1;
 	    } catch (Exception e) {
@@ -61,7 +61,7 @@ public class UserDao {
 			pstat.setString(4,info.getMem_nick());
 			pstat.setString(5,info.getMem_email1()+info.getMem_email2());
 			pstat.setString(6,"우편번호 : "+ info.getMem_addr1()+", 도로명 주소 : "+info.getMem_addr2()+", 상세 주소 : "+info.getMem_addr3() + ",(참고 :" + info.getMem_addr4() +")");
-			pstat.setString(7,info.getMem_mobile1()+info.getMem_mobile2()+info.getMem_mobile3());
+			pstat.setString(7,info.getMem_mobile1()+info.getMem_mobile2()+info.getMem_mobile3()); 
 			pstat.setString(8,info.getMem_sex());
 			pstat.setString(9,info.getMem_birth1()+info.getMem_birth2()+info.getMem_birth3());
 			pstat.setString(10,info.getMem_news());

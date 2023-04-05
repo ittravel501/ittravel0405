@@ -101,7 +101,6 @@ public class Joininfo {
 		this.mem_mobile2 = mem_mobile2;
 	}
 	
-	
 	public String getMem_mobile3() {
 		return mem_mobile3;
 	}

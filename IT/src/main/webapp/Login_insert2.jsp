@@ -29,7 +29,7 @@
  		} else if(result ==0){
  		%>	
  		<script>
-			alert("회원 아이디 또는 패스워드가 틀립니다.");
+			alert("패스워드가 틀립니다.");
 			location.href="login001.jsp";
 			history.back();
 		</script>	
