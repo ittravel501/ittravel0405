@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공지사항</title>
     <style type="text/css" ></style>
-     <link rel="stylesheet" href="css/com_css.css">
+     <link rel="stylesheet" href="css/com_style.css">
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
@@ -37,7 +37,7 @@ if(request.getParameter("pageNumber") != null){
     <form action="search_list.jsp" method="post">
     	<div class="btall2">
     	
-    	<div class="btdiv1">
+    	<div >
     		<select class="btdiv1" name="searchField">
     		<option value="0"> 선택 </option>
     		<option value="com_name"> 제목 </option>

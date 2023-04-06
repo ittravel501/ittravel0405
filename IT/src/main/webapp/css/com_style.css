@@ -33,32 +33,30 @@ a {
 	
 }
 .btdiv1{
-	border: 1px solid black;
-	border-radius:5px;
+	border-radius:4px;
 	width: 120px;
 	height: 40px;
 	text-align: center;
 	line-height:40px;
 	font-size:12pt;
-margin-right: 10px;
 	background: #000;
     color: #fff;
+    margin-left: 2px;
 }
 
 
 .btdiv3{
 /* 	border: 1px solid black; */
-	width: 360px;
+	width: 280px;
 	height: 40px;
-	margin-right: 10px;
 }
 
 .btdiv3 input[type="search"]{
-	width: 360px;
+	width: 280px;
 	height: 40px;
-	border-radius: 10px;
-	padding-left:25px;
-	font-size: 13pt;
+	border-radius: 4px;
+	padding-left:17px;
+	font-size: 12pt;
 	
 }
 
@@ -99,11 +97,12 @@ margin-right: 10px;
     min-width: 80px;	
     margin-left: 10px;
     padding: 12px;
-    border: 1px solid #000;
+/*     border: 1px solid #000; */
     border-radius: 2px;
     font-size: 1.4rem;
     
 }
+
 
 .bt_wrap a:first-child {
     margin-left: 0;
@@ -126,6 +125,50 @@ margin-right: 10px;
     color: #fff;
 }
 
+/* 목록 , 수정, 삭제 버튼  */
+.bt_wrap2 {
+ margin-top: 30px; 
+    text-align: center;
+    font-size: 0;
+    margin-left: auto;
+
+}
+
+.bt_wrap2 a {
+    display: inline-block;
+    min-width: 80px;	
+    margin-left: 10px;
+    padding: 12px;
+/*     border: 1px solid #000; */
+    border-radius: 2px;
+    font-size: 1.4rem;
+    
+}
+
+
+.bt_wrap2 a:first-child {
+    margin-left: 0;
+}
+
+.bt_wrap2 .on {
+    background: #000;
+    color: #fff;
+    border: 1px solid #000;
+}
+
+.bt_wrap2 .on1{
+	display: inline-block;
+    min-width: 80px;	
+    margin-left: 10px;
+    padding: 12px;
+    border: 1px solid #000;
+    border-radius: 2px;
+    font-size: 1.4rem;
+       background: #000;
+    color: #fff;
+}
+
+
 /* 검색 버튼  */
 .bt_wrap1 {
     text-align: center;
@@ -135,12 +178,12 @@ margin-right: 10px;
 .bt_wrap1 .on1 {
     display: inline-block;
     min-width: 50px;	
-
+	height:39px;
     padding: 12px;
-    border: 1px solid #000;
+/*     border: 1px solid #000; */
     border-radius: 2px;
     font-size: 1.4rem;
-    
+
 }
 
 .bt_wrap1 button:first-child {
@@ -150,6 +193,7 @@ margin-right: 10px;
 .bt_wrap1 .on1 {
     background: #000;
     color: #fff;
+        margin-right: 2px;
 }
 
 .bt_wrap1 .on1{

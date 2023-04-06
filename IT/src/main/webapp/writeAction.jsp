@@ -39,7 +39,7 @@
  		} else if(result == -1){
 		%>
 		<script>
-			alert('글쓰기에 실패했습니다. 데이터베이스 오류');
+			alert('비회원 글쓰기는 불가합니다. 로그인 후 작성해 주세요.');
 			history.go(-1);
 		</script>	
 		<%

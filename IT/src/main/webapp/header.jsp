@@ -75,7 +75,7 @@
 			              <li class="menulist5"> <a href="./tour002.html"  class="menu" > 투어예약 </a></li>
 			              <li class="menulist6"> <a href="#" class="menu"> 소셜 </a></li>
 			              <li class="menulist7"> <a href="shopping001.jsp"  class="menu"  > 쇼핑 </a></li>
-			              <li class="menulist8"><a href="com_list.jsp" class="menu"> 커뮤니티 </a></li>
+			              <li class="menulist8"><a href="com_main.jsp" class="menu"> 커뮤니티 </a></li>
 		              </div>
 		              
 	              </ul>

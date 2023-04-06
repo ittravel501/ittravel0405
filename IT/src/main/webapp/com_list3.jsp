@@ -32,10 +32,12 @@ if(request.getParameter("pageNumber") != null){
 	<div class="bandiv1">
  		
     	</div>
+    
     <div class="board_wrap">
+    <form action="search_list.jsp" method="post">
     	<div class="btall2">
     	
-     	<div class="btdiv1">
+    	<div class="btdiv1">
     		<select class="btdiv1" name="searchField">
     		<option value="0"> 선택 </option>
     		<option value="com_name"> 제목 </option>
@@ -43,7 +45,7 @@ if(request.getParameter("pageNumber") != null){
     		</select>
     	</div>
          <div class="btdiv3">
-    	<input type="search" placeholder="검색어를 입력해주세요.">
+    	<input type="search" name="searchText" placeholder="검색어를 입력해주세요.">
     	</div>
     	<div class="bt_wrap1">
         <button type="submit" class="on1"> 검색 </button>
@@ -69,21 +71,14 @@ if(request.getParameter("pageNumber") != null){
                 
                 <% 
            	  BoardDao bd = new BoardDao();
-           	  Vector<Cominfo> list1 = bd.getSearch(request.getParameter("searchField"), request.getParameter("searchText"));
-           	if (list1.size() == 0) {%>
-					<script>
- 					alert('검색결과가 없습니다.');
-					history.go(-1);
-				</script>	
-			
-			<% 
-			}for(int i = 0; i < list1.size(); i++){
+           	  Vector<Cominfo> list1 = bd.getList3(pageNumber); 
+           	  for(int i = 0; i < list1.size(); i++){
            	%>
 				<div>
 				<div class="num"><%=list1.get(i).getCom_bct()%></div>  
     			<div class="num"><%=list1.get(i).getCom_num()%></div> 
     			<div class="title" style="text-align:center;">
-        		<a href="board_view.jsp?com_num=<%=list1.get(i).getCom_num()%>">
+        		<a href="com_view.jsp?com_num=<%=list1.get(i).getCom_num()%>">
             		<%=list1.get(i).getCom_name()%>
         		</a>
     			</div>
@@ -106,7 +101,7 @@ if(request.getParameter("pageNumber") != null){
                   <%
                 if(pageNumber != 1) {
             	%>
-                <a href="board_list.jsp?pageNumber=<%=pageNumber -1 %>" class="bt prev"><</a>
+                <a href="com_list.jsp?pageNumber=<%=pageNumber -1 %>" class="bt prev"><</a>
                 <!-- <a href="#" class="num on">1</a>
                 <a href="#" class="num">2</a>
                 <a href="#" class="num">3</a>
@@ -115,7 +110,7 @@ if(request.getParameter("pageNumber") != null){
                 <%
                 } if (bd.nextPage(pageNumber + 1)) {
             	%>
-                <a href="board_list.jsp?pageNumber=<%=pageNumber +1 %>" class="bt next">></a>
+                <a href="com_list.jsp?pageNumber=<%=pageNumber +1 %>" class="bt next">></a>
                      <%
                 }
             		%>
@@ -124,7 +119,7 @@ if(request.getParameter("pageNumber") != null){
             </div>
             </div>
           <div class="bt_wrap">
-        <a href="board_write.jsp" class="on">등록</a>
+        <a href="com_write3.jsp" class="on">등록</a>
         </div>
           
         </div>

@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공지사항</title>
-     <link rel="stylesheet" href="css/com_css.css">
+     <link rel="stylesheet" href="css/com_style.css">
 </head> 
 <body>
 <jsp:include page="header.jsp"></jsp:include>
@@ -37,14 +37,13 @@ Cominfo ci = new BoardDao().getBoard(com_num);
 %>
     <div class="board_wrap">
         <div class="board_title">
-            <strong>커뮤니티</strong>
-            <p>공지사항을 빠르고 정확하게 안내해드립니다.</p>
+            <strong>동행구인</strong>
         </div>
         <div class="board_view_wrap">
             <div class="board_view">
                 <div class="title">
-                    <dt>제목</dt>
-                    <dd><%= ci.getCom_name().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">", "&gt;").replaceAll("\n","<br>") %></dd>
+                    <dt><%= ci.getCom_name().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">", "&gt;").replaceAll("\n","<br>") %></dt>
+                    
                 </div>
                 <div class="info">
                     	<dl>
@@ -76,10 +75,10 @@ Cominfo ci = new BoardDao().getBoard(com_num);
                 <%= ci.getCom_con().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">", "&gt;").replaceAll("\n","<br>") %><br>
                 </div>
             </div>
-            <div class="bt_wrap">
-                <a href="com_list.jsp" class="on">목록</a>
-                <a href="com_edit.jsp?com_num=<%=com_num%>"> <input class="on" type="submit"  value="수정"></a>
-               <a href="deleteAction.jsp?com_num=<%=com_num%>"> <input class="on" type="submit"  value="삭제"></a>
+            <div class="bt_wrap2">
+                <a href="com_list2.jsp" class="on1">목록</a>
+                <a href="com_edit.jsp?com_num=<%=com_num%>" class="on"> <input class="on" type="submit"  value="수정"></a>
+               <a href="deleteAction.jsp?com_num=<%=com_num%>"  class="on"> <input class="on" type="submit"  value="삭제"></a>
             </div>
         </div>
     </div>

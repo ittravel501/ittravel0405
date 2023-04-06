@@ -128,6 +128,70 @@ public class BoardDao{
 	        return list1; 
 	    }
 	
+	// 선택된 페이지에 해당되는 10개의 게시글을 읽어오도록 함, 동행구인만
+		public Vector<Cominfo> getList2(int pageNumber){
+			
+			// 조회된 기준 com_num으로 내림차순하여 위에 10개만 보여주는 쿼리 
+			 String SQL = "SELECT * FROM com_info"
+			 		+ " WHERE com_num < ? AND com_available = 1  AND com_bct = '동행구인' ORDER BY com_num DESC LIMIT 10";
+			 
+			 Vector<Cominfo> list1 = new Vector<Cominfo>();
+			 
+			 try {
+				 PreparedStatement pstat = conn.prepareStatement(SQL);
+				 pstat.setInt(1, getNext() - (pageNumber - 1 ) * 10);
+				 rs = pstat.executeQuery();
+				 while (rs.next()) {
+					 Cominfo ci = new Cominfo();
+					 	ci.setCom_num(rs.getInt(1));
+					 	ci.setCom_bct(rs.getString(2));
+					 	ci.setCom_mem_id(rs.getString(3));
+					 	ci.setCom_name(rs.getString(4));
+					 	ci.setCom_con(rs.getString(5));
+					 	ci.setCom_available(rs.getInt(6));
+					 	ci.setCom_count(rs.getInt(7));
+					 	ci.setCom_date(rs.getString(8));
+		                list1.add(ci);
+		            }
+		        } catch (Exception e) {
+		            e.printStackTrace();
+		        }
+		        return list1; 
+		    }
+		
+		
+		// 선택된 페이지에 해당되는 10개의 게시글을 읽어오도록 함, 중고장터만
+		public Vector<Cominfo> getList3(int pageNumber){
+			
+			// 조회된 기준 com_num으로 내림차순하여 위에 10개만 보여주는 쿼리 
+			 String SQL = "SELECT * FROM com_info"
+			 		+ " WHERE com_num < ? AND com_available = 1 AND com_bct = '중고장터' ORDER BY com_num DESC LIMIT 10";
+			 
+			 Vector<Cominfo> list1 = new Vector<Cominfo>();
+			 
+			 try {
+				 PreparedStatement pstat = conn.prepareStatement(SQL);
+				 pstat.setInt(1, getNext() - (pageNumber - 1 ) * 10);
+				 rs = pstat.executeQuery();
+				 while (rs.next()) {
+					 Cominfo ci = new Cominfo();
+					 	ci.setCom_num(rs.getInt(1));
+					 	ci.setCom_bct(rs.getString(2));
+					 	ci.setCom_mem_id(rs.getString(3));
+					 	ci.setCom_name(rs.getString(4));
+					 	ci.setCom_con(rs.getString(5));
+					 	ci.setCom_available(rs.getInt(6));
+					 	ci.setCom_count(rs.getInt(7));
+					 	ci.setCom_date(rs.getString(8));
+		                list1.add(ci);
+		            }
+		        } catch (Exception e) {
+		            e.printStackTrace();
+		        }
+		        return list1; 
+		    }
+		
+	
 	//게시글 수에 따라 페이징 처리
 	 public boolean nextPage(int pageNumber) {
 		 
@@ -150,7 +214,7 @@ public class BoardDao{
 	        return false; 
 	    }
 	 
-	 //목록
+	 //com_view
 	    public Cominfo getBoard(int com_num){
 	    	
 	    	
@@ -181,6 +245,7 @@ public class BoardDao{
 	            return null; 
 	        }
 	    
+
 	    // 조회수 증가 메소드
 	    public int countUpdate(int com_count,int com_num) {
 	    	String SQL = "update com_info set com_count = ? where com_num = ?";
@@ -202,8 +267,9 @@ public class BoardDao{
 	    	 Vector<Cominfo> list1 = new Vector<Cominfo>();
 		      String SQL ="select * from com_info WHERE "+searchField.trim();
 		      try {
-		            if(searchText != null && !searchText.equals("")){//이거 빼면 안 나온다ㅜ 왜지?
-		                SQL +=" LIKE '%"+searchText.trim()+"%' order by com_num desc limit 10";
+		    	  if(searchText != null && !searchText.equals("") ){//이거 빼면 안 나온다ㅜ 왜지?
+		                SQL +=" LIKE '%"+searchText+"%' order by com_num desc limit 10";
+
 		            }
 		            PreparedStatement pstmt=conn.prepareStatement(SQL);
 					rs=pstmt.executeQuery();//select
@@ -221,6 +287,7 @@ public class BoardDao{
 		         }         
 		      } catch(Exception e) {
 		         e.printStackTrace();
+		         System.out.println("오류");
 		      }
 		      return list1;//ㄱㅔ시글 리스트 반환
 		   }

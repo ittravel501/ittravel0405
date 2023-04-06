@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공지사항</title>
-    <link rel="stylesheet" href="css/com_css.css">
+    <link rel="stylesheet" href="css/com_style.css">
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
@@ -104,10 +104,10 @@ String com_con = request.getParameter("com_con");
                     <textarea placeholder="내용 입력" name="com_con" value="<%=com_con%>"></textarea>
                 </div>
             </div>
-            <div class="bt_wrap">
+            <div class="bt_wrap2">
                <!--  <a href="view.html" class="on">수정</a> -->
                 <input class="on" type="submit" value="수정">
-                <a href="com_list.jsp">취소</a>
+                <input class="on" type="submit" value="취소">
             </div>
         </div>
         </form>
