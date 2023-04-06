@@ -1,0 +1,64 @@
+@charset "UTF-8";
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'TheJamsil3Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil3Regular.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TheJamsil2Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil2Light.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+*{margin: 0; padding: 0; box-sizing: border-box; font-family: 'TheJamsil3Regular';} 
+ul,ol,li { list-style-type:none; width:100%; display:block; }
+ul { height : 100%;}
+a { color:#666; text-decoration:none; cursor:pointer;}
+
+input[type=button] {
+	background-color: #7E7DCB;
+    color: white;
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    border-style: none;
+    cursor:pointer;
+    margin: 10px 5px 10px 5px;
+}
+.wrap {
+	display:flex; width:1000px; height: auto;
+	margin : 30px auto;
+	padding : 20px 10px 20px 10px;
+	text-align : center;
+}
+
+.top_wrap {
+	background-color: white;
+	width : 100%;
+	margin : 15px;
+}
+.title {
+	font-size : 1.5em;
+	color : #7E7DCB;
+	margin : 15px;
+	text-align : left
+}
+.icon_wrap {
+	border-bottom: 1px solid #7E7DCB;
+	margin : 15px;
+	text-align : left;
+}
+.icon_wrap img{
+	width : 50px;
+	opacity : 50%;
+	color : #7E7DCB;
+}
+input[type=textarea] {
+	width : 90%;
+	height : 800px;
+	border : 1px solid #7E7DCB;
+}

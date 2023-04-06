@@ -1,0 +1,122 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'TheJamsil3Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil3Regular.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TheJamsil2Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil2Light.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+*{ margin: 0;padding: 0;font-family: 'TheJamsil3Regular';}
+
+/*-----------팝업-----------*/
+/*.pop_button{width:150px; height:40px; margin:20px auto; background-color:skyblue;}
+.pop_button a{display:block; color:#333;}
+
+.layer_pop_txt{display:none; position:fixed; width:100%; height:100%;
+				top:0; left:0; background:rgba(0,0,0,0.7);}
+.layer_pop_txt .pop_content{position:absolute; width:70%; top:20%; left:15%; z-index:20; 
+							background:#fff; text-align:center; padding:30px 0;}
+.layer_pop_txt .close_btn{position:absolute; top:10px; right:15px; font-size:20px;}
+
+.white-popup {
+     position: relative;
+     background: #FFF;
+     padding: 20px;
+     width: auto;
+     max-width: 1480px;
+     margin: 20px auto;
+     text-align: left;
+     }*/
+
+
+/*-----------게시물리스트-----------*/
+.postWrap {
+	align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: auto;
+    margin-bottom: 50px;
+}
+.titleWrap {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	width:auto;
+	height: 80px;
+	border-bottom: 1px solid #7E7DCB;
+    box-shadow: 10px 5px 10px rgb(0 0 0 / 5%);
+    margin-top: 15px;
+    margin-bottom:15px;
+    padding-bottom: 15px;
+}
+.postLogo {
+	padding-bottom: 15px;
+    width: 30%;
+    text-align: right;
+}
+.postLogo a img {
+	padding-top:15px;
+}
+.searchBox {
+	width: 40%;
+    /* margin: 10px 200px 0 30px; */
+    text-align: center;
+}
+.search-input {
+	width:50%;
+	padding:10px;
+	margin-top : 10px;	
+	border:1px solid #ddd;
+	border-radius:5px;
+}
+input[type="button"] {
+	background-color: #7E7DCB;
+    color: white;
+    width: 70px;
+    height: 35px;
+    border-radius: 5px;
+    border-style: none;
+}
+.postIcon {
+	width: 30%;
+	padding-top: 15px;
+    display:flex;
+}
+.postIcon a img {
+	margin-left: 15px;
+    width: 35px;
+    opacity: 70%;
+}
+.imglistWrap {
+	display: block;
+    width: 1000px;
+    height: auto;
+    margin: 0 auto;
+}
+.imglist {
+	width: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.imglist a img { 
+	width:300px; height:300px; margin : 5px 12.5px 5px 12.5px;
+	}
+a { color:#666; text-decoration:none; cursor:pointer;}
+.likeBox {
+	display:flex;
+	width:300px; height: 20px; margin:5px 12.5px 5px 12.5px;
+	font-size : 0.8em;
+}
+.tagbox {
+	width:300px; height:70px; margin:5px 12.5px 5px 12.5px;
+	font-size : 0.9em;
+	opacity : 70%;
+}
