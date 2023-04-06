@@ -29,8 +29,8 @@
                     this.content.addClass('white-popup');
                 }
             },
-            modal: true,
-            showCloseBtn: false
+            modal: false,
+            showCloseBtn: true
         });
     });
     
