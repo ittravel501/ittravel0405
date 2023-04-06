@@ -32,7 +32,7 @@
                     	e.stopPropagation();
                     });
                 }
-            },
+            }, 
         }); 
     });
     

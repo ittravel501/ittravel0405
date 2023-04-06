@@ -14,7 +14,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/soc_boardViewCss.css">
     <title>공지사항</title>
-    
 </head>
 <script> 
 document.getElementById('likeBtn').addEventListener('click', function() {

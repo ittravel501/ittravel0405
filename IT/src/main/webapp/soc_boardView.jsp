@@ -151,7 +151,7 @@ document.getElementById('likeBtn').addEventListener('click', function() {
    				<input type="button" value="게시">
    			</div>
    		</li>
-   		</ul>
+   		</ul> 
    	</div>
    </div>
 </body>
