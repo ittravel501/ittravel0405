@@ -18,7 +18,7 @@
  <jsp:include page="header.jsp" />
 </header>
 
-
+ 
 <%
 		request.setCharacterEncoding("utf-8");
 

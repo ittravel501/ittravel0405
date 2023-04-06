@@ -21,7 +21,7 @@
 	      background-color: rgba(126, 125, 203, 0.26);
 	    }
     
-    </style>
+    </style> 
     
 </head>
 

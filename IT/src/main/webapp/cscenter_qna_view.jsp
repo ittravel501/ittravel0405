@@ -24,7 +24,7 @@
 <header>
  <jsp:include page="header.jsp" />
 </header> 	
-
+ 
 <section style="height: 700px">
     <div class="board_wrap">
         <div class="board_title">

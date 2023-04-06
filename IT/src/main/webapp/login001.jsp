@@ -53,7 +53,7 @@
 		<a href="#">&nbsp;&nbsp;개인정보처리방침&nbsp;&nbsp;</a>|
 		<a href="#">&nbsp;&nbsp;책임의 한계와 법적고지&nbsp;&nbsp;</a>|
 		<a href="#">&nbsp;&nbsp;고객센터</a></div>
-		
+		 
 		<div class="bottom">
 		<div class="bottomLogo"><a href="#">ittravel</a></div>
 		<div class="copy">Copyright © ITTRAVEL Corp. All Rights Reserved.</div>

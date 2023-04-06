@@ -19,7 +19,7 @@
 		String mem_id = request.getParameter("mem_id");
 		String mem_pw = request.getParameter("mem_pw");
 		//회원 아이디와 패스워드가 일치하는지 비교
- 		
+ 		 
 		UserDao ud = new UserDao();
 		
  		int result = ud.login(user.getMem_id(),user.getMem_pw());

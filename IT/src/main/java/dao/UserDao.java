@@ -70,7 +70,7 @@ public class UserDao {
 			}
 			
 		} catch (SQLException e) {
-			
+			 
 			e.printStackTrace();
 		}
 		return nick; 

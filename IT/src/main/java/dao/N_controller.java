@@ -17,7 +17,7 @@ public class N_controller {
 	
 	Connection conn = null;
 	Statement stmt = null;
-	
+	 
 		
 	public N_controller() {  //생성자 
 	

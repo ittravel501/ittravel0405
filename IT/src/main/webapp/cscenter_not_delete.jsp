@@ -23,7 +23,7 @@
 	//근데 왜 not_num의 name을 num으로 줬는데, 넘어가는 페이지에 설정해놓은 not_num으로 받는거지??ㅠㅠ
 
 
-user.N_delete(not_num);
+user.N_delete(not_num); 
 %>	
 
 <script type="text/javascript">

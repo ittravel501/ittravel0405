@@ -25,7 +25,7 @@
     </style>
     
 </head>
-
+ 
 
 <jsp:useBean id="user" class="dao.N_controller"/> 
 

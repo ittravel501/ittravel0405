@@ -21,7 +21,7 @@ String qna_mem_id = (String) session.getAttribute("mem_id");
 
 
 QNA_MD md = new QNA_MD(); //QNA_MD에다가 저장할거임.
-
+ 
 String qna_fil = request.getParameter("qna_fil"); //앞에서 선택한 카테고리
 String qna_title =request.getParameter("qna_title"); //앞에서 입력한 제목
 //String qna_mem_id =request.getParameter("qna_mem_id"); //
