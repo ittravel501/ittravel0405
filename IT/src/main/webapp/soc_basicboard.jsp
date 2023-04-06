@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html;charset=utf-8"
     pageEncoding="UTF-8"%>
     <%@page import ="java.util.*" %>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,6 +20,7 @@
         $("#list").magnificPopup({
             delegate: 'a.popup',
             type: 'ajax',
+            showCloseBtn: true,
             closeOnContentClick: false,
             closeOnBgClick: true,
             enableEscapeKey: true,
@@ -30,7 +30,7 @@
                 }
             },
             modal: false,
-            showCloseBtn: true
+            
         });
     });
     
@@ -45,8 +45,8 @@
                     this.content.addClass('white-popup');
                 }
             },
-            modal: true,
-            showCloseBtn: false
+            modal: false,
+            showCloseBtn: false,
         });
     });
 	function latest(){
