@@ -13,10 +13,19 @@
 </head>
 <body>
 	<div class="wrap">
+		<!-- 최상단 -->
 		<div class="top_wrap">
-		<div class="title">잇로그 글쓰기</div>
-		
-		<input type="textarea" col="30" raw="30">
+			<div style="width:30%;">
+			<a href="#"><img src="imgs/board/gallery_icon.png"></a>
+			<a href="#"><img src="imgs/board/movie_icon.png"></a>
+			<a href="#"><img src="imgs/board/pick_icon.png"></a>
+			</div>
+			<div style="width:45%;"></div>
+			<div class="title">잇로그 글쓰기</div>
+		</div>
+		<!-- 텍스트박스 -->
+		<div>
+		<textarea placeholder="내용을 입력해주세요."></textarea>
 		<input type="button" value="취소"><input type="button" value="등록">
 		</div>
 	</div>

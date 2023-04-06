@@ -8,6 +8,12 @@
     font-style: normal;
 }
 @font-face {
+    font-family: 'TheJamsil5Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
     font-family: 'TheJamsil2Light';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil2Light.woff2') format('woff2');
     font-weight: 700;
@@ -28,37 +34,41 @@ input[type=button] {
     border-style: none;
     cursor:pointer;
     margin: 10px 5px 10px 5px;
+    font-size : 1.1em;
 }
 .wrap {
-	display:flex; width:1000px; height: auto;
+	width:1000px; height: auto;
 	margin : 30px auto;
 	padding : 20px 10px 20px 10px;
 	text-align : center;
+	background-color: white;
 }
 
 .top_wrap {
-	background-color: white;
-	width : 100%;
-	margin : 15px;
+	
+	display: flex;
+    margin: 15px 0 15px 0;
+    align-items:center;
+    justify-content: center;
+}
+.top_wrap a img{
+	width : 60px;
+	opacity : 90%;
 }
 .title {
+	width:20%;
 	font-size : 1.5em;
 	color : #7E7DCB;
-	margin : 15px;
-	text-align : left
+	border: 1px solid #7E7DCB;
+	padding:15px;
+	margin-right:48px;
+	font-family: 'TheJamsil5Bold';
 }
-.icon_wrap {
-	border-bottom: 1px solid #7E7DCB;
-	margin : 15px;
-	text-align : left;
-}
-.icon_wrap img{
-	width : 50px;
-	opacity : 50%;
-	color : #7E7DCB;
-}
-input[type=textarea] {
+textarea {
 	width : 90%;
 	height : 800px;
 	border : 1px solid #7E7DCB;
+	padding: 10px;
+	font-size : 1.1em;
+	font-family: 'TheJamsil2Light';
 }
