@@ -17,6 +17,7 @@
 ul,ol,li { list-style-type:none; width:100%; display:block; }
 ul { height : 100%;}
 a { color:#666; text-decoration:none; cursor:pointer;}
+span { font-size : 0.8em; margin-left: 10px; margin-bottom:2px;}
 
 .Wrap {
 	background-color : white;
@@ -126,7 +127,7 @@ input[type=button] {
 	border-bottom: 1px solid #7E7DCB;
 }
 .con_03 {
-	height:25%;
+	height:23%;
 	padding:15px;
 }
 .rep01 {
@@ -156,6 +157,7 @@ input[type=button] {
 	padding : 5px;
 }
 .rep_icon img{
+	margin-top:2px;
 	margin-left: 5px;
     width: 30px;
     opacity: 70%;

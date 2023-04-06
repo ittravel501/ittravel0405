@@ -14,8 +14,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/soc_boardViewCss.css">
     <title>공지사항</title>
-    
 </head>
+<script>
+document.getElementById('likeBtn').addEventListener('click', function() {
+	  var imgSrc = this.querySelector('img').src;
+	  if (imgSrc.includes('like_icon.png')) {
+	    this.querySelector('img').src = 'imgs/board/like(1)_icon.png';
+	  } else if (imgSrc.includes('like(1)_icon.png')) {
+	    this.querySelector('img').src = 'imgs/board/like_icon.png';
+	  }
+	});
+
+	document.getElementById('storeBtn').addEventListener('click', function() {
+	  var imgSrc = this.querySelector('img').src;
+	  if (imgSrc.includes('store_icon.png')) {
+	    this.querySelector('img').src = 'imgs/board/store(1)_icon.png';
+	  } else if (imgSrc.includes('store(1)_icon.png')) {
+	    this.querySelector('img').src = 'imgs/board/store_icon.png';
+	  }
+	});
+</script>
 
 <body>
    <div class="Wrap">
@@ -111,6 +129,7 @@
 	   			</div>
 	   			<div class="rep_02">우와앙 츄르뇸냠</div>
 	   		</div>
+	   		
 	   		<div class="rep01">
 	   			<div class="rep_01">
 	   			<img src="imgs/board/aaa1.jpg"><a href="#">김기동</a>
@@ -118,11 +137,14 @@
 	   			<div class="rep_02">우와앙 츄르뇸냠</div>
 	   		</div>
    		</li>
+   		
    		<li class="con_04">
+   		<span>좋아요</span><span class="count">0개</span>
+   		<span>댓글</span><span class="count">0개</span>
    			<div class="rep_icon">
-	   			<a href="#"><img src="imgs/board/like_icon.png"></a>
+	   			<a href="#" id="likeBtn"><img src="imgs/board/like(1)_icon.png"></a>
 	   			<a href="#"><img src="imgs/board/share_icon.png"></a>
-	   			<a href="#"><img src="imgs/board/store_icon.png"></a>
+	   			<a href="#" id="storeBtn"><img src="imgs/board/store(1)_icon.png"></a>
    			</div>
    			<div class="rep_con">
    				<input type="text" class="rep_input" placeholder="댓글달기">
