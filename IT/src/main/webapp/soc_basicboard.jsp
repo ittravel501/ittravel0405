@@ -31,7 +31,7 @@
                     	e.stopPropagation();
                     });
                 }
-            },showCloseBtn: true,
+            },showCloseBtn: true, 
         }); 
     });
     
