@@ -22,7 +22,7 @@
     <style type="text/css">
     </style>
     <body > 
-
+<jsp:include page="header.jsp"></jsp:include>
 
 
      <section>
@@ -223,7 +223,7 @@
         </div>
 
         <div class="wrap4">
-            <h2>해외 특가 항공권 ✈ </h2>
+            <h2>국내 특가 항공권 ✈ </h2>
             <div class="imgdiv">
               <div class="salediv1">
                  <img src="./flightimgs/뉴욕1.jpg" alt="" >
