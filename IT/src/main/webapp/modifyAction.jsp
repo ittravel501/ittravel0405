@@ -14,7 +14,39 @@
 <title>수정 확인창</title>
 </head>
 <body>
-  <%
+	<% 
+		request.setCharacterEncoding("UTF-8");
+	
+		String mem_id = request.getParameter("mem_id");
+		String com_num = request.getParameter("com_num");
+		String com_con = request.getParameter("com_con");
+		String com_bct = request.getParameter("com_bct");
+		//회원 아이디와 패스워드가 일치하는지 비교
+ 		
+ 		BoardDao bd = new BoardDao();
+ 
+		int result = bd.update(info);
+ 		
+ 		if(result == 1){
+ 			session.setAttribute("mem_id",mem_id);
+			response.sendRedirect("com_list.jsp");
+ 		} else if(info.getCom_name() == null || info.getCom_con() == null){
+ 		%>	
+ 		<script>
+ 			alert('입력이 안된 사항이 있습니다.');
+			history.go(-1);
+		</script>	
+		<%
+ 		} else if(result == -1){
+		%>
+		<script>
+			alert('글쓰기에 실패했습니다. 데이터베이스 오류');
+			history.go(-1);
+		</script>	
+		<%
+ 		}
+		%>
+<%--   <%
   
  	String mem_id = null;
   
@@ -53,7 +85,7 @@
             PrintWriter script = response.getWriter();
             script.println("<script>");
             script.println("alert('권한이 없습니다')");
-            script.println("location.href = 'board_list.jsp'");
+            script.println("location.href = 'com_list.jsp'");
             script.println("</script>");
         }else {
         if(request.getParameter("com_name") == null || ci.getCom_con() == null
@@ -81,6 +113,6 @@
                     }
             }
         }
-    %>
+    %> --%>
 </body>
 </html>

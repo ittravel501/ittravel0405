@@ -74,14 +74,6 @@ Cominfo ci = new BoardDao().getBoard(com_num);
                 </div>
                 <div class="cont">
                 <%= ci.getCom_con().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">", "&gt;").replaceAll("\n","<br>") %><br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다
                 </div>
             </div>
             <div class="bt_wrap">

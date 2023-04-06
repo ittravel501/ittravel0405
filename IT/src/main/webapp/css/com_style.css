@@ -29,6 +29,7 @@ a {
 
 .btall2{
 	display: flex;
+	justify-content: flex-end;
 	
 }
 .btdiv1{
@@ -203,7 +204,7 @@ margin-right: 10px;
 }
 
 .board_list .top .title {
-    text-align: center;
+   text-align: center; 
 }
 
 .board_list .writer {

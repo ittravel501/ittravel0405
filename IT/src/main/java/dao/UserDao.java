@@ -20,7 +20,7 @@ public class UserDao {
 			Class.forName("com.mysql.jdbc.Driver");
 			String dbURL = "jdbc:mysql://localhost:3306/teamproject?useUnicode=true&characterEncoding=utf8";
 			String dbID = "root";
-			String dbPW = "1234";
+			String dbPW = "eogkrrksek!1";
 			conn = DriverManager.getConnection(dbURL, dbID, dbPW);
 		} catch (Exception e) {
 			e.printStackTrace();
