@@ -29,24 +29,7 @@
         
         <jsp:useBean id="user" class= "dao.N_controller"/>
         
-        <%
-        
-        String mem_nick = (String)session.getAttribute("NICK"); //session으로 가져오면 무조건 String으로 받으로 형변환해야 한다.
-        													//리턴값을 오브젝트로 받기 때문이다. 오브젝트는 int와 String를 받을 수 있기 때문에 정확히 변수의 타입을 확실히 정해주어야한다.
-        
-        													
-        if(mem_nick==null) {
-        	
-        	%>
-        	
-        	<script>
-			    alert("로그인을 해주세요.");
-			    location.href = "login001.jsp";
-			</script>
-        	
-        	<% 
-        }
-        %>
+
         	
         
         <% 

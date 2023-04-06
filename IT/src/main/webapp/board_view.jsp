@@ -16,7 +16,7 @@
 <% 
 String com_mem_id = null; // 로그인이 된 사람들은 로그인정보를 담을 수 있도록한다
 if (session.getAttribute("com_mem_id") != null)
-{
+{ 
 	com_mem_id = (String)session.getAttribute("com_mem_id");
 }
 int com_num = 0;
@@ -40,7 +40,6 @@ Cominfo ci = new BoardDao().getBoard(com_num);
             <strong>커뮤니티</strong>
             <p>공지사항을 빠르고 정확하게 안내해드립니다.</p>
         </div>
-         <form action="board_edit.jsp?com_num=<%=com_num %>" method="post">
         <div class="board_view_wrap">
             <div class="board_view">
                 <div class="title">
@@ -54,7 +53,7 @@ Cominfo ci = new BoardDao().getBoard(com_num);
 					</dl>
                     	<dl>
     				<dt>카테고리</dt>
-   					 <dd>선택된 카테고리</dd>
+   					 <dd><%= ci.getCom_bct().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">", "&gt;").replaceAll("\n","<br>") %></dd>
 					</dl>
                     <dl>
                         <dt>글쓴이</dt>
@@ -63,6 +62,10 @@ Cominfo ci = new BoardDao().getBoard(com_num);
                     <dl>
                         <dt>작성일</dt>
                         <dd><%= ci.getCom_date().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">", "&gt;").replaceAll("\n","<br>") %></dd>
+                    </dl>
+                    <dl>
+                        <dt>조회수</dt>
+                        <dd><%= String.valueOf(ci.getCom_count()+1).replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">", "&gt;").replaceAll("\n","<br>") %></dd>
                     </dl>
               <!--       <dl>
                         <dt>조회</dt>
@@ -85,10 +88,9 @@ Cominfo ci = new BoardDao().getBoard(com_num);
                 <a href="board_list.jsp" class="on">목록</a>
              <%--    <a href="board_edit.jsp?com_num=<%=com_num%>">수정</a> --%>
                 <a href="board_edit.jsp?com_num=<%=com_num%>"> <input class="on" type="submit"  value="수정"></a>
-               <a href="deleteAction.jsp?com_num=<%=com_num%>"> <a href="board_edit.jsp?com_num=<%=com_num%>"> <input class="on" type="submit"  value="삭제"></a>
+               <a href="deleteAction.jsp?com_num=<%=com_num%>"> <input class="on" type="submit"  value="삭제"></a>
             </div>
         </div>
-        </form>
     </div>
     
     <jsp:include page="footer.jsp"></jsp:include>

@@ -15,7 +15,7 @@
 <body>
 <jsp:include page="header.jsp"></jsp:include>
 <%
-// 로그인이 된 사람들은 로그인 정보를 담을 수 있도록 한다.
+// 로그인이 된 사람들은 로그인 정보를 담을 수 있도록 한다. 
  String com_mem_id =null;
 if(session.getAttribute(com_mem_id) != null){
 	com_mem_id =(String)session.getAttribute("com_mem_id");
@@ -32,21 +32,28 @@ if(request.getParameter("pageNumber") != null){
 	<div class="bandiv1">
  		
     	</div>
+    
     <div class="board_wrap">
+    <form action="search_list.jsp" method="post">
     	<div class="btall2">
+    	
     	<div class="btdiv1">
-    		<select class="btdiv1">
-    		<option> 전체 </option>
-    		<option> 동행구인 </option>
-    		<option> 중고장터 </option>
+    		<select class="btdiv1" name="searchField">
+    		<option value="0"> 선택 </option>
+    		<option value="com_name"> 제목 </option>
+    		<option value="com_mem_id"> 작성자 </option>
     		</select>
     	</div>
-
-
          <div class="btdiv3">
-    	<input type="search" placeholder="검색어를 입력해주세요.">
+    	<input type="search" name="searchText" placeholder="검색어를 입력해주세요.">
     	</div>
+    	<div class="bt_wrap1">
+        <button type="submit" class="on"> 검색 </button>
+        </div>
+     
     	</div>
+    	</form>
+    	
         <div class="board_title">
         
         </div>
@@ -68,6 +75,7 @@ if(request.getParameter("pageNumber") != null){
            	  for(int i = 0; i < list1.size(); i++){
            	%>
 				<div>
+				<div class="num"><%=list1.get(i).getCom_bct()%></div>  
     			<div class="num"><%=list1.get(i).getCom_num()%></div> 
     			<div class="title" style="text-align:center;">
         		<a href="board_view.jsp?com_num=<%=list1.get(i).getCom_num()%>">
@@ -80,9 +88,9 @@ if(request.getParameter("pageNumber") != null){
     			<div class="date">
     			<%=list1.get(i).getCom_date()%>
     			</div>
-    			<%-- <div class="count">
-    			<%=list1.get(i).getCom_hit()%>
-    			</div> --%>
+    			<div class="count">
+    			<%=list1.get(i).getCom_count()%>
+    			</div>
 				</div>
             <%
            	  }
@@ -110,7 +118,7 @@ if(request.getParameter("pageNumber") != null){
                 
             </div>
             </div>
-           	     <div class="bt_wrap">
+          <div class="bt_wrap">
         <a href="board_write.jsp" class="on">등록</a>
         </div>
           

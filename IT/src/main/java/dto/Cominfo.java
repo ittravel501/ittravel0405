@@ -2,17 +2,25 @@ package dto;
 
 public class Cominfo {
 	private int com_num;
-	private int com_available;
+	private String com_bct;
 	private String com_mem_id;
-	private String com_mem_pw;
 	private String com_name;
 	private String com_con;
+	private int com_available;
+	private int com_count;
 	private String com_date;
+	 
 	public int getCom_num() {
 		return com_num;
 	}
 	public void setCom_num(int com_num) {
 		this.com_num = com_num;
+	}	
+	public String getCom_bct() {
+		return com_bct;
+	}
+	public void setCom_bct(String com_bct) {
+		this.com_bct = com_bct;
 	}
 	public int getCom_available() {
 		return com_available;
@@ -26,12 +34,6 @@ public class Cominfo {
 	public void setCom_mem_id(String com_mem_id) {
 		this.com_mem_id = com_mem_id;
 	}
-	public String getCom_mem_pw() {
-		return com_mem_pw;
-	}
-	public void setCom_mem_pw(String com_mem_pw) {
-		this.com_mem_pw = com_mem_pw;
-	}
 	public String getCom_name() {
 		return com_name;
 	}
@@ -43,6 +45,12 @@ public class Cominfo {
 	}
 	public void setCom_con(String com_con) {
 		this.com_con = com_con;
+	}
+	public int getCom_count() {
+		return com_count;
+	}
+	public void setCom_count(int com_count) {
+		this.com_count = com_count;
 	}
 	public String getCom_date() {
 		return com_date;

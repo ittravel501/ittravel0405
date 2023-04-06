@@ -54,14 +54,14 @@ section #faq_title_wrap h1{
 
 
 section .faq_list_wrap{
-    width: 850px;
+    width: 1050px;
     height: 600px;
     margin-top: 70px;
     
 }
 
 section #faq_box_big1, #faq_box_big2{
-    width: 400px;
+    width: 45%;
     height: 200px;
     float: left;
     padding-left: 10px;
@@ -96,7 +96,7 @@ section #faq_box_big2 p:nth-child(2), #faq_box_big2 p:nth-child(2){
 
 
 section .faq_box_small{
-	width: 190px;
+	width: 20%;
 	height: 100px;
 	float: left;
 	margin-top: 30px;
