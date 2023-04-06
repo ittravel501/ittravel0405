@@ -14,7 +14,7 @@
 <body>
 <jsp:include page="header.jsp"></jsp:include>
 <% 
-
+	
 	String mem_id = null;
 
      if (session.getAttribute("mem_id") != null)
@@ -40,7 +40,7 @@
         PrintWriter script = response.getWriter();
         script.println("<script>");
         script.println("alert('유효하지 않은 글입니다')");
-        script.println("location.href = 'board_list.jsp'");
+        script.println("location.href = 'com_list.jsp'");
         script.println("</script>");
         return;
     }
@@ -51,10 +51,17 @@
         PrintWriter script = response.getWriter();
         script.println("<script>");
         script.println("alert('수정 가능한 권한이 없습니다')");
-        script.println("location.href = 'board_list.jsp'");
+        script.println("location.href = 'com_list.jsp'");
         script.println("</script>");
         return;
     } 
+    
+    session.setAttribute("mem_id",mem_id);
+
+
+String com_bct = request.getParameter("com_bct");
+String com_name = request.getParameter("com_name");
+String com_con = request.getParameter("com_con");
     
 %>
     <div class="board_wrap">
@@ -68,16 +75,15 @@
                  <div class="title">
                     <dl>
                         <dt>제목</dt>
-                        <dd><input type="text"  name="com_name" placeholder="제목 입력"></dd>
+                        <dd><input type="text"  value="<%=com_name%> name="com_name" placeholder="제목 입력"></dd>
                     </dl>
                 </div>
                 <div class="info">
                    <dl>
                         <dt>카테고리</dt>
                         <dd>
-                      	<select class="catediv1" name="com_bct">
-                      	<option value="전체" selected>전체</option>
-                      	<option value="동행구인" >동행구인</option>
+                      	<select class="catediv1" value="<%=com_bct%>  name="com_bct" >
+                      	<option value="동행구인" selected >동행구인</option>
                       	<option value="중고장터">중고장터</option>
                       	</select>
                         </dd>
@@ -95,7 +101,7 @@
                       
                 </div>
                 <div class="cont"> 
-                    <textarea placeholder="내용 입력" name="com_con"></textarea>
+                    <textarea placeholder="내용 입력" name="com_con" value="<%=com_con%>"></textarea>
                 </div>
             </div>
             <div class="bt_wrap">

@@ -28,7 +28,7 @@
  		
  		if(result == 1){
  			session.setAttribute("mem_id",mem_id);
-			response.sendRedirect("board_list.jsp");
+			response.sendRedirect("com_list.jsp");
  		} else if(board.getCom_name() == null || board.getCom_con() == null){
  		%>	
  		<script>
