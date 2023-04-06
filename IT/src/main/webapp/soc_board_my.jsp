@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html;charset=utf-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html;charset=utf-8" pageEncoding="UTF-8"%>
     <%@page import ="java.util.*" %>
     
 <!DOCTYPE html>
@@ -17,22 +16,43 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 <script> 
-    $(document).ready(function() {
-        $('#list').magnificPopup({
-            delegate: 'a.popup',
-            type: 'ajax',
-            closeOnContentClick: false,
-            closeOnBgClick: true,
-            enableEscapeKey: true,
-            callbacks: {
-                ajaxContentAdded: function() {
-                    this.content.addClass('white-popup');
-                }
-            },
-            modal: true,
-            showCloseBtn: false
-        });
-    });
+$(document).ready(function() {
+    $("#list").magnificPopup({
+        delegate: 'a.popup',
+        type: 'ajax',
+        modal: false,
+        closeOnContentClick: false,
+        closeOnBgClick: true,
+        enableEscapeKey: true,
+        callbacks: {
+            ajaxContentAdded: function() {
+                this.content.addClass('white-popup');
+                this.content.on('click', function(e){
+                	e.stopPropagation();
+                });
+            }
+        },showCloseBtn: true, 
+    }); 
+});
+
+$(document).ready(function() {
+    $('#write').magnificPopup({
+        type: 'ajax',
+        closeOnContentClick: false,
+        closeOnBgClick: true,
+        enableEscapeKey: true,
+        callbacks: {
+            ajaxContentAdded: function() {
+                this.content.addClass('white-popup');
+                this.content.on('click', function(e){
+                	e.stopPropagation();
+                });
+            }
+        },
+        modal: false,
+        showCloseBtn: false,
+    }); 
+});
 </script>
 
 <body>
@@ -50,9 +70,9 @@
 		    </div>
 		    <div class="postIcon">
 		    	<a href="tour002.jsp"><img src="imgs/board/home_icon.png"></a>
-		    	<a href="soc_boardWrite.jsp"><img src="imgs/board/plus_icon.png"></a>
+		    	<a href="soc_boardWrite.jsp" id="write"><img src="imgs/board/plus_icon.png"></a>
 		    	<a href="#"><img src="imgs/board/bell_icon.png"></a>
-		    	<a href="#"><img src="imgs/board/person_icon.png"></a>
+		    	<a href="soc_board_my.jsp"><img src="imgs/board/person_icon.png"></a>
 		    </div>
 		  </div>
 		 
