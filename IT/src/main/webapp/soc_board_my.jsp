@@ -69,7 +69,7 @@
 			    	</div>
 			    	</div>
 			    	<div>
-				    <a href="soc_boardView.jsp" class="popup"><img src="imgs/board/aaa10.jpg"></a>
+				    <a href="soc_boardView_my.jsp" class="popup"><img src="imgs/board/aaa10.jpg"></a>
 				    <div>
 					    <div class="likeBox">
 					    <div>좋아요 n개</div>&nbsp;&nbsp;&nbsp;&nbsp;<div>댓글 n개</div>

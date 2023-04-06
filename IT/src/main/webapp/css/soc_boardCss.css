@@ -86,6 +86,7 @@
     color: white;
     width: 70px;
     height: 35px;
+    border-style:none;
     border-radius: 5px;
     border: 1px solid #7E7DCB;
     cursor:pointer;
@@ -97,6 +98,7 @@
     color: #7E7DCB;
     width: 70px;
     height: 35px;
+    border-style:none;
     border-radius: 5px;
     border: 1px solid #7E7DCB;
     cursor:pointer;
