@@ -3,7 +3,7 @@
     
     <%@ page import = "java.util.ArrayList" %>
     
-    <%@page import="dto.QNA_MD" %>
+    <%@page import="dto.N_MD" %>
     <%@page import="dao.N_controller" %>
     
 <!DOCTYPE html>
@@ -11,14 +11,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Q&A</title>
+    <title>공지사항</title>
     <link rel="stylesheet" href="css/css.css">
     <link rel="stylesheet" href="css/cscenter.css">
     
-    
     <style type="text/css">
     
-	    	section .cscenter_menu_wrap .cscenter_menu:nth-child(3) {
+	    	section .cscenter_menu_wrap .cscenter_menu:first-child {
 	      background-color: rgba(126, 125, 203, 0.26);
 	    }
     
@@ -35,6 +34,7 @@
 
 <header>
    <jsp:include page="header.jsp" />
+</header> 
 <section>
 
 
@@ -74,26 +74,25 @@
 
     <div class="board_wrap">
         <div class="board_title">
-            <strong>직접 문의하기</strong>
+            <strong>공지사항</strong>
            <!-- <p>공지사항을 빠르고 정확하게 안내해드립니다.</p>  --> 
         </div>
         
         <div class="board_list_wrap">
             <div class="board_list">
                 <div class="top">
-                 <!-- <div class="num">번호</div> -->   
-                 	<div class="num">카테고리</div>
+                    <div class="num">번호</div>
                     <div class="title">제목</div>
-                    <div class="writer">질문자</div>
-                    <div class="count">답변상황</div>
-                    <div class="date">문의일</div>
+                    <div class="writer">글쓴이</div>
+                    <div class="date">작성일</div>
+                    <div class="count">조회</div>
                 </div>
                 
                
                 <div >
                <%
                
-               ArrayList<QNA_MD> N_arr = user.Q_select(); 
+               ArrayList<N_MD> N_arr = user.select(); 
                
                //int i = N_arr.size();
                
@@ -101,11 +100,11 @@
                 	
                 %>
                 	
-                    <div class="num"><%=N_arr.get(i).getQna_fil() %></div>
-                    <div class="title"><a href="cscenter_qna_view.jsp?qna_num=<%=N_arr.get(i).getQna_num()%>"><%=N_arr.get(i).getQna_title()%></a></div>
-                    <div class="writer"><%=N_arr.get(i).getQna_mem_id() %></div>
-                    <div class="writer"><%=N_arr.get(i).getQna_reply() %></div>
-                    <div class="date"><%=N_arr.get(i).getQna_date() %></div>
+                    <div class="num"><%=N_arr.get(i).getNot_num() %></div>
+                    <div class="title"><a href="cscenter_not_view.jsp?not_num=<%=N_arr.get(i).getNot_num()%>"><%=N_arr.get(i).getNot_title()%></a></div>
+                    <div class="writer"><%=N_arr.get(i).getNot_writer() %></div>
+                    <div class="date"><%=N_arr.get(i).getNot_date() %></div>
+                    <div class="count"><%=N_arr.get(i).getNot_view() %></div>
                                  
                 <%    
                 }
@@ -117,7 +116,7 @@
             
        
             <div class="bt_wrap">
-                <a href="cscenter_qna_write.jsp" class="on">등록</a>
+                <a href="cscenter_not_wirte.jsp" class="on">등록</a>
                 <!--<a href="#">수정</a>-->
             </div>
             
