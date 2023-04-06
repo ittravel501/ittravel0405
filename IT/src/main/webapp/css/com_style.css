@@ -129,14 +129,12 @@ margin-right: 10px;
 .bt_wrap1 {
     text-align: center;
     font-size: 0;
-
-
 }
 
-.bt_wrap1 a {
+.bt_wrap1 .on1 {
     display: inline-block;
     min-width: 50px;	
-    margin-left: 10px;
+
     padding: 12px;
     border: 1px solid #000;
     border-radius: 2px;
@@ -144,11 +142,11 @@ margin-right: 10px;
     
 }
 
-.bt_wrap1 a:first-child {
+.bt_wrap1 button:first-child {
     margin-left: 0;
 }
 
-.bt_wrap1 .on {
+.bt_wrap1 .on1 {
     background: #000;
     color: #fff;
 }
@@ -161,7 +159,7 @@ margin-right: 10px;
     border: 1px solid #000;
     border-radius: 2px;
     font-size: 1.4rem;
-       background: #000;
+    background: #000;
     color: #fff;
 }
 
