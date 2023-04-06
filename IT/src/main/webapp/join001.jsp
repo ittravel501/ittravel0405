@@ -93,7 +93,7 @@
 			if(mem_nick.length<=8 && mem_nick.length>=2) {
 				$.ajax({
 					type : "post",
-					url :"join004.jsp",
+					url :"join003.jsp",
 					data : { "mem_nick" : mem_nick },
 					dataType : "html",
 					success : function(result) {
@@ -379,7 +379,7 @@
 				<div class="line01" style="background-color: #7E7DCB;"></div>
 
 				<input class="but" type="submit" onclick="btn()" value="회원가입 완료"
-					onclick=location.href="tour002.jsp">
+					onclick=location.href="Mainindex.jsp">
 			</div>
 		</form>
 
