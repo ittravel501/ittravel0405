@@ -32,7 +32,7 @@
 
 	.zoom{
 	 	transition: transform .2s;
-
+		cursor : pointer;
 	}
 	.zoom:hover {
 	 
@@ -87,7 +87,9 @@
 	.depdatewrap ul li{
 		margin-top : 10px;
 	}
-
+	
+	
+	
 
 	.inputdes{
 
@@ -230,7 +232,11 @@ transition: margin-left 200ms ease;
 		background-color: #7e7dcb;
 		text-align: center;
 		font-size: 16px;
-
+		border : none;
+		margin-top: 5px;
+		border-radius : 5px;
+		color: white;
+		font-family: TheJamsil2Light;
 	}
 
 
@@ -603,8 +609,7 @@ body.modal-open {
 }
 
 
-.x{
-	 color:gray; font-size: 20px; float:right; padding:10px; font-family: TheJamsil2Light; cursor : pointer;}
+.x{ color:gray; font-size: 20px; float:right; padding:10px; font-family: TheJamsil2Light; cursor : pointer;}
 	 
 
 
