@@ -13,7 +13,7 @@
 </head>
 
 <body> 
-	<div class="wrap">
+	<div class="wrap"> 
 		<!-- 최상단 -->
 		<div class="top_wrap">
 			<div style="width:30%;">

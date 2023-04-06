@@ -21,23 +21,7 @@
             delegate: 'a.popup',
             type: 'ajax',
             modal: false,
-            closeOnContentClick: false,
-            closeOnBgClick: true,
-            enableEscapeKey: true,
-            callbacks: {
-                ajaxContentAdded: function() {
-                    this.content.addClass('white-popup');
-                    this.content.on('click', function(e){
-                    	e.stopPropagation();
-                    });
-                }
-            },showCloseBtn: true, 
-        }); 
-    });
-    
-    $(document).ready(function() {
-        $('#write').magnificPopup({
-            type: 'ajax',
+            showCloseBtn: false,
             closeOnContentClick: false,
             closeOnBgClick: true,
             enableEscapeKey: true,
@@ -49,8 +33,25 @@
                     });
                 }
             },
+        }); 
+    });
+    
+    $(document).ready(function() {
+        $('#write').magnificPopup({
+            type: 'ajax',
             modal: false,
             showCloseBtn: false,
+            closeOnContentClick: false,
+            closeOnBgClick: true,
+            enableEscapeKey: true,
+            callbacks: {
+                ajaxContentAdded: function() {
+                    this.content.addClass('white-popup');
+                    this.content.on('click', function(e){
+                    	e.stopPropagation();
+                    });
+                }
+            },
         }); 
     });
 	function latest(){
