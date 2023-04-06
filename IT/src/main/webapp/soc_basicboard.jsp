@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html;charset=utf-8"
     pageEncoding="UTF-8"%>
     <%@page import ="java.util.*" %>
-    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,6 +49,25 @@
             showCloseBtn: false
         });
     });
+	function latest(){
+		var p = document.getElementById('popularBtn');
+		var l = document.getElementById('latestBtn');
+		    
+		p.style.backgroundColor = 'white';
+		p.style.color = '#7E7DCB';
+		l.style.backgroundColor = '#7E7DCB';
+		l.style.color = 'white';
+	}
+	function popular(){
+		var p = document.getElementById('popularBtn');
+		var l = document.getElementById('latestBtn');
+		    
+		l.style.backgroundColor = 'white';
+		l.style.color = '#7E7DCB';
+		p.style.backgroundColor = '#7E7DCB';
+		p.style.color = 'white';
+	}
+    
 </script>
 
 <body>
@@ -74,6 +93,10 @@
 		 
 	    <!-- 이미지리스트1 -->
 	 	<div class="imglistWrap" id="list">
+	 		<div class="filter">
+			    <input type="button" value="인기순" id="popularBtn" onclick="popular()">
+  				<input type="button" value="최신순" id="latestBtn" onclick="latest()">	
+		    </div>
 		    <div class="imglist">
 			    	<div>
 				    <a href="soc_boardView.jsp" class="popup"><img src="imgs/board/aaa5.jpg"></a>

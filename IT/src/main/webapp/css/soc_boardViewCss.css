@@ -127,7 +127,7 @@ input[type=button] {
 	border-bottom: 1px solid #7E7DCB;
 }
 .con_03 {
-	height:23%;
+	height:24%;
 	padding:15px;
 }
 .rep01 {
@@ -164,8 +164,7 @@ input[type=button] {
 }
 .rep_input {
 	width: 82%;
-	padding:10px;
-	margin-top : 10px;	
+	padding:10px;	
 	border:1px solid #ddd;
 	border-radius:5px;
 }

@@ -141,6 +141,8 @@ document.getElementById('likeBtn').addEventListener('click', function() {
 	   		</div>
    		</li>
    		<li class="con_04">
+   		<span>좋아요</span><span class="count">0개</span>
+   		<span>댓글</span><span class="count">0개</span>
    			<div class="rep_icon">
 	   			<a href="#" id="likeBtn"><img src="imgs/board/like(1)_icon.png"></a>
 	   			<a href="#"><img src="imgs/board/share_icon.png"></a>
