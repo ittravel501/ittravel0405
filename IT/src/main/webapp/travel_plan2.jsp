@@ -4,7 +4,7 @@
 <%@ page language="java" contentType="text/html;charset=utf-8"
 	pageEncoding="UTf-8"%>
 <% request.setCharacterEncoding("utf-8"); %>
-<div id="days"></div>
+
 
 <script>
 function addDays() {
@@ -25,6 +25,10 @@ function addDays() {
 
 document.getElementsByName("depdate")[0].addEventListener("change", addDays);
 document.getElementsByName("arrdate")[0].addEventListener("change", addDays);
+
+var cityName = document.getElementsByTagName("h3")[0].innerHTML;
+sessionStorage.setItem("cityName", cityName);
+
 </script>
 
 
@@ -45,8 +49,18 @@ document.getElementsByName("arrdate")[0].addEventListener("change", addDays);
   // 선택한 날짜를 session 객체에 저장
   
   String destination = request.getParameter("coouncity");
+  
+  String smalltravel1 = request.getParameter("smalltravel1");
+  String smalltravel2 = request.getParameter("smalltravel2");
+  
+  session.setAttribute("smalltravel1", smalltravel1);
+  session.setAttribute("smalltravel2", smalltravel2);
+  
   String fromDate1 = request.getParameter("depdate");
   String toDate1 = request.getParameter("arrdate");
+  
+  
+  
   session.setAttribute("fromDate", fromDate1);
   session.setAttribute("toDate", toDate1);
   session.setAttribute("coouncity", destination);

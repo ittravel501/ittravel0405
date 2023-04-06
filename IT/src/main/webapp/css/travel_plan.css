@@ -15,6 +15,31 @@
 }
 
 
+@font-face {
+    font-family: 'TheJamsil1Thin';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil1Thin.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TheJamsil2Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil2Light.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+	.zoom{
+	 	transition: transform .2s;
+		cursor : pointer;
+	}
+	.zoom:hover {
+	 
+	 	transform : scale(1.1);
+	 	transition: all 200ms ease-in-out;
+	}
+
 
 	#dessearch{
 
@@ -62,7 +87,9 @@
 	.depdatewrap ul li{
 		margin-top : 10px;
 	}
-
+	
+	
+	
 
 	.inputdes{
 
@@ -182,11 +209,20 @@ transition: margin-left 200ms ease;
 
 		}
 
+
+.smallbtn input[type=button]{
+	width: 40px;
+	height: 30px;
+	background-color : #7e7dcb; border-radius: 5px; color : white;
+	font-family: TheJamsil2Light;
+	
+}
+
+
 	input[type=button]{
 		background-color : #7e7dcb; border-radius: 5px; color : white; width : 88px; height : 35px; border : none; margin-top : 5px;
 		margin-right : 5.5px; float : left; box-sizing: border-box;
 		text-align: center; font-size: 16px; font-family: 'TheJamsil3Regular'; letter-spacing: -1px; }
-
 
 
 	#desearbtn{
@@ -196,7 +232,11 @@ transition: margin-left 200ms ease;
 		background-color: #7e7dcb;
 		text-align: center;
 		font-size: 16px;
-
+		border : none;
+		margin-top: 5px;
+		border-radius : 5px;
+		color: white;
+		font-family: TheJamsil2Light;
 	}
 
 
@@ -529,3 +569,47 @@ transition: margin-left 200ms ease;
   font-weight: 400;
   src: url(https://fonts.gstatic.com/s/materialicons/v139/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
 }
+
+
+#background{
+	
+	     	position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background: black;
+            opacity: 0.4;
+            display: none;
+            z-index:10;
+}
+
+#front {
+            /* 요소의 좌측상단 꼭지점이 화면 중앙에 위치하게 된다. */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            /* 요소의 크기/2 만큼 왼쪽,상단 방향으로 이동시켜 가운데 배치한다 */
+            margin-top: -200px;
+            margin-left: -325px;
+            display: none;
+            width: 700px;
+            height: 400px;
+            background-color: white;
+            z-index : 100;
+        }
+        
+.over_layer{
+	
+	display: flex;
+}        
+        
+body.modal-open {
+    overflow: hidden;
+}
+
+
+.x{ color:gray; font-size: 20px; float:right; padding:10px; font-family: TheJamsil2Light; cursor : pointer;}
+	 
+
+

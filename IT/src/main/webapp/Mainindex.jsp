@@ -3,7 +3,8 @@
 <%@ page language="java" contentType="text/html;charset=utf-8" pageEncoding="UTf-8"%>
 <% request.setCharacterEncoding("utf-8"); %>
 <link rel="stylesheet" href="css/mainindex.css">
-
+  <link rel="stylesheet" href="./slick-1.8.1/slick/slick.css">
+        <link rel="stylesheet" href="./slick-1.8.1/slick/slick-theme.css">
 
 <html>
 <head>
@@ -22,40 +23,40 @@
     <div class="mainflightdiv1">
             <ul class="slider">
                 <li>
-                  <div style="background-image:url('mainindeximgs/holdingphoto.webp')">
+                  <div style="background-image:url('mainindeximgs/메인인덱스슬라이드1.jpg')">
                     <dl class="right">
                     </dl>
                   </div>
                 </li>
                 <li>
-                              <div style="background-image:url('mainindeximgs/holdingphoto.webp')">
+                              <div style="background-image:url('mainindeximgs/메인인덱스슬라이드2.jpg')">
                     <dl>
                     </dl>
                   </div>
                 </li>
                 <li>
-                  <div style="background-image:url('mainindeximgs/holdingphoto.webp')">
+                  <div style="background-image:url('mainindeximgs/메인인덱스슬라이드3.jpg')">
                     <dl class="right">
                 
                     </dl>
                   </div>
                 </li>
                 <li>
-                     <div style="background-image:url('mainindeximgs/holdingphoto.webp')">
+                     <div style="background-image:url('mainindeximgs/메인인덱스슬라이드1.jpg')">
                     <dl>
                 
                     </dl>
                   </div>
                 </li>
                 <li>
-                  <div style="background-image:url('mainindeximgs/메인인덱스슬라이드1.jpg');">
+                  <div style="background-image:url('mainindeximgs/메인인덱스슬라이드2.jpg');">
                     <dl class="right">
                   
                     </dl>
                   </div>
                 </li>
                 <li>
-                  <div style="background-image:url('mainindeximgs/holdingphoto.webp'')">
+                  <div style="background-image:url('mainindeximgs/메인인덱스슬라이드3.jpg'')">
                     <dl>
                 
                     </dl>
@@ -64,17 +65,9 @@
               </ul>
         </div>
 
-
-    		
-<!--         <div class="quickmenuwrap"> -->
-<!--         	<div class="quickwrap"> -->
-<!--         		<div class="quick" style="float : left;"></div> -->
-
-<!--         	</div> -->
-<!--         </div> -->
-
-
-    	<div class="reclistwrap">
+   </section>
+   
+       	<div class="reclistwrap">
     		<div class="socialfeedwrap">
     			<div class="title">소셜피드</div>
     			<div class="socialfeedsort">
@@ -172,8 +165,6 @@
 
     	</div>
     	</div>
-   
-   </section>
    
     <footer>
     	<jsp:include page="footer.jsp"/>

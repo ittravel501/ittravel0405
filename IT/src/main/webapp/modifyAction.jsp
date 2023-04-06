@@ -16,33 +16,8 @@
 <body>
   <%
   
- 
+ 	String mem_id = null;
   
-  String mem_id = request.getParameter("mem_id");
-
-  String com_bct = request.getParameter("com_bct");
-  String com_name = request.getParameter("com_name");
-  String com_con = request.getParameter("com_con");
-
-  // 로그인 된 사람은 회원가입페이지에 들어갈수 없다
-  /*if(session.getAttribute("mem_id") != null )
-  {
-      mem_id = (String) session.getAttribute("mem_id");
-  } */
-
-  if(mem_id != null){
-
-      session.setAttribute("mem_id",mem_id);
-
-      session.setAttribute("com_name",com_name);
-      session.setAttribute("com_bct",com_bct);
-      session.setAttribute("com_con",com_con);
-
-      response.sendRedirect("board_list.jsp");
-  }
-  
-  /* String com_mem_id = null; */
-  // 로그인 된 사람은 회원가입페이지에 들어갈수 없다
   if(session.getAttribute("mem_id") != null )
   {
       mem_id = (String) session.getAttribute("mem_id");
@@ -53,7 +28,7 @@
       PrintWriter script = response.getWriter();
       script.println("<script>");
       script.println("alert('로그인을 하세요')");
-      script.println("location.href = 'login_001.jsp'");
+      script.println("location.href = 'login001.jsp'");
       script.println("</script>");
   } 
   
@@ -68,7 +43,7 @@
       PrintWriter script = response.getWriter();
       script.println("<script>");
       script.println("alert('유효하지 않은 글입니다')");
-      script.println("location.href = 'board_list.jsp'");
+      script.println("location.href = 'com_list.jsp'");
       script.println("</script>");
   } 
   
@@ -101,7 +76,7 @@
                 else { // 글수정에 성공했을 경우
                     PrintWriter script = response.getWriter();
                     script.println("<script>");
-                    script.println("location.href= 'board_list.jsp'");
+                    script.println("location.href= 'com_list.jsp?pageNumber=1'");
                     script.println("</script>");
                     }
             }

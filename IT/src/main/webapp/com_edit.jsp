@@ -15,29 +15,9 @@
 <jsp:include page="header.jsp"></jsp:include>
 <% 
 
+	String mem_id = null;
 
-	// 로그인한 사용자라면 com_mem_id에 값이 담기게 될 것이다.
-		String mem_id = null;
-		String com_num = null;
-		String com_bct = null;
-		String com_name = null;
-		String com_con = null;
-  				if(session.getAttribute("mem_id") != null){
-  					mem_id = (String)session.getAttribute("mem_id");
-  				}
-  				if(session.getAttribute("com_num") != null){
-  					com_num = (String)session.getAttribute("com_num");
-  				}
-  				if(session.getAttribute("com_bct") != null){
-  					com_bct = (String)session.getAttribute("com_bct");
-  				}
-  				if(session.getAttribute("com_name") != null){
-  					com_name = (String)session.getAttribute("com_name");
-  				}
-  				if(session.getAttribute("com_con") != null){
-  					com_con = (String)session.getAttribute("com_con");
-  				}
-/*     if (session.getAttribute("mem_id") != null)
+     if (session.getAttribute("mem_id") != null)
     {
     	mem_id = (String)session.getAttribute("mem_id");
     }
@@ -74,7 +54,7 @@
         script.println("location.href = 'board_list.jsp'");
         script.println("</script>");
         return;
-    } */
+    } 
     
 %>
     <div class="board_wrap">
@@ -121,7 +101,7 @@
             <div class="bt_wrap">
                <!--  <a href="view.html" class="on">수정</a> -->
                 <input class="on" type="submit" value="수정">
-                <a href="board_list.jsp">취소</a>
+                <a href="com_list.jsp">취소</a>
             </div>
         </div>
         </form>

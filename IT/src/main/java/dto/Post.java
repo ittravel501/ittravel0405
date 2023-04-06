@@ -1,4 +1,4 @@
-package teamproject;
+package dto;
 
 public class Post {
 	String mem_id;

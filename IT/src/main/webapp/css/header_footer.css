@@ -577,7 +577,7 @@ margin-top: 5px;font-size:13px;
      padding:0px 70px 0 20px;
      opacity: 0;
      position: absolute;
-     top:0px;
+     top:-3px;
      left:0px;
      background: transparent;
      box-sizing: border-box;
@@ -616,6 +616,7 @@ margin-top: 5px;font-size:13px;
      height:50px;
      margin: 10px;
      border-radius: 30px;
+     top:-3px;
  }
  .search-wrapper .input-holder .search-icon span {
      width:22px;

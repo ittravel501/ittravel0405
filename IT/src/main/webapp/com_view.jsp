@@ -14,10 +14,10 @@
 <body>
 <jsp:include page="header.jsp"></jsp:include>
 <% 
-String com_mem_id = null; // 로그인이 된 사람들은 로그인정보를 담을 수 있도록한다
-if (session.getAttribute("com_mem_id") != null)
+String mem_id = null; // 로그인이 된 사람들은 로그인정보를 담을 수 있도록한다
+if (session.getAttribute("mem_id") != null)
 { 
-	com_mem_id = (String)session.getAttribute("com_mem_id");
+	mem_id = (String)session.getAttribute("mem_id");
 }
 int com_num = 0;
 if (request.getParameter("com_num") != null)
@@ -85,9 +85,8 @@ Cominfo ci = new BoardDao().getBoard(com_num);
                 </div>
             </div>
             <div class="bt_wrap">
-                <a href="board_list.jsp" class="on">목록</a>
-             <%--    <a href="board_edit.jsp?com_num=<%=com_num%>">수정</a> --%>
-                <a href="board_edit.jsp?com_num=<%=com_num%>"> <input class="on" type="submit"  value="수정"></a>
+                <a href="com_list.jsp" class="on">목록</a>
+                <a href="com_edit.jsp?com_num=<%=com_num%>"> <input class="on" type="submit"  value="수정"></a>
                <a href="deleteAction.jsp?com_num=<%=com_num%>"> <input class="on" type="submit"  value="삭제"></a>
             </div>
         </div>

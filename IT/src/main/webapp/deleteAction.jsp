@@ -40,7 +40,7 @@
             PrintWriter script = response.getWriter();
             script.println("<script>");
             script.println("alert('유효하지 않은 글입니다')");
-            script.println("location.href = 'board_list.jsp'");
+            script.println("location.href = 'com_list.jsp'");
             script.println("</script>");
         }
         Cominfo ci = new BoardDao().getBoard(com_num);
@@ -49,7 +49,7 @@
             PrintWriter script = response.getWriter();
             script.println("<script>");
             script.println("alert('권한이 없습니다')");
-            script.println("location.href = 'board_list.jsp'");
+            script.println("location.href = 'com_list.jsp'");
             script.println("</script>");
         
         } else {
@@ -65,7 +65,7 @@
                 else { // 글삭제에 성공했을 경우
                     PrintWriter script = response.getWriter();
                     script.println("<script>");
-                    script.println("location.href= 'board_list.jsp'");
+                    script.println("location.href= 'com_list.jsp'");
                     script.println("</script>");
                 }
             }
