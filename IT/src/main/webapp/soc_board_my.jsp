@@ -21,6 +21,7 @@ $(document).ready(function() {
         delegate: 'a.popup',
         type: 'ajax',
         modal: false,
+        showCloseBtn: false, 
         closeOnContentClick: false,
         closeOnBgClick: true,
         enableEscapeKey: true,
@@ -31,7 +32,7 @@ $(document).ready(function() {
                 	e.stopPropagation();
                 });
             }
-        },showCloseBtn: true, 
+        },
     }); 
 });
 
