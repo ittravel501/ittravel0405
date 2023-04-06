@@ -68,7 +68,7 @@
 		    	<a href="tour002.jsp"><img src="imgs/board/home_icon.png"></a>
 		    	<a href="soc_boardWrite.jsp" id="write"><img src="imgs/board/plus_icon.png"></a>
 		    	<a href="#"><img src="imgs/board/bell_icon.png"></a>
-		    	<a href="#"><img src="imgs/board/person_icon.png"></a>
+		    	<a href="soc_board_my.jsp"><img src="imgs/board/person_icon.png"></a>
 		    </div>
 		  </div>
 		 
