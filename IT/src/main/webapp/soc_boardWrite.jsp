@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>잇로그 글쓰기</title>
 </head>
-	<link rel="stylesheet" href="css/boardWriteCss.css">
+	<link rel="stylesheet" href="css/soc_boardWriteCss.css">
     <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-barun-gothic.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
     <script src="./slick-1.8.1/slick/slick.min.js"></script>

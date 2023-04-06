@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@page import = "java.util.*" %>
-    <%@page import = "teamproject.Board" %>
-    <%@page import = "teamproject.Post" %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <!DOCTYPE html>
 <html>
@@ -10,11 +8,11 @@
 <meta charset="UTF-8">
 <title>게시물 팝업</title>
 </head>
-
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/boardViewCss.css">
+    <link rel="stylesheet" href="css/soc_boardViewCss.css">
     <title>공지사항</title>
     
 </head>
@@ -25,7 +23,7 @@
    		<ul>
    		<li class="sch_01">
 	   		<div class="sch_01_L">
-		    	<a href="basicboard.jsp"><img src="imgs/board/itlog_logo.png"></a>
+		    	<a href="soc_basicboard.jsp"><img src="imgs/board/itlog_logo.png"></a>
 		    </div>
    			<div class="sch_01_R">
 		   		<div class="day_01"><a href="#">1day</a>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -93,14 +91,11 @@
    				</div>
    			</div>
    			</li>
-   			<li>
-   				<a href="#" style="padding-left:30px;">편집</a>
-   			</li>
    		</ul>
    	</div>
    	<div class="img_wrap">
    		<ul>
-   		<li class="img_01"><a href="#"><img src="imgs/board/aaa1.jpg"></a></li>
+   		<li class="img_01"><a href="#"><img src="imgs/board/aaa11.jpg"></a></li>
    		</ul>
    	</div>
    		<div class="con_wrap">
