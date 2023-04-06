@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html;charset=utf-8"
     pageEncoding="UTF-8"%>
     <%@page import ="java.util.*" %>
-    <%@page import ="IT.Post" %>
     
 <!DOCTYPE html>
 <html>
@@ -54,10 +53,6 @@
 
 <body>
 
-<jsp:useBean id="test" class="IT.Board"/>
-
-	
-
 <div>   
 	<div class="postWrap"><!-- 전체div -->
 	    <!-- 로고,검색창,아이콘 박스 -->
@@ -80,7 +75,7 @@
 	    <!-- 이미지리스트1 -->
 	 	<div class="imglistWrap" id="list">
 		    <div class="imglist">
-			    <div>
+			    	<div>
 				    <a href="boardView.jsp" class="popup"><img src="imgs/board/aaa5.jpg"></a>
 				    <div>
 					    <div class="likeBox">
@@ -113,6 +108,6 @@
 		    </div>
 	    </div>
 	</div>
-</div>
+
   </body>
 </html>
