@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/soc_boardViewCss.css">
     <title>공지사항</title>
 </head>
-<script>
+<script> 
 document.getElementById('likeBtn').addEventListener('click', function() {
 	  var imgSrc = this.querySelector('img').src;
 	  if (imgSrc.includes('like_icon.png')) {
@@ -151,7 +151,7 @@ document.getElementById('likeBtn').addEventListener('click', function() {
    				<input type="button" value="게시">
    			</div>
    		</li>
-   		</ul>
+   		</ul> 
    	</div>
    </div>
 </body>

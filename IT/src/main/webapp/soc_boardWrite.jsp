@@ -11,7 +11,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
     <script src="./slick-1.8.1/slick/slick.min.js"></script>
 </head>
-<body>
+
+<body> 
 	<div class="wrap">
 		<!-- 최상단 -->
 		<div class="top_wrap">
@@ -26,7 +27,7 @@
 		<!-- 텍스트박스 -->
 		<div>
 		<textarea placeholder="내용을 입력해주세요."></textarea>
-		<input type="button" value="취소"><input type="button" value="등록">
+		<a href="soc_basicboard.jsp"><input type="button" value="취소"></a><input type="button" value="등록">
 		</div>
 	</div>
 </body>

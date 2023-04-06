@@ -20,7 +20,7 @@
 }
 *{ margin: 0;padding: 0;font-family: 'TheJamsil3Regular';}
  /* X 표시의 색상과 위치를 변경하는 CSS 스타일 */
-.mfp-close-btn-in .mfp-close {
+.mfp-close-btn-in .mfp-close { 
 	color: #ffffff !important; /* 흰색으로 변경 */
 	top: 0;
     right: 165px;
