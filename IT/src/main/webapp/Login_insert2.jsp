@@ -21,11 +21,21 @@
 		//회원 아이디와 패스워드가 일치하는지 비교
  		
 		UserDao ud = new UserDao();
- 		int result = ud.login(user.getMem_id(),user.getMem_pw()); 
+		
+ 		int result = ud.login(user.getMem_id(),user.getMem_pw());
+ 		
+ 		//String mem_nick = user.getMem_nick(); //회원정보에 저정된 닉네임 가져와서 mem_nick에 저장하기
+ 		
  		
  		if(result == 1){
+ 			
+ 			String mem_nick = ud.loginsession(mem_id);
+ 			
  			session.setAttribute("mem_id",mem_id);
+ 			session.setAttribute("mem_nick", mem_nick);
+ 			
 			response.sendRedirect("Mainindex.jsp");
+			
  		} else if(result ==0){
  		%>	
  		<script>
