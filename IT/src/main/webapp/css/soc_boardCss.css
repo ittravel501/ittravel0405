@@ -19,29 +19,14 @@
     font-style: normal;
 }
 *{ margin: 0;padding: 0;font-family: 'TheJamsil3Regular';}
-
-/*-----------팝업-----------*/
-/*.pop_button{width:150px; height:40px; margin:20px auto; background-color:skyblue;}
-.pop_button a{display:block; color:#333;}
-
-.layer_pop_txt{display:none; position:fixed; width:100%; height:100%;
-				top:0; left:0; background:rgba(0,0,0,0.7);}
-.layer_pop_txt .pop_content{position:absolute; width:70%; top:20%; left:15%; z-index:20; 
-							background:#fff; text-align:center; padding:30px 0;}
-.layer_pop_txt .close_btn{position:absolute; top:10px; right:15px; font-size:20px;}
-
-.white-popup {
-     position: relative;
-     background: #FFF;
-     padding: 20px;
-     width: auto;
-     max-width: 1480px;
-     margin: 20px auto;
-     text-align: left;
-     }*/
-
-
-/*-----------게시물리스트-----------*/
+ /* X 표시의 색상과 위치를 변경하는 CSS 스타일 */
+.mfp-close-btn-in .mfp-close {
+	color: #ffffff !important; /* 흰색으로 변경 */
+	top: 0;
+    right: 165px;
+	position: absolute;
+	background-color:black;
+}
 .postWrap {
 	align-items: center;
     justify-content: center;

@@ -30,7 +30,7 @@ public class Join_controller {
 
 		try{
 
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/teamproject","root","1234");		
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/teamproject?useUnicode=true&characterEncoding=utf8","root","eogkrrksek!1");		
 			
 			if(conn==null) {
 				throw new Exception("데이터베이스에 연결할 수 없습니다.");
