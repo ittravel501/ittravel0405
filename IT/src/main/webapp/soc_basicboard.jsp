@@ -20,18 +20,19 @@
         $("#list").magnificPopup({
             delegate: 'a.popup',
             type: 'ajax',
-            showCloseBtn: true,
+            modal: false,
             closeOnContentClick: false,
             closeOnBgClick: true,
             enableEscapeKey: true,
             callbacks: {
                 ajaxContentAdded: function() {
                     this.content.addClass('white-popup');
+                    this.content.on('click', function(e){
+                    	e.stopPropagation();
+                    });
                 }
-            },
-            modal: false,
-            
-        });
+            },showCloseBtn: true,
+        }); 
     });
     
     $(document).ready(function() {
@@ -43,11 +44,14 @@
             callbacks: {
                 ajaxContentAdded: function() {
                     this.content.addClass('white-popup');
+                    this.content.on('click', function(e){
+                    	e.stopPropagation();
+                    });
                 }
             },
             modal: false,
             showCloseBtn: false,
-        });
+        }); 
     });
 	function latest(){
 		var p = document.getElementById('popularBtn');
@@ -92,12 +96,12 @@
 		  </div>
 		 
 	    <!-- 이미지리스트1 -->
-	 	<div class="imglistWrap" id="list">
+	 	<div class="imglistWrap">
 	 		<div class="filter">
 			    <input type="button" value="인기순" id="popularBtn" onclick="popular()">
   				<input type="button" value="최신순" id="latestBtn" onclick="latest()">	
 		    </div>
-		    <div class="imglist">
+		    <div class="imglist" id="list">
 			    	<div>
 				    <a href="soc_boardView.jsp" class="popup"><img src="imgs/board/aaa5.jpg"></a>
 				    <div>

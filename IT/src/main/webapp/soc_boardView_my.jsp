@@ -16,7 +16,7 @@
     <title>공지사항</title>
     
 </head>
-<script>
+<script> 
 document.getElementById('likeBtn').addEventListener('click', function() {
 	  var imgSrc = this.querySelector('img').src;
 	  if (imgSrc.includes('like_icon.png')) {
