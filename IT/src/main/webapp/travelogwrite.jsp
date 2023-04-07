@@ -38,6 +38,8 @@
 						<div class="title">
 							<input type="text" id="log_depdate" name="log_depdate"
 								placeholder="µµÂø³â¿ùÀÏ">
+								
+								
 						</div>
 						<div class="title">
 							<input type="text" id="log_arrdate" name="log_arrdate"

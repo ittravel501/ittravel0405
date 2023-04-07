@@ -12,7 +12,7 @@ request.setCharacterEncoding("utf-8");
 </head>
 
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>	
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>	
 <script src="js/slick-1.8.1/slick/slick.min.js"></script>
 <script src="js/travel_plan.js"></script>
 <script>
@@ -41,9 +41,6 @@ function openmodal(city_eng){
 };
 
 
-
-
-
 //화면에 표시된 배경 레이어를 클릭한 경우
 function closemodal(){
 
@@ -67,6 +64,13 @@ function x(){
 	 $('body').removeClass('modal-open');
 }
 
+
+function add() {
+    var smallcity1 = $('#smallcity1').text(); // smallcity1의 내용을 가져옴
+    $('input[name=coouncity]').smallcity1; // cooncity 텍스트 창에 smallcity1의 내용을 넣음
+  	console.log(smallcity1);
+  };
+
 </script>
 
 
@@ -82,6 +86,9 @@ function x(){
 	<section>
 	
 	<form action="travel_plan2.jsp" method="post">
+	
+	
+<!--///////////// 팝업창 ////////// 	 -->
 	 <div class='gray_layer' id='background' onclick="closemodal()"></div>
     <div class='over_layer' id='front'>
 			<div class="photocity" style="display: flex;">
@@ -100,7 +107,7 @@ function x(){
 									"You're easy" You're always riding in the backseat Now I'm
 									smiling from the stage while You were clapping in the
 									nosebleeds</div>
-						<div><button type="button" id="modalchoose"></button></div>
+						<div><button type="button" id="modalchoose" onclick="add">여행지 추가하기</button></div>
 																		
 <!-- cityexplain2 -->
 					</div>
@@ -111,6 +118,12 @@ function x(){
 			</div>
 <!-- over_layer -->
 		</div>
+
+
+
+
+
+<!-- ///////////메인화면 시작////////// -->
 	
 		<div class="dessearch">
 			<div id="inputwrap">
@@ -118,9 +131,9 @@ function x(){
 
 					<div class="depdatewrap">
 						<ul>
-							<li><input type="text" size="50" name="coouncity" class="inputdes" placeholder="여행지를 입력해주세요"></li>
-							<li><input type="button" class="btn" value="가는날" style ="font-family: TheJamsil2Light;"> <input type="date" name="depdate"></li>
-							<li><input type="button" class="btn" value="오는날" style="font-family: TheJamsil2Light;"> <input type="date" name="arrdate"></li>														
+							<li><input type="text" size="50" name="coouncity" class="inputdes" placeholder="여행지를 입력해주세요" required></li>
+							<li><input type="button" class="btn" value="가는날" style ="font-family: TheJamsil2Light;"> <input type="date" name="depdate" required></li>
+							<li><input type="button" class="btn" value="오는날" style="font-family: TheJamsil2Light;"> <input type="date" name="arrdate" required></li>														
 							<li><input type="submit" id="desearbtn" value="선택완료"></li>
 						</ul>
 <!-- depdatewrap -->

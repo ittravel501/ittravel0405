@@ -31,14 +31,16 @@
     			<%
   					// 세션 객체에서 저장된 날짜 값을 가져옴
   				
-    			  String cityName = (String) session.getAttribute("cityName");
-    			out.println(cityName);
+//     			  String cityName = (String) session.getAttribute("cityName");
+//     			out.println(cityName);
   				String destination = (String) session.getAttribute("coouncity");
     			 out.println(destination);%>
+    			
+    			
     			</div>
     			<div class="destitle2">Da Nang</div>
     			<% String smalltravel2 = (String)session.getAttribute("smalltravel2");
-    				out.println(smalltravel2);
+//     				out.println(smalltravel2);
     				
     			%>
     			<div class="traveldate">
@@ -156,7 +158,7 @@
                     <div class="searchex">가고 싶은 장소를 검색해보세요</div>
                     <div class="searchtnbtn">
                     <input type="text" class="searcht" size = "20">
-                    <button id="searchbtn">검색
+                    <button id="searchbtn">검색</button>
                     </div>
                 </div>
                 
@@ -167,7 +169,7 @@
                             <div class="recpicntwrap">
                             <img src="./schmngimgs//핑크성당.jpg">
                                 <div class="recinfo">떤딘성당</div>
-                                <button onclick ="addlist('떤딘성당')" class = "addbtn">추가하기</button>
+                                <button onclick ="addlist('떤딘성당')" class = "addbtn" >추가하기</button>
                             </div>
                         </li>
                         <li>
