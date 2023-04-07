@@ -17,11 +17,13 @@
 		<!-- 최상단 -->
 		<div class="top_wrap">
 			<div style="width:30%;">
+			<a href="#"><img src="imgs/board/icon_pack.png"></a>
 			<a href="#"><img src="imgs/board/gallery_icon.png"></a>
 			<a href="#"><img src="imgs/board/movie_icon.png"></a>
 			<a href="#"><img src="imgs/board/pick_icon.png"></a>
+			
 			</div>
-			<div style="width:45%;"></div>
+			<div style="width:40%;"></div>
 			<div class="title">잇로그 글쓰기</div>
 		</div>
 		<!-- 텍스트박스 -->
