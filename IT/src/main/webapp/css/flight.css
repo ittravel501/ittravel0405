@@ -191,7 +191,7 @@ a {
 
 .select_area2 input[value="항공권 검색"]{
     width: 220px;
-    margin: 0px 0 0 30px;
+    margin: 0px 0 0 73px;
     float: none;
     height: 62px;
     line-height: 62px;
@@ -231,7 +231,7 @@ option {
 
 
 .date1{
-    width: 385px;
+    width: 392px;
     margin: 20px 0 0 10px;
     float: none;
     height: 62px;
@@ -244,7 +244,7 @@ option {
 }
 
 .date2{
-    width: 385px;
+    width: 392px;
     margin: 20px 0 0 10px;
     float: none;
     height: 62px;
@@ -264,6 +264,19 @@ option {
 }
 
 .personwrap1{
+    width: 200px;
+    margin: 20px 0 30px 2px;
+    float: none;
+    height: 62px;
+    line-height: 62px;
+    background-color: #f2f6f9;
+    border: none;
+    border-radius: 3px;
+    padding: 0 20px;
+    font-size: 15px;
+}
+
+.personwrap2{
     width: 200px;
     margin: 20px 0 30px 30px;
     float: none;
@@ -372,9 +385,10 @@ section .imgdiv{
 
 section .salediv1{
 /*    float: left;*/
-    width: 265px;
+/*     width: 265px; */
     height: 320px;
-    margin-right: 10px;
+    margin-right: auto;
+
     background-color: white;
     color: black;
     box-shadow: 1px 1px 3px 3px rgb(105 105 105 / 10%);
@@ -388,9 +402,9 @@ section .salediv1:hover{
 
 section .salediv2{
 /*    float: right;*/
-    width: 265px;
+/*     width: 265px; */
     height: 320px;
-   margin-right: 10px;
+  margin-right: auto;
     background-color: white;
     color: black;
     box-shadow: 1px 1px 3px 3px rgb(105 105 105 / 10%);
@@ -398,7 +412,7 @@ section .salediv2{
 
 section .salediv3{
 /*    float: right;*/
-    width: 265px;
+/*     width: 265px; */
     height: 320px;
     background-color: white;
     color: black;
@@ -421,23 +435,23 @@ section .salediv3:hover{
 
 .fontdiv2{
     font-size: 15px;
-    margin-left: 30px;
+    margin-left: 20px;
     margin-top: 30px;
     color: cadetblue;
 }
 
 .fontdiv1{
     font-size: 20px;
-    margin-left: 30px;
-    margin-top: 14px;
+    margin-left: 20px;
+    margin-top: 20px;
 }
 
 
 
 .fontdiv3{
     font-size: 20px;
-    margin-left:30px;
-    margin-top: 24px;
+    margin-left:20px;
+    margin-top: 20px;
    
 } 
 
@@ -451,6 +465,18 @@ section .salediv3:hover{
     border-style: solid;
     border-color: black;
     border-width: 1px; */
+}
+
+.floating {
+    position: fixed;
+    top: 200px;
+    left: 60%;
+    margin-left: 500px;
+    z-index: 1000;
+}
+
+.floating img{
+    border-radius: 7px;
 }
 
 

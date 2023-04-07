@@ -80,7 +80,7 @@
                             </div>
 
                               <div class="select_area2">
-                              <label> 탑승 인원 </label>
+                              <label > 탑승 인원 </label>
                               <select class="personwrap1">
                               <option value="none" selected> 성인</option>
                               <option value="option 1"> 1명</option>
@@ -94,7 +94,7 @@
                               <option value="option 3"> 9명 </option>
                       
                               </select>
-                              <select class="personwrap1">
+                              <select class="personwrap2">
                               <option value="none" selected> 소아 </option>
                               <option value="option 1"> 1명</option>
                               <option value="option 2"> 2명 </option>
@@ -107,7 +107,7 @@
                               <option value="option 3"> 9명 </option>
                         
                               </select>
-                              <select class="personwrap1">
+                              <select class="personwrap2">
                               <option value="none" selected> 유아 </option>
                              <option value="option 1"> 1명</option>
                               <option value="option 2"> 2명 </option>
@@ -226,29 +226,29 @@
             <h2>국내 특가 항공권 ✈ </h2>
             <div class="imgdiv">
               <div class="salediv1">
-                 <img src="./flightimgs/뉴욕1.jpg" alt="" >
-                 <div class="fontdiv2"> 자유의 나라로 </div>
-                  <div class="fontdiv1"> 인천 ↔ 뉴욕 </div>
-                <div class="fontdiv3"> 1,096,100원~ </div>
+                 <img src="./flightimgs/제주도.jpg" alt="" >
+                 <div class="fontdiv2"> 제주로 떠나요 </div>
+                  <div class="fontdiv1"> 김포 ↔ 제주 </div>
+                <div class="fontdiv3"> 90,000원~ </div>
               </div>
 
                  <div class="salediv1">
-                        <img src="./flightimgs/방콕1.jpg" alt="" >
-                        <div class="fontdiv2"> 지금 가장 뜨는 곳 </div>
-                        <div class="fontdiv1"> 인천 ↔ 방콕 </div>
-                        <div class="fontdiv3"> 383,600원~ </div>
+                        <img src="./flightimgs/부산.jpg" alt="" >
+                        <div class="fontdiv2"> 지금 부산 바다로 </div>
+                        <div class="fontdiv1"> 김포 ↔ 부산 </div>
+                        <div class="fontdiv3"> 50,000원~ </div>
               </div>
                  <div class="salediv2">
-                        <img src="./flightimgs/하와이1.jpg" alt="" >
-                        <div class="fontdiv2"> 휴양이 필요해 </div>
-                        <div class="fontdiv1"> 인천 ↔ 하와이 </div>
-                        <div class="fontdiv3"> 1,031,400원~ </div>
+                        <img src="./flightimgs/양양제주.jpg" alt="" >
+                        <div class="fontdiv2"> 양양에서 제주로! </div>
+                        <div class="fontdiv1"> 양양 ↔ 제주 </div>
+                        <div class="fontdiv3"> 90,000원~  </div>
               </div>
                  <div class="salediv3">
-                        <img src="./flightimgs/파리1.jpg" alt="" >
-                        <div class="fontdiv2"> MD 강력 추천 </div>
-                        <div class="fontdiv1"> 인천 ↔ 파리 </div>
-                        <div class="fontdiv3"> 781,300원~ </div>
+                        <img src="./flightimgs/서울서울.jpg" alt="" >
+                        <div class="fontdiv2"> 떠나요 서울로 </div>
+                        <div class="fontdiv1"> 여수 ↔ 김포 </div>
+                        <div class="fontdiv3"> 80,000원~  </div>
               </div>
               
             </div>
@@ -262,7 +262,11 @@
     </div>
 
      </section>
-
+		
+		        <div class="floating">
+          <img src="./flightimgs/이동봉사 신청.png" style="opacity: 100%;"></a>
+          </div>
+          
     <jsp:include page="footer.jsp"></jsp:include>
     </body>
 </html>

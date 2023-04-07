@@ -8,9 +8,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>공지사항</title>
-    <style type="text/css" ></style>
+    <title>커뮤니티 전체</title>
      <link rel="stylesheet" href="css/com_style.css">
+
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
@@ -30,14 +30,25 @@ if(request.getParameter("pageNumber") != null){
 %>
 
 	<div class="bandiv1">
- 		
+ 		<div class="bandiv2" id="bandiv2" onclick="location.href='com_list3.jsp'">
+ 		중고장터
+ 		</div>
+ 		<div class="bandiv3" id="bandiv3" onclick="location.href='com_list2.jsp'" >
+ 		동행구인
+ 		</div>
+ 		<div class="bandiv4"  id="bandiv4" onclick="location.href='com_list.jsp'" >
+ 		전체
+ 		</div>
     	</div>
     
     <div class="board_wrap">
     <form action="search_list.jsp" method="post">
     	<div class="btall2">
-    	
-    	<div >
+  		<div class="titlediv1">
+  		전체
+  		</div>
+  	
+    	<div>
     		<select class="btdiv1" name="searchField">
     		<option value="0"> 선택 </option>
     		<option value="com_name"> 제목 </option>
