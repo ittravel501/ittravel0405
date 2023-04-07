@@ -12,6 +12,12 @@
     font-weight: 700;
     font-style: normal;
 }
+@font-face {
+    font-family: 'TheJamsil5Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
 
 *{margin: 0; padding: 0; box-sizing: border-box; font-family: 'TheJamsil3Regular';} 
 ul,ol,li { list-style-type:none; width:100%; display:block; }
@@ -34,8 +40,25 @@ span { font-size : 0.8em; margin-left: 10px; margin-bottom:2px;}
     display : flex;
     }
 .sch_01_L {
-	padding-bottom: 15px;
-    width: 35%;
+	display: grid;
+    padding-bottom: 15px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    border: 1px solid rgb(126, 125, 203);
+    align-items: center;
+    margin: 10px 10px 0px;
+    border-radius: 50%;
+}
+.country {
+	width: 100%;
+    margin-top: 10px;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+.city {
+	width: 100%;
+    margin-top: -25px;
 }
 .sch_01_R {
 	width: 65%;
@@ -77,6 +100,15 @@ input[type=button] {
     margin: 7px;
     padding: 10px 0 5px 10px;
     border-bottom: 1px solid #CECEF4;
+}
+.span_wrap {
+	font-size :0.7em;
+	margin-top: 10px;
+}
+.span_wrap span {
+	color : #666;
+	font-size:1.0em;
+	margin-left:3px;
 }
 .tcp {
 	display : flex;

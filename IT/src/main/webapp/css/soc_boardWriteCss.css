@@ -64,9 +64,39 @@ input[type=button] {
 	padding:15px;
 	font-family: 'TheJamsil5Bold';
 }
+.travel_plan {
+	width : 90%;
+	height:200px;
+	overflow:auto;
+	border : 1px solid #7E7DCB;
+	padding: 10px;
+	font-family: 'TheJamsil2Light';
+	display:flex;
+	margin-bottom:15px;
+}
+.day_plan {
+	text-align:center;
+	overflow:auto;
+	width:33%;
+}
+.day_plan div {
+	height: 15%;
+	margin:10px;
+	padding-bottom:10px;
+	border-bottom:1px solid #7E7DCB;
+}
+.day_plan h4 {
+	height: auto;
+	margin:10px;
+}
+.day_plan h5 {
+	height: auto;
+	margin:10px;
+}
 textarea {
 	width : 90%;
 	height : 800px;
+	overflow:auto;
 	border : 1px solid #7E7DCB;
 	padding: 10px;
 	font-size : 1.1em;

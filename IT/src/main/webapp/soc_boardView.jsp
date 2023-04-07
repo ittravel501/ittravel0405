@@ -41,7 +41,8 @@ document.getElementById('likeBtn').addEventListener('click', function() {
    		<ul>
    		<li class="sch_01">
 	   		<div class="sch_01_L">
-		    	<a href="soc_basicboard.jsp"><img src="imgs/board/itlog_logo.png"></a>
+		    	<h3 class="country">태국</h3>
+		    	<h1 class="city">방콕</h1>
 		    </div>
    			<div class="sch_01_R">
 		   		<div class="day_01"><a href="#">1day</a>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -55,7 +56,13 @@ document.getElementById('likeBtn').addEventListener('click', function() {
    		</li>
    		<li class="sch_02">
    			<div class="day_sch_02">
-   				<h3>1Day</h3>
+   				<h3>1Day
+   				<span class="span_wrap">
+   					<span class="span_year">2023</span>/
+   					<span class="span_month">04</span>/
+   					<span class="span_day">22</span>
+   				</span>
+   				</h3>
    				<div class="tcp">
 	   				<div class="time">9:00</div>
 	   				<div class="content">기상 및 조식</div>
@@ -73,7 +80,12 @@ document.getElementById('likeBtn').addEventListener('click', function() {
    				</div>
    			</div>
    			<div class="day_sch_02">
-   				<h3>2Day</h3>
+   				<h3>2Day
+   				<span class="span_wrap">
+   					<span class="span_year">2023</span>/
+   					<span class="span_month">04</span>/
+   					<span class="span_day">23</span>
+   				</span></h3>
    				<div class="tcp">
 	   				<div class="time">9:00</div>
 	   				<div class="content">기상 및 조식</div>
@@ -91,7 +103,12 @@ document.getElementById('likeBtn').addEventListener('click', function() {
    				</div>
    			</div>
    			<div class="day_sch_02">
-   				<h3>3Day</h3>
+   				<h3>3Day
+   				<span class="span_wrap">
+   					<span class="span_year">2023</span>/
+   					<span class="span_month">04</span>/
+   					<span class="span_day">24</span>
+   				</span></h3>
    				<div class="tcp">
 	   				<div class="time">9:00</div>
 	   				<div class="content">기상 및 조식</div>

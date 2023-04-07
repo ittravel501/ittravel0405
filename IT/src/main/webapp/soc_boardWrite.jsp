@@ -26,9 +26,51 @@
 			<div style="width:40%;"></div>
 			<div class="title">잇로그 글쓰기</div>
 		</div>
+		<div style="display:flex; justify-content:center;">
+		<div class="travel_plan">
+			<div class="day_plan">
+				<div>2023/04/22</div>
+				<h4>스케줄1</h4>
+					<h5>설명1</h5>
+				<h4>스케줄1</h4>
+				<h5>설명1</h5>
+				<h4>스케줄1</h4>
+				<h5>설명1</h5>
+				<h4>스케줄1</h4>
+				<h5>설명1</h5>
+				<h4>스케줄1</h4>
+				<h5>설명1</h5>				
+			</div>
+			<div class="day_plan">
+				<div>2023/04/23</div>
+				<h4>스케줄1</h4>
+					<h5>설명1</h5>
+				<h4>스케줄1</h4>
+				<h5>설명1</h5>
+				<h4>스케줄1</h4>
+				<h5>설명1</h5>
+				<h4>스케줄1</h4>
+				<h5>설명1</h5>
+				<h4>스케줄1</h4>
+				<h5>설명1</h5>				
+			</div>
+			<div class="day_plan">
+				<div>2023/04/24</div>
+				<h4>스케줄1</h4>
+					<h5>설명1</h5>
+				<h4>스케줄1</h4>
+				<h5>설명1</h5>
+				<h4>스케줄1</h4>
+				<h5>설명1</h5>
+				<h4>스케줄1</h4>
+				<h5>설명1</h5>
+				<h4>스케줄1</h4>
+				<h5>설명1</h5>				
+			</div>
+		</div></div>
 		<!-- 텍스트박스 -->
 		<div>
-		<textarea placeholder="내용을 입력해주세요."></textarea>
+		<textarea placeholder="내용을 입력하세요."></textarea>
 		<a href="soc_basicboard.jsp"><input type="button" value="취소"></a><input type="button" value="등록">
 		</div>
 	</div>
