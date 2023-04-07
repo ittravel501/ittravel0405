@@ -310,7 +310,7 @@ function countReplies() {
 		    	<a href="soc_basicboard.jsp"><img src="imgs/board/itlog_logo.png"></a>
 		    </div>
 		    <div class="searchBox">
-		       <input type="text" class="search-input" placeholder="검색어를 입력해주세요." />
+		       <input type="text" class="search-input" placeholder="검색어를 입력해주세요." style = "width: 380px; height: 34px;"/>
 		       <input type="button" value="검색">
 		    </div>
 		    <div class="postIcon">
