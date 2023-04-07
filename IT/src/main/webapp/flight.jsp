@@ -55,20 +55,9 @@
                             <div class="bowl">
                     
                             </div>
-                            <div class="select_area">
-                            <select class="select1">
-                              <option value="none" selected> 출발지 선택 </option>
-                              <option value="option 1">option 1</option>
-                              <option value="option 2">option 2</option>
-                              <option value="option 3">option 3</option>
-                              </select>
-                              <select class="select1">
-                              <option value="none" selected> 도착지 선택 </option>
-                              <option value="option 1">option 1</option>
-                              <option value="option 2">option 2</option>
-                              <option value="option 3">option 3</option>
-                              </select>
-                            </div>
+                            
+                            <!-- 출발지 / 도착지  -->
+            				<jsp:include page="flightselectlist.jsp"></jsp:include>
                           
                             <div class="select_area2">
                               <label class="come1"> 가는날</label>
@@ -82,42 +71,42 @@
                               <div class="select_area2">
                               <label > 탑승 인원 </label>
                               <select class="personwrap1">
-                              <option value="none" selected> 성인</option>
-                              <option value="option 1"> 1명</option>
-                              <option value="option 2"> 2명 </option>
-                              <option value="option 3"> 3명 </option>
-                              <option value="option 1"> 4명</option>
-                              <option value="option 2"> 5명 </option>
-                              <option value="option 3"> 6명 </option>
-                              <option value="option 1"> 7명</option>
-                              <option value="option 2"> 8명 </option>
-                              <option value="option 3"> 9명 </option>
+                              <option value="0" selected> 성인</option>
+                              <option value="성인1"> 성인 1명</option>
+                              <option value="성인2"> 성인 2명 </option>
+                              <option value="성인3"> 성인 3명 </option>
+                              <option value="성인4"> 성인 4명</option>
+                              <option value="성인5"> 성인 5명 </option>
+                              <option value="성인6"> 성인 6명 </option>
+                              <option value="성인7"> 성인 7명</option>
+                              <option value="성인8"> 성인 8명 </option>
+                              <option value="성인9"> 성인 9명 </option>
                       
                               </select>
                               <select class="personwrap2">
-                              <option value="none" selected> 소아 </option>
-                              <option value="option 1"> 1명</option>
-                              <option value="option 2"> 2명 </option>
-                              <option value="option 3"> 3명 </option>
-                              <option value="option 1"> 4명</option>
-                              <option value="option 2"> 5명 </option>
-                              <option value="option 3"> 6명 </option>
-                              <option value="option 1"> 7명</option>
-                              <option value="option 2"> 8명 </option>
-                              <option value="option 3"> 9명 </option>
+                              <option value="0" selected> 소아 </option>
+                              <option value="소아1"> 소아 1명</option>
+                              <option value="소아2"> 소아 2명 </option>
+                              <option value="소아3"> 소아 3명 </option>
+                              <option value="소아4"> 소아 4명</option>
+                              <option value="소아5"> 소아 5명 </option>
+                              <option value="소아6"> 소아 6명 </option>
+                              <option value="소아7"> 소아 7명</option>
+                              <option value="소아8"> 소아 8명 </option>
+                              <option value="소아9"> 소아 9명 </option>
                         
                               </select>
                               <select class="personwrap2">
                               <option value="none" selected> 유아 </option>
-                             <option value="option 1"> 1명</option>
-                              <option value="option 2"> 2명 </option>
-                              <option value="option 3"> 3명 </option>
-                              <option value="option 1"> 4명</option>
-                              <option value="option 2"> 5명 </option>
-                              <option value="option 3"> 6명 </option>
-                              <option value="option 1"> 7명</option>
-                              <option value="option 2"> 8명 </option>
-                              <option value="option 3"> 9명 </option>
+                             <option value="유아1"> 유아 1명</option>
+                              <option value="유아2"> 유아 2명 </option>
+                              <option value="유아3"> 유아 3명 </option>
+                              <option value="유아4"> 유아 4명</option>
+                              <option value="유아5"> 유아 5명 </option>
+                              <option value="유아6"> 유아 6명 </option>
+                              <option value="유아7"> 유아 7명</option>
+                              <option value="유아8"> 유아 8명 </option>
+                              <option value="유아9"> 유아 9명 </option>
                           
                               </select>
                               <input type="button" value="항공권 검색">

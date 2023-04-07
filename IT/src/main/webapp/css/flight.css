@@ -157,11 +157,9 @@ a {
     font-size: 15px;
 }
 
-
 .select_area2 {
     margin: 0px 10px 0 30px;
 }
-
 
 
 .select_area2 input[placeholder="도착지"]{
@@ -207,8 +205,8 @@ a {
 }
 
 .select1{
-    width: 500px;
-    margin: 20px 0 0 30px;
+    width: 434px;
+    margin: 20px 0 0 10px;
     float: none;
     height: 62px;
     line-height: 62px;
@@ -217,9 +215,21 @@ a {
     border-radius: 3px;
     padding: 0 20px;
     font-size: 15px;
-
-    appearance:none /* 화살표 없애기 */
 }
+
+.select2{
+    width: 430px;
+    margin: 20px 0 0 10px;
+    float: none;
+    height: 62px;
+    line-height: 62px;
+    background-color: #f2f6f9;
+    border: none;
+    border-radius: 3px;
+    padding: 0 20px;
+    font-size: 15px;
+}
+
 
 
 option {
@@ -228,7 +238,6 @@ option {
   color: black;
   background-color: #f2f6f9;
 }
-
 
 .date1{
     width: 392px;
