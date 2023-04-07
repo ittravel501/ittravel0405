@@ -55,7 +55,23 @@ document.getElementById('likeBtn').addEventListener('click', function() {
    		<li class="sch_02">
    			<div class="day_sch_02">
    				<h3>1Day<span style="margin-left:250px;"><a href="#" style="padding-left:30px;">편집</a></span></h3>
-   				
+   				<div class="tcp">
+	   				<div class="time">9:00</div>
+	   				<div class="content">기상 및 조식</div>
+	   				<div class="place">신라호텔</div>
+   				</div><div class="tcp">
+	   				<div class="time">9:00</div>
+	   				<div class="content">기상 및 조식</div>
+	   				<div class="place">신라호텔</div>
+   				</div><div class="tcp">
+	   				<div class="time">9:00</div>
+	   				<div class="content">기상 및 조식</div>
+	   				<div class="place">신라호텔</div>
+   				</div><div class="tcp">
+	   				<div class="time">9:00</div>
+	   				<div class="content">기상 및 조식</div>
+	   				<div class="place">신라호텔</div>
+   				</div>
    				<div class="tcp">
 	   				<div class="time">9:00</div>
 	   				<div class="content">기상 및 조식</div>

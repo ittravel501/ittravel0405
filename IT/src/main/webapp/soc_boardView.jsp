@@ -45,9 +45,11 @@ document.getElementById('likeBtn').addEventListener('click', function() {
 		    	<h1 class="city">방콕</h1>
 		    </div>
    			<div class="sch_01_R">
-		   		<div class="day_01"><a href="#">1day</a>&nbsp;&nbsp;&nbsp;&nbsp;
-		   		<a href="#">2day</a>&nbsp;&nbsp;&nbsp;&nbsp;
-		   		<a href="#">3day</a></div>
+		   		<div class="day_01">
+		   		<a href="#">1day</a>
+		   		<a href="#">2day</a>
+		   		<a href="#">3day</a>		   		
+		   		</div>
 		   		<div>
 		   		<input type="text" class="search-input" placeholder="검색어를 입력해주세요." />
 		   		<input type="button" value="검색">
@@ -64,6 +66,47 @@ document.getElementById('likeBtn').addEventListener('click', function() {
    				</span>
    				</h3>
    				<div class="tcp">
+	   				<div class="time">9:00</div>
+	   				<div class="content">기상 및 조식</div>
+	   				<div class="place">신라호텔</div>
+   				</div>
+   				<div class="tcp">
+	   				<div class="time">9:00</div>
+	   				<div class="content">기상 및 조식</div>
+	   				<div class="place">신라호텔</div>
+   				</div><div class="tcp">
+	   				<div class="time">9:00</div>
+	   				<div class="content">기상 및 조식</div>
+	   				<div class="place">신라호텔</div>
+   				</div><div class="tcp">
+	   				<div class="time">9:00</div>
+	   				<div class="content">기상 및 조식</div>
+	   				<div class="place">신라호텔</div>
+   				</div><div class="tcp">
+	   				<div class="time">9:00</div>
+	   				<div class="content">기상 및 조식</div>
+	   				<div class="place">신라호텔</div>
+   				</div><div class="tcp">
+	   				<div class="time">9:00</div>
+	   				<div class="content">기상 및 조식</div>
+	   				<div class="place">신라호텔</div>
+   				</div><div class="tcp">
+	   				<div class="time">9:00</div>
+	   				<div class="content">기상 및 조식</div>
+	   				<div class="place">신라호텔</div>
+   				</div><div class="tcp">
+	   				<div class="time">9:00</div>
+	   				<div class="content">기상 및 조식</div>
+	   				<div class="place">신라호텔</div>
+   				</div><div class="tcp">
+	   				<div class="time">9:00</div>
+	   				<div class="content">기상 및 조식</div>
+	   				<div class="place">신라호텔</div>
+   				</div><div class="tcp">
+	   				<div class="time">9:00</div>
+	   				<div class="content">기상 및 조식</div>
+	   				<div class="place">신라호텔</div>
+   				</div><div class="tcp">
 	   				<div class="time">9:00</div>
 	   				<div class="content">기상 및 조식</div>
 	   				<div class="place">신라호텔</div>
@@ -138,7 +181,17 @@ document.getElementById('likeBtn').addEventListener('click', function() {
    		<li class="con_01">
 	   		<img src="imgs/board/aaa1.jpg"><a href="#">OOO님</a>
 	   		</li>
-   		<li class="con_02">블라블라<br>블라블라<br>블라블라<br>블라블라<br>블라블라<br></li>
+   		<li class="con_02">
+   		
+   		블라블라<br>블라블라<br>블라블라<br>블라블라<br>블라블라<br>
+   		블라블라<br>블라블라<br>블라블라<br>블라블라<br>블라블라<br>
+   		블라블라<br>블라블라<br>블라블라<br>블라블라<br>블라블라<br>
+   		블라블라<br>블라블라<br>블라블라<br>블라블라<br>블라블라<br>
+   		블라블라<br>블라블라<br>블라블라<br>블라블라<br>블라블라<br>
+   		블라블라<br>블라블라<br>블라블라<br>블라블라<br>블라블라<br>
+   		블라블라<br>블라블라<br>블라블라<br>블라블라<br>블라블라<br>
+   		
+   		</li>
    		<li class="con_03">
 	   		<div class="rep01">
 	   			<div class="rep_01">
