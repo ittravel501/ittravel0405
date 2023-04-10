@@ -24,9 +24,11 @@ input, select{ height: 30px; text-align: left;}
 .category	 { width: 250px;height: 100px; padding-top: 40px; border: 2px solid lightgray; border-radius: 4px;}
 #cat_wrap01 { width: 950px;height:100px; margin: 0 10px;}
 .group {text-align: left; padding-left: 15px;}
-.select-group {margin-bottom: 10px; margin-top: 5px;}
+.select-group {width: 100%;
+    display: flex;
+    margin: 5px 10px 10px 0;}
 .group li a { text-align: left; text-decoration: none; color: gray; }
-.drop_02 { width: 174px;height: 40px;border: 1px solid #666; border-radius: 4px;}
+.drop_02 { width: 174px;height: 40px;border: 1px solid #666; border-radius: 4px; margin-right: 10px;}
 .link-group { display: block; width: 700px; padding: 10px; border: 2px none ; border-radius: 4px; background-color: #EAEAEA;}
 .link-group li {display: inline-block; }
 .link-group li a { color:#666; margin-left: 5px; }
@@ -37,10 +39,19 @@ input, select{ height: 30px; text-align: left;}
 /*투어상품리스트*/
 #bottomwrap { width: 1480px;margin: 0 auto; display: inline-block;}
 
-#drop_1	{ width: 1100px;height: 40px; text-align: left; margin-left: 200px; margin-bottom: -20px;}
-.drop_01{ width: 100px;height: 30px; margin-left: 10px;
-		color: #7E7DCB; border-style: none; border-radius: 10px; 
-		font-weight: bolder; font-size: 15px;}
+#drop_1	{ width: 1100px;
+    height: 40px;
+    text-align: left;
+    margin-left: 190px;
+    margin-bottom: -20px;}
+.drop_01{ width: 100px;
+    height: 40px;
+    break-after: avoid;
+    color: #7E7DCB;
+    border-style: none;
+    border-radius: 10px;
+    border: 1px solid #7E7DCB;
+    margin-right: 5px;}
 option { text-align: center; }
 #wrap001 { height:1100px; margin:0 auto; }
 #prod_con	{ width: 1100px; margin: 0 auto;}

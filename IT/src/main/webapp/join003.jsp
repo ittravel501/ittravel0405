@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html;charset=utf-8" pageEncoding="utf-8" %>  
 <%@page import="java.sql.*"%>
 <%
-   String mem_id = request.getParameter("mem_nick");
+   String mem_nick = request.getParameter("mem_nick");
    Connection conn=null;
    Statement stmt = null;
 
