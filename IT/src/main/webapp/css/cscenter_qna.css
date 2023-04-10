@@ -2,7 +2,7 @@
 
 section{
 	width: 100%;
-	height: 500px;
+	/*height: 500px;*/
 	
 }
 
@@ -43,6 +43,39 @@ table {
 #qna_fil{
 	width: 150px;
 	height: 30px;
+}
+
+input#qna_writer {
+	border: none;
+	width: 100px;
+}
+
+.td_right input[type="file"] {
+	width: 100px;
+	height: 50px;
+	background: #000;
+    color: #fff;
+}
+
+.td_right input[type="radio"] {
+	width: 20px;
+	
+}
+
+section .qna_title {
+    width: 130px;
+    height: 100px;
+    margin-top: 50px;
+}
+
+.qna_date_wrap{
+	width: 970px;
+	/*float: left;*/
+	
+}
+
+input[type="date"] {
+	width: 20%;
 }
 
 

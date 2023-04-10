@@ -24,7 +24,7 @@
  <jsp:include page="header.jsp" />
 </header>
 
-<% 
+<%
 		request.setCharacterEncoding("utf-8"); 
         
         String mem_nick = (String)session.getAttribute("mem_nick"); //session으로 가져오면 무조건 String으로 받으로 형변환해야 한다.
@@ -39,6 +39,11 @@
 			</script>
         	
         	<% 
+        	
+        } else{
+        	
+        	
+        	
         }
         %>
 
@@ -84,6 +89,15 @@
 					
 					<td class="td_right">
 						<input name="qna_img" type="file"	id="qna_img" />
+					</td>
+				</tr>
+				
+				<tr>
+					<td class="td_left"><label for="BOARD_FILE"> 공개여부 </label></td>
+					
+					<td class="td_right">
+						<input name="qna_open" type="radio"	id="qna_public" value="공개" style="width: 30px;" /><label style="	margin-right: 50px;" >공개</label>
+						<input name="qna_open" type="radio"	id="qna_private" value="비공개" style="width: 30px;" /><label>비공개</label>
 					</td>
 				</tr>
 				

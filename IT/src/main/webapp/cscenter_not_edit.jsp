@@ -16,7 +16,7 @@
 </head>
 
 <%
- 
+
 
 String not_title = request.getParameter("not_title");
 String not_num = request.getParameter("not_num"); //int여도 getParameter로 받으면 String으로 받는다!
