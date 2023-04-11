@@ -274,7 +274,7 @@ function countReplies() {
    				<input type="text" class="rep_input" id="leavecomment" placeholder="댓글달기">
    				<button type="button" onclick="addComment()">게시</button>
   
-   			</div>
+   			</div> 
    		</li>
    		</ul>
    	</div>

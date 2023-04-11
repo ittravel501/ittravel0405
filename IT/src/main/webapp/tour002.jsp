@@ -310,7 +310,7 @@
 									<div class="average">
 										<div><a href="#"><img src="imgs/tour/avg_45.png"></a></div>
 										<div><a href="#">[29]</a></div>
-									</div>
+									</div> 
 								</div>
 							</li>
 							<li class="aa">
