@@ -17,11 +17,34 @@
     
     <style type="text/css">
     
-	    	section .cscenter_menu_wrap .cscenter_menu:first-child {
+	    section .cscenter_menu_wrap .cscenter_menu:first-child {
 	      background-color: rgba(126, 125, 203, 0.26);
+	      border-radius: 10px;
 	    }
+	    
+	    section .cscenter_menu_wrap .cscenter_menu:nth-child(2), .cscenter_menu:nth-child(3) {
+	      background-color: #f6f6f6;
+	      border-radius: 10px; 
+	    }
+	    
+	    
+	    
+	    .cscenter_menu {
+	    
+		  position: relative;
+		}
+		
+		.triangle {
+		
+		  margin-left: 165px; /* 삼각형의 가로 길이의 절반 */
+		  width: 0;
+		  height: 0;
+		  border-top: 10px solid rgba(126, 125, 203, 0.26); /* 삼각형의 높이 */
+		  border-right: 10px solid transparent;
+		  border-left: 10px solid transparent;
+		}
     
-    </style> 
+    </style>
     
 </head>
 
@@ -45,8 +68,10 @@
 					<div class="cscenter_menu" >
 					
 						<div class="cscenter_menu_txt">			
-							<p><a href="cscenter_not_list.jsp" >공지사항</a></p>
+							<p style="margin-left: 30px;" ><a href="cscenter_not_list.jsp" >공지사항</a></p>
 						</div>	
+						
+						<div class="triangle"></div>
 					
 					</div>
 					
@@ -74,8 +99,8 @@
 
     <div class="board_wrap">
         <div class="board_title">
-            <strong>공지사항</strong>
-           <!-- <p>공지사항을 빠르고 정확하게 안내해드립니다.</p>  --> 
+            <h1 style="font-size: 40px;" >NOTICE</h1>
+			<h3 style="font-size: 20px;">공지사항</h3> 
         </div>
         
         <div class="board_list_wrap">
@@ -94,9 +119,9 @@
                
                ArrayList<N_MD> N_arr = user.select(); 
                
-               //int i = N_arr.size();
+               int i = N_arr.size();
                
-                for(int i=0 ; i <N_arr.size(); i++) {  
+                for(i=i-1 ; i >=0; i = i-1) {  
                 	
                 %>
                 	

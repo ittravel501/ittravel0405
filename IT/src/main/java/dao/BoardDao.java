@@ -15,7 +15,7 @@ public class BoardDao{
 	public BoardDao() { 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			String dbURL = "jdbc:mysql://localhost:3306/teamproject?useUnicode=true&characterEncoding=utf8";
+			String dbURL = "jdbc:mysql://localhost:3306/teamproject?useUnicode=true&characterEncoding=euc-kr";
 			String dbID = "root";
 			String dbPW = "eogkrrksek!1";
 			conn = DriverManager.getConnection(dbURL, dbID, dbPW);
@@ -268,7 +268,7 @@ public class BoardDao{
 		      String SQL ="select * from com_info WHERE "+searchField.trim();
 		      try {
 		    	  if(searchText != null && !searchText.equals("") ){//이거 빼면 안 나온다ㅜ 왜지?
-		                SQL +=" LIKE '%"+searchText+"%' order by com_num desc limit 10";
+		                SQL +=" LIKE '%"+searchText.trim()+"%' order by com_num desc limit 10";
 
 		            }
 		            PreparedStatement pstmt=conn.prepareStatement(SQL);

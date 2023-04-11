@@ -17,9 +17,40 @@
 	<script src="js/jquery.js"></script>
 	
 	<script src="js/slick-1.8.1/slick/slick.min.js"></script>
-	<!--수정-->
-
-	<!-- -->
+	
+<script>
+    $(document).ready(function() {
+        $('#choi').on('change', function() {
+            var choi = $(this).val();
+            $('#for, #kor, #alist, #blist, #glist, #klist').hide();
+            if (choi === '해외여행') {
+                $('#for').show();
+            } else if (choi === '국내여행') {
+                $('#kor').show();
+            }
+        });
+        
+        $('#for').on('change', function() {
+            var forVal = $(this).val();
+            $('#alist, #blist, #glist, #klist').hide();
+            if (forVal === '일본') {
+                $('#alist').show();
+            } else if (forVal === '동남아') {
+                $('#blist').show();
+            }
+        });
+        
+        $('#kor').on('change', function() {
+            var korVal = $(this).val();
+            $('#glist, #klist').hide();
+            if (korVal === '강원도') {
+                $('#glist').show();
+            } else if (korVal === '제주도') {
+                $('#klist').show();
+            }
+        });
+    });
+</script>
 	
 </head>
 <body>
@@ -75,6 +106,7 @@
 					</div>
 				</div>
 			</div>
+			<div>
 			<div id="all">
 				<div id="cat_wrap">
 					<div id="cat_wrap02">
@@ -82,33 +114,61 @@
 					<div id="cat_wrap01">
 						<div class="group">
 							<div class="select-group">
-								<select class="drop_02">
+							
+							<!-- 대분류 -->
+								<select class="drop_02" id="choi" onchange="onChoiSelectChange()">
+									<option>여행선택</option>
 									<option>해외여행</option>
-									<option>일본</option>
-									<option>동남아</option>
-									<option>홍콩·대만·중국</option>
-									<option>미주·하와이</option>
-									<option>유럽</option>
-								</select>
-								<select class="drop_02">
 									<option>국내여행</option>
-									<option>서울·경기·인천</option>
-									<option>강원도</option>
-									<option>경상도</option>
-									<option>전라도</option>
-									<option>충청도</option>
 								</select>
-									<select class="drop_02">
-									<option>제주도</option>
-									<option>제주시</option>
-									<option>서귀포시</option>
+								
+							<!-- 중분류 -->
+								<select class="drop_02" id="for" style="display:none;" onchange="onForSelectChange()">
+									<option>나라선택</option>
+									<option id="a">일본</option>
+									<option id="b">동남아</option>
+									<option id="c">홍콩·대만·중국</option>
+									<option id="d">미주·하와이</option>
+									<option id="e">유럽</option>
+								</select>
+								<select class="drop_02" id="kor" style="display:none;" onchange="onKorSelectChange()">
+									<option>지역선택</option>
+									<option id="f">서울·경기·인천</option>
+									<option id="g">강원도</option>
+									<option id="h">경상도</option>
+									<option id="i">전라도</option>
+									<option id="j">충청도</option>
+									<option id="k">제주도</option>
+								</select>
+								
+							<!-- 소분류 -->								
+								<select class="drop_02" id="alist" style="display:none;">
+									<option>도시선택</option>	
+									<option id="aa">오사카</option>
+									<option id="ab">도쿄</option>
+								</select>
+								<select class="drop_02" id="blist" style="display:none;">
+									<option>도시선택</option>	
+									<option id="ba">방콕</option>
+									<option id="bb">하노이</option>
+								</select>
+								<select class="drop_02" id="glist" style="display:none;">
+									<option>도시선택</option>	
+									<option id="ga">춘천</option>
+									<option id="gb">속초</option>
+								</select>
+								<select class="drop_02" id="klist" style="display:none;">
+									<option>도시선택</option>
+									<option id="ka">제주시</option>
+									<option id="kb">서귀포시</option>
 								</select>
 							</div>
 							<ul class="link-group">
-								<li><a href="#">입장권·패스·현지투어</a></li>
-								<li><a href="#">패키지·자유여행</a></li>
-								<li><a href="#">해외호텔·숙박</a></li>
-								<li><a href="#">지역별상품</a></li>
+								<li><a href="#">교통</a></li>
+								<li><a href="#">테마파크</a></li>
+								<li><a href="#">박물관</a></li>
+								<li><a href="#">레저·액티비티</a></li>
+								<li><a href="#">맛집</a></li>
 							</ul>
 						</div>
 					</div>
@@ -143,108 +203,136 @@
 				<div class="wrap001">
 					<div id="prod_con">
 						<ul>
-							<li>
-								<div class="prod_img"><a href="#"><img src="imgs/tour/tour01.jpg"></a></div>
-								<div class="prod_txt">
+							<li class="aa">
+								<div class="prod_img"><img src="imgs/tour/tour01.jpg"></div>
+								<div class="prod_txt" >
 									<div class="txt00">[히트상품]</div>
-									<div class="txt01"><br/>얼리버드 세부퍼시픽 <br/>특가좌석</div>
-									<div class="txt02"><br/>
-									세부 / 마닐라 편도 항공권 11%</div><br/>
+									<div class="txt01">
+										<div>얼리버드 세부퍼시픽</div>
+										<div>특가좌석</div>
+									</div>
+									<div class="txt02">세부 / 마닐라 편도 항공권<div>11</div>%</div>
+									
+									<div class="cal_wrap">
 									<div class="img03"><img src="imgs/tour/calender.png" style="width: 24px; opacity: 70%;"></div>
 									<div class="txt04">~9월 초 출발일</div>
-									<div class="txt05"><br/>899,000원~</div>
-									<div class="average"><br/>💜💜💜💜🤍<a href="count">[29]</a></div>
+									</div>
+									
+									<div class="txt05">899,000원~</div>
+									<div class="average">
+										<div><a href="#"><img src="imgs/tour/avg_45.png"></a></div>
+										<div><a href="#">[29]</a></div>
+									</div>
 								</div>
 							</li>
-							<li>
-								<div class="prod_img"><img src="imgs/tour/tour02.jpg"></div>
-								<div class="prod_txt">
+							<li class="aa">
+								<div class="prod_img"><img src="imgs/tour/tour01.jpg"></div>
+								<div class="prod_txt" >
 									<div class="txt00">[히트상품]</div>
-									<div class="txt01"><br/>얼리버드 세부퍼시픽 <br/>특가좌석</div>
-									<div class="txt02"><br/>
-									세부 / 마닐라 편도 항공권 11%</div><br/>
+									<div class="txt01">
+										<div>얼리버드 세부퍼시픽</div>
+										<div>특가좌석</div>
+									</div>
+									<div class="txt02">세부 / 마닐라 편도 항공권<div>11</div>%</div>
+									
+									<div class="cal_wrap">
 									<div class="img03"><img src="imgs/tour/calender.png" style="width: 24px; opacity: 70%;"></div>
 									<div class="txt04">~9월 초 출발일</div>
-									<div class="txt05"><br/>899,000원~</div>
-									<div class="average"><br/>💜💜💜💜💜<a href="count">[4]</a></div>
+									</div>
+									
+									<div class="txt05">899,000원~</div>
+									<div class="average">
+										<div><a href="#"><img src="imgs/tour/avg_45.png"></a></div>
+										<div><a href="#">[29]</a></div>
+									</div>
 								</div>
 							</li>
-							<li>
-								<div class="prod_img"><img src="imgs/tour/tour03.jpg"></div>
-								<div class="prod_txt">
+							<li class="aa">
+								<div class="prod_img"><img src="imgs/tour/tour01.jpg"></div>
+								<div class="prod_txt" >
 									<div class="txt00">[히트상품]</div>
-									<div class="txt01"><br/>얼리버드 세부퍼시픽 <br/>특가좌석</div>
-									<div class="txt02"><br/>
-									세부 / 마닐라 편도 항공권 11%</div><br/>
+									<div class="txt01">
+										<div>얼리버드 세부퍼시픽</div>
+										<div>특가좌석</div>
+									</div>
+									<div class="txt02">세부 / 마닐라 편도 항공권<div>11</div>%</div>
+									
+									<div class="cal_wrap">
 									<div class="img03"><img src="imgs/tour/calender.png" style="width: 24px; opacity: 70%;"></div>
 									<div class="txt04">~9월 초 출발일</div>
-									<div class="txt05"><br/>899,000원~</div>
-									<div class="average"><br/>💜💜💜💜🤍<a href="count">[12]</a></div>
+									</div>
+									
+									<div class="txt05">899,000원~</div>
+									<div class="average">
+										<div><a href="#"><img src="imgs/tour/avg_45.png"></a></div>
+										<div><a href="#">[29]</a></div>
+									</div>
 								</div>
 							</li>
-							<li>
-								<div class="prod_img"><img src="imgs/tour/tour04.jpg"></div>
-								<div class="prod_txt">
+							<li class="aa">
+								<div class="prod_img"><img src="imgs/tour/tour01.jpg"></div>
+								<div class="prod_txt" >
 									<div class="txt00">[히트상품]</div>
-									<div class="txt01"><br/>얼리버드 세부퍼시픽 <br/>특가좌석</div>
-									<div class="txt02"><br/>
-									세부 / 마닐라 편도 항공권 11%</div><br/>
+									<div class="txt01">
+										<div>얼리버드 세부퍼시픽</div>
+										<div>특가좌석</div>
+									</div>
+									<div class="txt02">세부 / 마닐라 편도 항공권<div>11</div>%</div>
+									
+									<div class="cal_wrap">
 									<div class="img03"><img src="imgs/tour/calender.png" style="width: 24px; opacity: 70%;"></div>
 									<div class="txt04">~9월 초 출발일</div>
-									<div class="txt05"><br/>899,000원~</div>
-									<div class="average"><br/>💜💜💜💜💜<a href="count">[92]</a></div>
+									</div>
+									
+									<div class="txt05">899,000원~</div>
+									<div class="average">
+										<div><a href="#"><img src="imgs/tour/avg_45.png"></a></div>
+										<div><a href="#">[29]</a></div>
+									</div>
 								</div>
 							</li>
-							<li>
-								<div class="prod_img"><img src="imgs/tour/tour05.jpg"></div>
-								<div class="prod_txt">
+							<li class="aa">
+								<div class="prod_img"><img src="imgs/tour/tour01.jpg"></div>
+								<div class="prod_txt" >
 									<div class="txt00">[히트상품]</div>
-									<div class="txt01"><br/>얼리버드 세부퍼시픽 <br/>특가좌석</div>
-									<div class="txt02"><br/>
-									세부 / 마닐라 편도 항공권 11%</div><br/>
+									<div class="txt01">
+										<div>얼리버드 세부퍼시픽</div>
+										<div>특가좌석</div>
+									</div>
+									<div class="txt02">세부 / 마닐라 편도 항공권<div>11</div>%</div>
+									
+									<div class="cal_wrap">
 									<div class="img03"><img src="imgs/tour/calender.png" style="width: 24px; opacity: 70%;"></div>
 									<div class="txt04">~9월 초 출발일</div>
-									<div class="txt05"><br/>899,000원~</div>
-									<div class="average"><br/>💜💜💜💜💜<a href="count">[29]</a></div>
+									</div>
+									
+									<div class="txt05">899,000원~</div>
+									<div class="average">
+										<div><a href="#"><img src="imgs/tour/avg_45.png"></a></div>
+										<div><a href="#">[29]</a></div>
+									</div> 
 								</div>
 							</li>
-							<li>
-								<div class="prod_img"><img src="imgs/tour/tour06.jpg"></div>
-								<div class="prod_txt">
+							<li class="aa">
+								<div class="prod_img"><img src="imgs/tour/tour01.jpg"></div>
+								<div class="prod_txt" >
 									<div class="txt00">[히트상품]</div>
-									<div class="txt01"><br/>얼리버드 세부퍼시픽 <br/>특가좌석</div>
-									<div class="txt02"><br/>
-									세부 / 마닐라 편도 항공권 11%</div><br/>
+									<div class="txt01">
+										<div>얼리버드 세부퍼시픽</div>
+										<div>특가좌석</div>
+									</div>
+									<div class="txt02">세부 / 마닐라 편도 항공권<div>11</div>%</div>
+									
+									<div class="cal_wrap">
 									<div class="img03"><img src="imgs/tour/calender.png" style="width: 24px; opacity: 70%;"></div>
 									<div class="txt04">~9월 초 출발일</div>
-									<div class="txt05"><br/>899,000원~</div>
-									<div class="average"><br/>💜💜💜💜💜<a href="count">[29]</a></div>
-								</div>
-							</li>
-							<li>
-								<div class="prod_img"><img src="imgs/tour/tour07.jpg"></div>
-								<div class="prod_txt">
-									<div class="txt00">[히트상품]</div>
-									<div class="txt01"><br/>얼리버드 세부퍼시픽 <br/>특가좌석</div>
-									<div class="txt02"><br/>
-									세부 / 마닐라 편도 항공권 11%</div><br/>
-									<div class="img03"><img src="imgs/tour/calender.png" style="width: 24px; opacity: 70%;"></div>
-									<div class="txt04">~9월 초 출발일</div>
-									<div class="txt05"><br/>899,000원~</div>
-									<div class="average"><br/>💜💜💜💜🤍<a href="count">[29]</a></div>
-								</div>
-							</li>
-							<li>
-								<div class="prod_img"><img src="imgs/tour/tour08.jpg"></div>
-								<div class="prod_txt">
-									<div class="txt00">[히트상품]</div>
-									<div class="txt01"><br/>얼리버드 세부퍼시픽 <br/>특가좌석</div>
-									<div class="txt02"><br/>
-									세부 / 마닐라 편도 항공권 11%</div><br/>
-									<div class="img03"><img src="imgs/tours/calender.png" style="width: 24px; opacity: 70%;"></div>
-									<div class="txt04">~9월 초 출발일</div>
-									<div class="txt05"><br/>899,000원~</div>
-									<div class="average"><br/>💜💜💜💜💜<a href="count">[225]</a></div>
+									</div>
+									
+									<div class="txt05">899,000원~</div>
+									<div class="average">
+										<div><a href="#"><img src="imgs/tour/avg_45.png"></a></div>
+										<div><a href="#">[29]</a></div>
+									</div>
 								</div>
 							</li>
 						</ul>		
@@ -263,6 +351,7 @@
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 
 	  <footer>

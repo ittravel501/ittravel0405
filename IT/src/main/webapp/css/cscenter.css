@@ -55,10 +55,11 @@ section .cscenter_menu_wrap{
 }
 
 section .cscenter_menu{
-	width: 33%;
+	width: 32.4%;
 	height: 50px;
 	float: left;
 	/*padding-left: 70px;*/
+	margin-right: 10px;
 	
 }
 
@@ -75,6 +76,7 @@ section .cscenter_menu_txt{
 	width: 150px;
 	height: 50px;
 	margin: 0 auto;
+	line-height: 50px;
 }
 
 

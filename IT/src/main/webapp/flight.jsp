@@ -55,20 +55,9 @@
                             <div class="bowl">
                     
                             </div>
-                            <div class="select_area">
-                            <select class="select1">
-                              <option value="none" selected> 출발지 선택 </option>
-                              <option value="option 1">option 1</option>
-                              <option value="option 2">option 2</option>
-                              <option value="option 3">option 3</option>
-                              </select>
-                              <select class="select1">
-                              <option value="none" selected> 도착지 선택 </option>
-                              <option value="option 1">option 1</option>
-                              <option value="option 2">option 2</option>
-                              <option value="option 3">option 3</option>
-                              </select>
-                            </div>
+                            
+                            <!-- 출발지 / 도착지  -->
+            				<jsp:include page="flightselectlist.jsp"></jsp:include>
                           
                             <div class="select_area2">
                               <label class="come1"> 가는날</label>
@@ -80,44 +69,44 @@
                             </div>
 
                               <div class="select_area2">
-                              <label> 탑승 인원 </label>
+                              <label > 탑승 인원 </label>
                               <select class="personwrap1">
-                              <option value="none" selected> 성인</option>
-                              <option value="option 1"> 1명</option>
-                              <option value="option 2"> 2명 </option>
-                              <option value="option 3"> 3명 </option>
-                              <option value="option 1"> 4명</option>
-                              <option value="option 2"> 5명 </option>
-                              <option value="option 3"> 6명 </option>
-                              <option value="option 1"> 7명</option>
-                              <option value="option 2"> 8명 </option>
-                              <option value="option 3"> 9명 </option>
+                              <option value="0" selected> 성인</option>
+                              <option value="성인1"> 성인 1명</option>
+                              <option value="성인2"> 성인 2명 </option>
+                              <option value="성인3"> 성인 3명 </option>
+                              <option value="성인4"> 성인 4명</option>
+                              <option value="성인5"> 성인 5명 </option>
+                              <option value="성인6"> 성인 6명 </option>
+                              <option value="성인7"> 성인 7명</option>
+                              <option value="성인8"> 성인 8명 </option>
+                              <option value="성인9"> 성인 9명 </option>
                       
                               </select>
-                              <select class="personwrap1">
-                              <option value="none" selected> 소아 </option>
-                              <option value="option 1"> 1명</option>
-                              <option value="option 2"> 2명 </option>
-                              <option value="option 3"> 3명 </option>
-                              <option value="option 1"> 4명</option>
-                              <option value="option 2"> 5명 </option>
-                              <option value="option 3"> 6명 </option>
-                              <option value="option 1"> 7명</option>
-                              <option value="option 2"> 8명 </option>
-                              <option value="option 3"> 9명 </option>
+                              <select class="personwrap2">
+                              <option value="0" selected> 소아 </option>
+                              <option value="소아1"> 소아 1명</option>
+                              <option value="소아2"> 소아 2명 </option>
+                              <option value="소아3"> 소아 3명 </option>
+                              <option value="소아4"> 소아 4명</option>
+                              <option value="소아5"> 소아 5명 </option>
+                              <option value="소아6"> 소아 6명 </option>
+                              <option value="소아7"> 소아 7명</option>
+                              <option value="소아8"> 소아 8명 </option>
+                              <option value="소아9"> 소아 9명 </option>
                         
                               </select>
-                              <select class="personwrap1">
+                              <select class="personwrap2">
                               <option value="none" selected> 유아 </option>
-                             <option value="option 1"> 1명</option>
-                              <option value="option 2"> 2명 </option>
-                              <option value="option 3"> 3명 </option>
-                              <option value="option 1"> 4명</option>
-                              <option value="option 2"> 5명 </option>
-                              <option value="option 3"> 6명 </option>
-                              <option value="option 1"> 7명</option>
-                              <option value="option 2"> 8명 </option>
-                              <option value="option 3"> 9명 </option>
+                             <option value="유아1"> 유아 1명</option>
+                              <option value="유아2"> 유아 2명 </option>
+                              <option value="유아3"> 유아 3명 </option>
+                              <option value="유아4"> 유아 4명</option>
+                              <option value="유아5"> 유아 5명 </option>
+                              <option value="유아6"> 유아 6명 </option>
+                              <option value="유아7"> 유아 7명</option>
+                              <option value="유아8"> 유아 8명 </option>
+                              <option value="유아9"> 유아 9명 </option>
                           
                               </select>
                               <input type="button" value="항공권 검색">
@@ -226,29 +215,29 @@
             <h2>국내 특가 항공권 ✈ </h2>
             <div class="imgdiv">
               <div class="salediv1">
-                 <img src="./flightimgs/뉴욕1.jpg" alt="" >
-                 <div class="fontdiv2"> 자유의 나라로 </div>
-                  <div class="fontdiv1"> 인천 ↔ 뉴욕 </div>
-                <div class="fontdiv3"> 1,096,100원~ </div>
+                 <img src="./flightimgs/제주도.jpg" alt="" >
+                 <div class="fontdiv2"> 제주로 떠나요 </div>
+                  <div class="fontdiv1"> 김포 ↔ 제주 </div>
+                <div class="fontdiv3"> 90,000원~ </div>
               </div>
 
                  <div class="salediv1">
-                        <img src="./flightimgs/방콕1.jpg" alt="" >
-                        <div class="fontdiv2"> 지금 가장 뜨는 곳 </div>
-                        <div class="fontdiv1"> 인천 ↔ 방콕 </div>
-                        <div class="fontdiv3"> 383,600원~ </div>
+                        <img src="./flightimgs/부산.jpg" alt="" >
+                        <div class="fontdiv2"> 지금 부산 바다로 </div>
+                        <div class="fontdiv1"> 김포 ↔ 부산 </div>
+                        <div class="fontdiv3"> 50,000원~ </div>
               </div>
                  <div class="salediv2">
-                        <img src="./flightimgs/하와이1.jpg" alt="" >
-                        <div class="fontdiv2"> 휴양이 필요해 </div>
-                        <div class="fontdiv1"> 인천 ↔ 하와이 </div>
-                        <div class="fontdiv3"> 1,031,400원~ </div>
+                        <img src="./flightimgs/양양제주.jpg" alt="" >
+                        <div class="fontdiv2"> 양양에서 제주로! </div>
+                        <div class="fontdiv1"> 양양 ↔ 제주 </div>
+                        <div class="fontdiv3"> 90,000원~  </div>
               </div>
                  <div class="salediv3">
-                        <img src="./flightimgs/파리1.jpg" alt="" >
-                        <div class="fontdiv2"> MD 강력 추천 </div>
-                        <div class="fontdiv1"> 인천 ↔ 파리 </div>
-                        <div class="fontdiv3"> 781,300원~ </div>
+                        <img src="./flightimgs/서울서울.jpg" alt="" >
+                        <div class="fontdiv2"> 떠나요 서울로 </div>
+                        <div class="fontdiv1"> 여수 ↔ 김포 </div>
+                        <div class="fontdiv3"> 80,000원~  </div>
               </div>
               
             </div>
@@ -262,7 +251,11 @@
     </div>
 
      </section>
-
+		
+		        <div class="floating">
+          <img src="./flightimgs/이동봉사 신청.png" style="opacity: 100%;"></a>
+          </div>
+          
     <jsp:include page="footer.jsp"></jsp:include>
     </body>
 </html>

@@ -155,8 +155,8 @@
     for (let i = 0; i < addMoneyButtons.length; i++) {
       addMemo100Buttons[i].addEventListener('click', show);
     }
-    
-    document.getElementById("addmemo1").addEventListener("click", function() {
-        document.getElementById("memo-textarea").focus();
-          });
-    
+//    
+//    document.getElementById("addmemo1").addEventListener("click", function() {
+//        document.getElementById("memo-textarea").focus();
+//          });
+//    

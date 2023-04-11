@@ -224,6 +224,15 @@ transition: margin-left 200ms ease;
 		margin-right : 5.5px; float : left; box-sizing: border-box;
 		text-align: center; font-size: 16px; font-family: 'TheJamsil3Regular'; letter-spacing: -1px; }
 
+button[type=button]{
+	
+	background-color : #7e7dcb; border-radius: 5px; color : white; width : 95px; height : 35px; border : none; margin-top : 15px;
+		margin-right : 5.5px; float : left; box-sizing: border-box;
+		text-align: center; font-size: 13px; font-family: 'TheJamsil3Regular'; letter-spacing: 0px; 
+	    font-family: TheJamsil2Light;
+	
+}
+
 
 	#desearbtn{
 

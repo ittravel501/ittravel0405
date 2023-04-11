@@ -26,7 +26,7 @@ user.Q_update(qna_title, qna_con, qna_num);
 
 %>
 
- 
+
 <script>
     alert("수정이 완료되었습니다.");
     location.href = "cscenter_qna_list.jsp";
