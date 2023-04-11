@@ -1,14 +1,18 @@
 package dao;
 
+import static db.JdbcUtil.close;
+
 import java.sql.Connection;
 
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Date;
 
+import dto.FAQ_MD;
 import dto.Join_MD;
 import dto.N_MD;
 import dto.QNA_MD;
@@ -321,6 +325,7 @@ public void Q_insert(QNA_MD md) {	 //select 메소드, 리턴 해서 반환값�
 		String qna_con = md.getQna_con(); //문의 내용
 		String qna_img = md.getQna_img(); //문의 첨부파일
 		String qna_reply = "답변대기"; //답변 상황 - 답변대기 or 답변완료 >이제 등록해서 그냥 답변대기로 설정해놓음
+		String qna_open = md.getQna_open();
 		String qna_mem_id = md.getQna_mem_id(); //문의한 아이디 
 
 		Date currentDate = new Date();
@@ -328,7 +333,7 @@ public void Q_insert(QNA_MD md) {	 //select 메소드, 리턴 해서 반환값�
 		
 		//큐엔에이 8개 넣어야 함.
 		
-		String ss = String.format("insert into qna_info values ( %s ,'%s','%s','%s','%s','%s','%s','%s' )",qna_num, qna_fil ,qna_title, qna_con,qna_img, qna_date,qna_reply,qna_mem_id);
+		String ss = String.format("insert into qna_info values ( %s ,'%s','%s','%s','%s','%s','%s','%s','%s' )",qna_num, qna_fil ,qna_title, qna_con,qna_img, qna_date,qna_reply,qna_open,qna_mem_id);
 		
 		int rowNum = stmt.executeUpdate(ss);
 		if(rowNum <1) {
@@ -372,6 +377,7 @@ try {
 		n_list.setQna_img(rs.getString("qna_img"));
 		n_list.setQna_date(rs.getString("qna_date"));
 		n_list.setQna_reply("답변대기");
+		n_list.setQna_open(rs.getString("qna_open"));
 		n_list.setQna_mem_id(rs.getString("qna_mem_id"));
 		
 		
@@ -412,6 +418,7 @@ try {
 		//n_list.setPw(rs.getString("pw"));
 		n_list.setQna_con(rs.getString("qna_con"));
 		n_list.setQna_mem_id(rs.getString("qna_mem_id"));
+		n_list.setQna_open(rs.getString("qna_open"));
 		n_list.setQna_date(rs.getString("qna_date"));
 		//n_list.set_view(rs.getInt("not_view"));
 
@@ -465,10 +472,130 @@ try { //실행
 		diconn(); //데이터베이스 연결 종료
 	}
 
+}
 
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+public ArrayList<FAQ_MD> F_select() {
+
+conn();
+ArrayList<FAQ_MD> N_list = new ArrayList<> ();
+
+try {
+	
+	ResultSet rs = stmt.executeQuery("select*from faq_info;");
+	
+	while(rs.next()) {
+		
+		FAQ_MD n_list = new FAQ_MD();
+		
+		n_list.setFaq_num(rs.getInt("faq_num"));
+		n_list.setFaq_title(rs.getString("faq_title"));
+		n_list.setFaq_con(rs.getString("faq_con"));
+		n_list.setFaq_view(rs.getInt("faq_view"));
+		
+		N_list.add(n_list); //arraylist에 한 줄 저장 함.		
+
+	}
+	
+	}catch (Exception e) {
+		System.out.println("외않되");
+		
+		// TODO: handle exception
+		
+	}finally {
+		
+		diconn();
+		
+	}
+	return N_list;
 
 }
 
+public ArrayList<FAQ_MD> F_search(String faq_search) {
+
+	conn();
+	ArrayList<FAQ_MD> F_list = new ArrayList<> ();
+	
+	try {
+		
+		//ResultSet rs = stmt.executeQuery("select faq_title,faq_con from faq_info;");
+		//faq에 제목이랑 내용만 셀렉한다.
+		
+		// 검색어를 포함한 faq_title 또는 faq_con을 검색하는 쿼리입니다.
+			String query = "SELECT faq_title, faq_con FROM faq_info WHERE faq_title LIKE '%" + faq_search + "%' OR faq_con LIKE '%" + faq_search + "%'";
+			ResultSet rs = stmt.executeQuery(query);
+		
+		while(rs.next()) {
+			
+			FAQ_MD f_list = new FAQ_MD();
+			
+			//F_list.setFaq_num(rs.getInt("faq_num"));
+			f_list.setFaq_title(rs.getString("faq_title"));
+			f_list.setFaq_con(rs.getString("faq_con"));
+			
+			F_list.add(f_list); 	
+	
+		}
+		
+	}catch (Exception e) {
+		System.out.println("외않되");
+		
+		// TODO: handle exception
+		
+	}finally {
+		
+		diconn();
+		
+	}
+	return F_list;
+
+}
+
+public Integer F_viewcount (String faq_num) {
+	
+	conn();
+	
+	int f_view = 0 ;
+	
+	try { //실행
+
+		ResultSet rs = stmt.executeQuery("select*from faq_info where faq_num= '"+ faq_num +"' ;");
+		// 글번호가 num인 데이터들을 select한다. 
+		
+		if(rs.next()) {
+			int vv = rs.getInt("faq_view"); //rs에 저장된 int 이름이 not_veiw인 것을 int vv라고 정한다. 
+										  //이 ("not_view")는 필드명으로 지정한 것으로 하는 것인가?? 어디서 저한 name이지??!
+			f_view = vv + 1; //가져온 조회수에 1을 더하여 조회수값에 저장한다. 	
+		}
+
+		String ss = String.format("update faq_info set faq_view= '" + f_view + "' where faq_num= '"+ faq_num +"' ;"  ); //글번호가 num인 레코드를 조회수 n_view로 수정한다.  
+		
+		System.out.println(ss);
+		
+		int rowNum = stmt.executeUpdate(ss);
+		
+		if(rowNum <1) {
+			throw new Exception("데이터를 DB에 입력할 수 없습니다");
+		}
+		System.out.println("됐냥??");
+	
+	}
+		
+		catch(Exception e) {	//예외처리
+			
+			System.out.println(e);	
+			System.out.println("조회수 수정 결과 저장이,,,");
+						
+		}finally{
+			
+			diconn(); //데이터베이스 연결 종료
+		}
+	return f_view;
+	
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

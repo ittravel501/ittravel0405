@@ -9,8 +9,15 @@ public class QNA_MD {
 	String qna_img;
 	String qna_date;
 	String qna_reply;
+	String qna_open;
 	String qna_mem_id;
 	
+	public String getQna_open() {
+		return qna_open;
+	}
+	public void setQna_open(String qna_open) {
+		this.qna_open = qna_open;
+	}
 	public int getQna_num() {
 		return qna_num;
 	}

@@ -14,18 +14,40 @@
     <title>Q&A</title>
     <link rel="stylesheet" href="css/css.css">
     <link rel="stylesheet" href="css/cscenter.css">
+    <link rel="stylesheet" href="css/cscenter_qna.css">
     
     
     <style type="text/css">
     
-	    	section .cscenter_menu_wrap .cscenter_menu:nth-child(3) {
-	      background-color: rgba(126, 125, 203, 0.26);
+    section .cscenter_menu_wrap .cscenter_menu:first-child, .cscenter_menu:nth-child(2) {
+	      background-color: #f6f6f6;
+	      border-radius: 10px; 
 	    }
+    
+	    section .cscenter_menu_wrap .cscenter_menu:nth-child(3) {
+	      background-color: rgba(126, 125, 203, 0.26);
+	      border-radius: 10px;
+	    }
+	    
+	    .cscenter_menu {
+	    
+		  position: relative;
+		}
+		
+		.triangle {
+		
+		  margin-left: 165px; /* 삼각형의 가로 길이의 절반 */
+		  width: 0;
+		  height: 0;
+		  border-top: 10px solid rgba(126, 125, 203, 0.26); /* 삼각형의 높이 */
+		  border-right: 10px solid transparent;
+		  border-left: 10px solid transparent;
+		}
     
     </style>
     
 </head>
- 
+
 
 <jsp:useBean id="user" class="dao.N_controller"/> 
 
@@ -33,8 +55,8 @@
 
 <body>
 
-<header>
    <jsp:include page="header.jsp" />
+   
 <section>
 
 
@@ -45,7 +67,7 @@
 					<div class="cscenter_menu" >
 					
 						<div class="cscenter_menu_txt">			
-							<p><a href="cscenter_not_list.jsp" >공지사항</a></p>
+							<p style="margin-left: 30px;"><a href="cscenter_not_list.jsp" >공지사항</a></p>
 						</div>	
 					
 					</div>
@@ -64,6 +86,8 @@
 							<p><a href="cscenter_qna_list.jsp">직접 문의하기</a></p>
 
 						</div>
+						
+						<div class="triangle"></div>
 
 					</div>
 				
@@ -71,12 +95,22 @@
 							
 		</div>
 
-
+<form action="cscenter_qna_list_date.jsp">
     <div class="board_wrap">
-        <div class="board_title">
-            <strong>직접 문의하기</strong>
-           <!-- <p>공지사항을 빠르고 정확하게 안내해드립니다.</p>  --> 
+        <div class="qna_title">
+            <h1 style="font-size: 40px;" >Q&A</h1>
+			<h3 style="font-size: 20px;" >직접 문의하기</h3> 
+			
         </div>
+        
+        
+        <div class="qna_date_wrap" >        
+        	<input type="date"  name="start_date" value="<%= (String) session.getAttribute("start_date") %>" >
+			<input type="date" name="end_date" value="<%= (String) session.getAttribute("end_date") %>" >
+			<input type="submit" value="설정하기" >
+        
+        </div>
+        
         
         <div class="board_list_wrap">
             <div class="board_list">
@@ -93,16 +127,33 @@
                 <div >
                <%
                
-               ArrayList<QNA_MD> N_arr = user.Q_select(); 
+               ArrayList<QNA_MD> N_arr = user.Q_select();
                
-               //int i = N_arr.size();
                
-                for(int i=0 ; i <N_arr.size(); i++) {  
+               
+               int i = N_arr.size();
+               
+                for(i= i-1 ; i >=0; i = i-1) {  
                 	
-                %>
+     
+                	%>
                 	
                     <div class="num"><%=N_arr.get(i).getQna_fil() %></div>
-                    <div class="title"><a href="cscenter_qna_view.jsp?qna_num=<%=N_arr.get(i).getQna_num()%>"><%=N_arr.get(i).getQna_title()%></a></div>
+                    
+                    <div class="title">
+                    
+				        <a href="cscenter_qna_view.jsp?qna_num=<%=N_arr.get(i).getQna_num()%>">
+				        
+				        <% if(N_arr.get(i).getQna_open().equals("비공개")) { %>
+				        
+				            <img src="cscenterimg/qna_secret.png">
+				        <% } %>
+				        
+				        <%=N_arr.get(i).getQna_title()%></a>
+				        
+				    </div>
+                    
+                    
                     <div class="writer"><%=N_arr.get(i).getQna_mem_id() %></div>
                     <div class="writer"><%=N_arr.get(i).getQna_reply() %></div>
                     <div class="date"><%=N_arr.get(i).getQna_date() %></div>
@@ -117,7 +168,7 @@
             
        
             <div class="bt_wrap">
-                <a href="cscenter_qna_write.jsp" class="on">등록</a>
+                <a href="cscenter_qna_write.jsp" class="on" style="margin-top: 50px;" >등록</a>
                 <!--<a href="#">수정</a>-->
             </div>
             
@@ -126,6 +177,8 @@
             
         </div>
     </div>
+    </form>
+    
     </section>
     
     <footer>

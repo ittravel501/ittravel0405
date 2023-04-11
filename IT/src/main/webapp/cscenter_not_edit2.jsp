@@ -23,7 +23,7 @@ user.not_update(not_title, not_con, not_num);
 
 //response.sendRedirect("N_list.jsp");
 
-%> 
+%>
 
 
 <script>

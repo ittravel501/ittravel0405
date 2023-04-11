@@ -21,7 +21,7 @@
 </header> 	
 
 <section style="height: 700px">
-    <div class="board_wrap"> 
+    <div class="board_wrap">
         <div class="board_title">
             <h2>공지사항</h2>
         </div>

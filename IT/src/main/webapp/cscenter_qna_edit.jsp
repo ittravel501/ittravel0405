@@ -18,7 +18,7 @@
 </head>
 
 <%
- 
+
 
 String qna_title = request.getParameter("qna_title");
 String qna_num = request.getParameter("qna_num"); //int여도 getParameter로 받으면 String으로 받는다!

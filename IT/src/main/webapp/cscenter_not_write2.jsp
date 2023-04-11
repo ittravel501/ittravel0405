@@ -17,7 +17,7 @@
 request.setCharacterEncoding("utf-8");
 
 
- 
+
 N_MD md = new N_MD();
 
 //String numString = request.getParameter("num");
