@@ -55,13 +55,13 @@
                             <div class="bowl">
                     
                             </div>
-                            
+                            <form action="flightAction.jsp" method="post">
                             <!-- 출발지 / 도착지  -->
             				<jsp:include page="flightselectlist.jsp"></jsp:include>
                           
                             <div class="select_area2">
                               <label class="come1"> 가는날</label>
-                              <input type="date" class="date1">
+                              <input type="date" class="date1" name="air_dday">
               
                                <label class="come2"> 오는날</label>
                               <input type="date" class="date2">
@@ -109,9 +109,9 @@
                               <option value="유아9"> 유아 9명 </option>
                           
                               </select>
-                              <input type="button" value="항공권 검색">
+                              <input type="submit" value="항공권 검색">
                             </div>
-
+							</form>
                           </div>  
                         </div>
                       </div>
