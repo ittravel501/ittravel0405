@@ -70,7 +70,7 @@ div.prod_txt {
     color: #7E7DCB;
     width: 100%;}
 .txt01 { 
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: bold;
     width:100%;
     align-items: center;
@@ -80,13 +80,14 @@ div.prod_txt {
 .cal_wrap{ display:flex; text-align:left; align-items:center;}
 .img03 { float:left; height:10%; }
 .txt04 { opacity:70%; float: left; width:100%;}
-.txt05 { font-size: 1.5em;
+.txt05 { font-size: 1.3em;
     font-weight: bold;
     width: 100%;
     display: grid;
     align-items: center;}
 .average { display:flex; width:100%;align-items: center;}
-.average a img { height:25px;}
+.average a img { height:25px; margin-left: -7px;
+    margin-top: 3px;}
 .count { color:#7E7DCB; }
 .count:hover { text-decoration: underline;}
 

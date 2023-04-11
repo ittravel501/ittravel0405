@@ -220,8 +220,8 @@
 									
 									<div class="txt05">899,000원~</div>
 									<div class="average">
-										<div><a href="#"><img src="imgs/tour/avg_45.png"></a></div>
-										<div><a href="#">[29]</a></div>
+										<a href="#"><img src="imgs/tour/avg_45.png"></a>
+										<a href="#">[29]</a>
 									</div>
 								</div>
 							</li>
