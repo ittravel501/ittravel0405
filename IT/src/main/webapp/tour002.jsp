@@ -106,6 +106,7 @@
 					</div>
 				</div>
 			</div>
+			<div>
 			<div id="all">
 				<div id="cat_wrap">
 					<div id="cat_wrap02">
@@ -163,9 +164,11 @@
 								</select>
 							</div>
 							<ul class="link-group">
-								<li><a href="#">입장권·패스·현지투어</a></li>
-								<li><a href="#">패키지·자유여행</a></li>
-								<li><a href="#">해외호텔·숙박</a></li>
+								<li><a href="#">교통</a></li>
+								<li><a href="#">테마파크</a></li>
+								<li><a href="#">박물관</a></li>
+								<li><a href="#">레저·액티비티</a></li>
+								<li><a href="#">맛집</a></li>
 							</ul>
 						</div>
 					</div>
@@ -200,108 +203,136 @@
 				<div class="wrap001">
 					<div id="prod_con">
 						<ul>
-							<li>
-								<div class="prod_img"><a href="#"><img src="imgs/tour/tour01.jpg"></a></div>
+							<li class="aa">
+								<div class="prod_img"><img src="imgs/tour/tour01.jpg"></div>
 								<div class="prod_txt" >
 									<div class="txt00">[히트상품]</div>
-									<div class="txt01"><br/>얼리버드 세부퍼시픽 <br/>특가좌석</div>
-									<div class="txt02"><br/>
-									세부 / 마닐라 편도 항공권 11%</div><br/>
+									<div class="txt01">
+										<div>얼리버드 세부퍼시픽</div>
+										<div>특가좌석</div>
+									</div>
+									<div class="txt02">세부 / 마닐라 편도 항공권<div>11</div>%</div>
+									
+									<div class="cal_wrap">
 									<div class="img03"><img src="imgs/tour/calender.png" style="width: 24px; opacity: 70%;"></div>
 									<div class="txt04">~9월 초 출발일</div>
-									<div class="txt05"><br/>899,000원~</div>
-									<div class="average"><br/>💜💜💜💜🤍<a href="count">[29]</a></div>
+									</div>
+									
+									<div class="txt05">899,000원~</div>
+									<div class="average">
+										<div><a href="#"><img src="imgs/tour/avg_45.png"></a></div>
+										<div><a href="#">[29]</a></div>
+									</div>
 								</div>
 							</li>
-							<li>
-								<div class="prod_img"><img src="imgs/tour/tour02.jpg"></div>
-								<div class="prod_txt">
+							<li class="aa">
+								<div class="prod_img"><img src="imgs/tour/tour01.jpg"></div>
+								<div class="prod_txt" >
 									<div class="txt00">[히트상품]</div>
-									<div class="txt01"><br/>얼리버드 세부퍼시픽 <br/>특가좌석</div>
-									<div class="txt02"><br/>
-									세부 / 마닐라 편도 항공권 11%</div><br/>
+									<div class="txt01">
+										<div>얼리버드 세부퍼시픽</div>
+										<div>특가좌석</div>
+									</div>
+									<div class="txt02">세부 / 마닐라 편도 항공권<div>11</div>%</div>
+									
+									<div class="cal_wrap">
 									<div class="img03"><img src="imgs/tour/calender.png" style="width: 24px; opacity: 70%;"></div>
 									<div class="txt04">~9월 초 출발일</div>
-									<div class="txt05"><br/>899,000원~</div>
-									<div class="average"><br/>💜💜💜💜💜<a href="count">[4]</a></div>
+									</div>
+									
+									<div class="txt05">899,000원~</div>
+									<div class="average">
+										<div><a href="#"><img src="imgs/tour/avg_45.png"></a></div>
+										<div><a href="#">[29]</a></div>
+									</div>
 								</div>
 							</li>
-							<li>
-								<div class="prod_img"><img src="imgs/tour/tour03.jpg"></div>
-								<div class="prod_txt">
+							<li class="aa">
+								<div class="prod_img"><img src="imgs/tour/tour01.jpg"></div>
+								<div class="prod_txt" >
 									<div class="txt00">[히트상품]</div>
-									<div class="txt01"><br/>얼리버드 세부퍼시픽 <br/>특가좌석</div>
-									<div class="txt02"><br/>
-									세부 / 마닐라 편도 항공권 11%</div><br/>
+									<div class="txt01">
+										<div>얼리버드 세부퍼시픽</div>
+										<div>특가좌석</div>
+									</div>
+									<div class="txt02">세부 / 마닐라 편도 항공권<div>11</div>%</div>
+									
+									<div class="cal_wrap">
 									<div class="img03"><img src="imgs/tour/calender.png" style="width: 24px; opacity: 70%;"></div>
 									<div class="txt04">~9월 초 출발일</div>
-									<div class="txt05"><br/>899,000원~</div>
-									<div class="average"><br/>💜💜💜💜🤍<a href="count">[12]</a></div>
+									</div>
+									
+									<div class="txt05">899,000원~</div>
+									<div class="average">
+										<div><a href="#"><img src="imgs/tour/avg_45.png"></a></div>
+										<div><a href="#">[29]</a></div>
+									</div>
 								</div>
 							</li>
-							<li>
-								<div class="prod_img"><img src="imgs/tour/tour04.jpg"></div>
-								<div class="prod_txt">
+							<li class="aa">
+								<div class="prod_img"><img src="imgs/tour/tour01.jpg"></div>
+								<div class="prod_txt" >
 									<div class="txt00">[히트상품]</div>
-									<div class="txt01"><br/>얼리버드 세부퍼시픽 <br/>특가좌석</div>
-									<div class="txt02"><br/>
-									세부 / 마닐라 편도 항공권 11%</div><br/>
+									<div class="txt01">
+										<div>얼리버드 세부퍼시픽</div>
+										<div>특가좌석</div>
+									</div>
+									<div class="txt02">세부 / 마닐라 편도 항공권<div>11</div>%</div>
+									
+									<div class="cal_wrap">
 									<div class="img03"><img src="imgs/tour/calender.png" style="width: 24px; opacity: 70%;"></div>
 									<div class="txt04">~9월 초 출발일</div>
-									<div class="txt05"><br/>899,000원~</div>
-									<div class="average"><br/>💜💜💜💜💜<a href="count">[92]</a></div>
+									</div>
+									
+									<div class="txt05">899,000원~</div>
+									<div class="average">
+										<div><a href="#"><img src="imgs/tour/avg_45.png"></a></div>
+										<div><a href="#">[29]</a></div>
+									</div>
 								</div>
 							</li>
-							<li>
-								<div class="prod_img"><img src="imgs/tour/tour05.jpg"></div>
-								<div class="prod_txt">
+							<li class="aa">
+								<div class="prod_img"><img src="imgs/tour/tour01.jpg"></div>
+								<div class="prod_txt" >
 									<div class="txt00">[히트상품]</div>
-									<div class="txt01"><br/>얼리버드 세부퍼시픽 <br/>특가좌석</div>
-									<div class="txt02"><br/>
-									세부 / 마닐라 편도 항공권 11%</div><br/>
+									<div class="txt01">
+										<div>얼리버드 세부퍼시픽</div>
+										<div>특가좌석</div>
+									</div>
+									<div class="txt02">세부 / 마닐라 편도 항공권<div>11</div>%</div>
+									
+									<div class="cal_wrap">
 									<div class="img03"><img src="imgs/tour/calender.png" style="width: 24px; opacity: 70%;"></div>
 									<div class="txt04">~9월 초 출발일</div>
-									<div class="txt05"><br/>899,000원~</div>
-									<div class="average"><br/>💜💜💜💜💜<a href="count">[29]</a></div>
+									</div>
+									
+									<div class="txt05">899,000원~</div>
+									<div class="average">
+										<div><a href="#"><img src="imgs/tour/avg_45.png"></a></div>
+										<div><a href="#">[29]</a></div>
+									</div>
 								</div>
 							</li>
-							<li>
-								<div class="prod_img"><img src="imgs/tour/tour06.jpg"></div>
-								<div class="prod_txt">
+							<li class="aa">
+								<div class="prod_img"><img src="imgs/tour/tour01.jpg"></div>
+								<div class="prod_txt" >
 									<div class="txt00">[히트상품]</div>
-									<div class="txt01"><br/>얼리버드 세부퍼시픽 <br/>특가좌석</div>
-									<div class="txt02"><br/>
-									세부 / 마닐라 편도 항공권 11%</div><br/>
+									<div class="txt01">
+										<div>얼리버드 세부퍼시픽</div>
+										<div>특가좌석</div>
+									</div>
+									<div class="txt02">세부 / 마닐라 편도 항공권<div>11</div>%</div>
+									
+									<div class="cal_wrap">
 									<div class="img03"><img src="imgs/tour/calender.png" style="width: 24px; opacity: 70%;"></div>
 									<div class="txt04">~9월 초 출발일</div>
-									<div class="txt05"><br/>899,000원~</div>
-									<div class="average"><br/>💜💜💜💜💜<a href="count">[29]</a></div>
-								</div>
-							</li>
-							<li>
-								<div class="prod_img"><img src="imgs/tour/tour07.jpg"></div>
-								<div class="prod_txt">
-									<div class="txt00">[히트상품]</div>
-									<div class="txt01"><br/>얼리버드 세부퍼시픽 <br/>특가좌석</div>
-									<div class="txt02"><br/>
-									세부 / 마닐라 편도 항공권 11%</div><br/>
-									<div class="img03"><img src="imgs/tour/calender.png" style="width: 24px; opacity: 70%;"></div>
-									<div class="txt04">~9월 초 출발일</div>
-									<div class="txt05"><br/>899,000원~</div>
-									<div class="average"><br/>💜💜💜💜🤍<a href="count">[29]</a></div>
-								</div>
-							</li>
-							<li>
-								<div class="prod_img"><img src="imgs/tour/tour08.jpg"></div>
-								<div class="prod_txt">
-									<div class="txt00">[히트상품]</div>
-									<div class="txt01"><br/>얼리버드 세부퍼시픽 <br/>특가좌석</div>
-									<div class="txt02"><br/>
-									세부 / 마닐라 편도 항공권 11%</div><br/>
-									<div class="img03"><img src="imgs/tours/calender.png" style="width: 24px; opacity: 70%;"></div>
-									<div class="txt04">~9월 초 출발일</div>
-									<div class="txt05"><br/>899,000원~</div>
-									<div class="average"><br/>💜💜💜💜💜<a href="count">[225]</a></div>
+									</div>
+									
+									<div class="txt05">899,000원~</div>
+									<div class="average">
+										<div><a href="#"><img src="imgs/tour/avg_45.png"></a></div>
+										<div><a href="#">[29]</a></div>
+									</div>
 								</div>
 							</li>
 						</ul>		
@@ -320,6 +351,7 @@
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 
 	  <footer>

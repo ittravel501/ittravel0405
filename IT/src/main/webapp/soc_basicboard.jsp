@@ -18,61 +18,44 @@
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <script>
+$(document).ready(function() {
+    $("#list").magnificPopup({
+        delegate: 'a.popup',
+        type: 'ajax',
+        modal: false,
+        showCloseBtn: false,
+        closeOnContentClick: false,
+        closeOnBgClick: true,
+        enableEscapeKey: true,
+        callbacks: {
+            ajaxContentAdded: function() {
+                this.content.addClass('white-popup');
+                this.content.on('click', function(e){
+                	e.stopPropagation();
+                });
+            }
+        }, 
+    }); 
+});
 
-
-    
-function openmodal(){
-	
-	$('#background').fadeIn(200);
-	$('#front').fadeIn(200);
-	$('body').addClass('modal-open');
-	
-// 	$.ajax({
-// 		url: "soc_modaldata.jsp",
-// 		type: "get",
-// 		data: {
-// 			city_eng: city_eng,		
-// 		},
-// 		success: function(data){
-// 			console.log(city_name);
-// 			 var city_name = data.split(',')[0];
-// 			document.getElementById("photo2").style.backgroundImage = "url('./travelplanimgs/" + city_eng + ".jpg')",	
-//  			document.getElementById("smallcity1").innerText = city_name,
-//  			document.getElementById("smallcity2").innerText = city_eng.toUpperCase()
- 			
-//  		}
-// 	});
-
-};
-
-
-
-function closemodal(){
-
-	$('#background').fadeOut(200);
-	$('#front').fadeOut(200);	
-	$('body').removeClass('modal-open');
-}
-
-function close(){
-	 $('#background').fadeOut(200);
-	 $('#front').fadeOut(200);
-	 $('body').removeClass('modal-open');
-}
-
-
-$(document).keyup(function(e) {
-	  if (e.key === "Escape") { // ESC 키를 눌렀을 때
-	    // 모달 팝업 닫기
-	    $('#background').fadeOut(200);
-	    $('#front').fadeOut(200);
-		$('body').removeClass('modal-open');
-	  }
-	}); 
-	
-
-
-
+$(document).ready(function() {
+    $('#write').magnificPopup({
+        type: 'ajax',
+        modal: false,
+        showCloseBtn: false,
+        closeOnContentClick: false,
+        closeOnBgClick: true,
+        enableEscapeKey: true,
+        callbacks: {
+            ajaxContentAdded: function() {
+                this.content.addClass('white-popup');
+                this.content.on('click', function(e){
+                	e.stopPropagation();
+                });
+            }
+        },
+    }); 
+});
 	function latest(){
 		var p = document.getElementById('popularBtn');
 		var l = document.getElementById('latestBtn');
