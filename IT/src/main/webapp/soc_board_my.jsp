@@ -121,14 +121,17 @@ $(document).keyup(function(e) {
    		<ul>
    		<li class="sch_01">
 	   		<div class="sch_01_L">
-		    	<a href="soc_basicboard.jsp"><img src="imgs/board/itlog_logo.png"></a>
+		    	<h3 class="country">태국</h3>
+		    	<h1 class="city">방콕</h1>
 		    </div>
    			<div class="sch_01_R">
-		   		<div class="day_01"><a href="#">1day</a>&nbsp;&nbsp;&nbsp;&nbsp;
-		   		<a href="#">2day</a>&nbsp;&nbsp;&nbsp;&nbsp;
-		   		<a href="#">3day</a></div>
+		   		<div class="day_01">
+		   		<a href="#">1day</a>
+		   		<a href="#">2day</a>
+		   		<a href="#">3day</a>		   		
+		   		</div>
 		   		<div>
-		   		<input type="text" class="search-input" placeholder="검색어를 입력해주세요." />
+		   		<input type="text" class="search-input" placeholder="검색어를 입력해주세요."  />
 		   		<input type="button" value="검색">
 		   		</div>
 	   		</div>
@@ -222,8 +225,8 @@ $(document).keyup(function(e) {
 	   		</div>
    		</li>
    		<li class="con_04">
-   		<span>좋아요</span><span class="count">0개</span>
-   		<span>댓글</span><span class="count">0개</span>
+   		<span>좋아요</span><span class="count">5개</span>
+   		<span>댓글</span><span class="count">10개</span>
    			<div class="rep_icon">
 	   			<a href="#" id="likeBtn"><img src="imgs/board/like(1)_icon.png"></a>
 	   			<a href="#"><img src="imgs/board/share_icon.png"></a>
@@ -264,7 +267,7 @@ $(document).keyup(function(e) {
 				    <img src="imgs/board/aaa1.jpg" onclick="openmodal()">
 				    <div>
 					    <div class="likeBox">
-					    <div>좋아요 n개</div>&nbsp;&nbsp;&nbsp;&nbsp;<div>댓글 n개</div>
+					    <div>좋아요 3개</div>&nbsp;&nbsp;&nbsp;&nbsp;<div>댓글 5개</div>
 					    </div>
 				    	<div class="tagbox">#김시도 #김기동 #고영이 #오에오에 #블라블라라라랄 #김시도 #김기동 #고영이 #오에오에</div>
 			    	</div>
@@ -273,7 +276,7 @@ $(document).keyup(function(e) {
 				    <img src="imgs/board/aaa10.jpg" onclick="openmodal()">
 				    <div>
 					    <div class="likeBox">
-					    <div>좋아요 n개</div>&nbsp;&nbsp;&nbsp;&nbsp;<div>댓글 n개</div>
+					    <div>좋아요 5개</div>&nbsp;&nbsp;&nbsp;&nbsp;<div>댓글 6개</div>
 					    </div>
 				    	<div class="tagbox">#김시도 #김기동 #고영이 #오에오에 #블라블라라라랄 #김시도 #김기동 #고영이 #오에오에</div>
 			    	</div>
@@ -282,7 +285,7 @@ $(document).keyup(function(e) {
 				    <a href="soc_boardView_my.jsp" class="popup"><img src="imgs/board/aaa12.jpg"></a>
 				    <div>
 					    <div class="likeBox">
-					    <div>좋아요 n개</div>&nbsp;&nbsp;&nbsp;&nbsp;<div>댓글 n개</div>
+					    <div>좋아요 12개</div>&nbsp;&nbsp;&nbsp;&nbsp;<div>댓글 4개</div>
 					    </div>
 				    	<div class="tagbox">#김시도 #김기동 #고영이 #오에오에 #블라블라라라랄 #김시도 #김기동 #고영이 #오에오에</div>
 			    	</div>
@@ -297,7 +300,7 @@ $(document).keyup(function(e) {
 				    <img src="imgs/board/aaa10.jpg" onclick="openmodal()">
 				    <div>
 					    <div class="likeBox">
-					    <div>좋아요 n개</div>&nbsp;&nbsp;&nbsp;&nbsp;<div>댓글 n개</div>
+					    <div>좋아요 6개</div>&nbsp;&nbsp;&nbsp;&nbsp;<div>댓글 n개</div>
 					    </div>
 				    	<div class="tagbox">#김시도 #김기동 #고영이 #오에오에 #블라블라라라랄 #김시도 #김기동 #고영이 #오에오에</div>
 			    	</div>
@@ -306,7 +309,7 @@ $(document).keyup(function(e) {
 				    <img src="imgs/board/aaa5.jpg" onclick="openmodal()">
 				    <div>
 					    <div class="likeBox">
-					    <div>좋아요 n개</div>&nbsp;&nbsp;&nbsp;&nbsp;<div>댓글 n개</div>
+					    <div>좋아요 4개</div>&nbsp;&nbsp;&nbsp;&nbsp;<div>댓글 2개</div>
 					    </div>
 				    	<div class="tagbox">#김시도 #김기동 #고영이 #오에오에 #블라블라라라랄 #김시도 #김기동 #고영이 #오에오에</div>
 			    	</div>
@@ -315,7 +318,7 @@ $(document).keyup(function(e) {
 				    <a href="soc_boardView_my.jsp" class="popup"><img src="imgs/board/aaa6.jpg"></a>
 				    <div>
 					    <div class="likeBox">
-					    <div>좋아요 n개</div>&nbsp;&nbsp;&nbsp;&nbsp;<div>댓글 n개</div>
+					    <div>좋아요 12개</div>&nbsp;&nbsp;&nbsp;&nbsp;<div>댓글 8개</div>
 					    </div>
 				    	<div class="tagbox">#김시도 #김기동 #고영이 #오에오에 #블라블라라라랄 #김시도 #김기동 #고영이 #오에오에</div>
 			    	</div>

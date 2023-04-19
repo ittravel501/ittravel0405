@@ -26,6 +26,7 @@
     	String city_name = rs.getString("city_name");
    		result = city_name;
 
+   		
 		out.println(result);
       }
       } finally {
@@ -38,6 +39,4 @@
          } catch(Exception ignored){
          }
    } 
-   // RequestDispatcher dis = request.getRequestDispatcher("join001.jsp");
-   //    dis.forward(request, response);
 %>

@@ -7,57 +7,112 @@
 //             }
 
 
+function addlist(name) {
+  $.ajax({
+    url: "travel_sch_mng3.jsp",
+    type: "get",
+    data: { name: name },
+    success: function(result2) {
+      var loc_filter = result2.split('#$%')[0].trim();
+      console.log(loc_filter);
+      var loc_loc = result2.split('#$%')[1];
+      console.log(loc_loc);
 
-            function addlist(name){
+      var newItem = document.createElement("li");
+      newItem.innerHTML = `
+        <div class="listtitlewrap">
+          <div class="listtitle">${name}</div>
+          <div class="listremove" onclick="removeListItem(this)">삭제</div>
+        </div>
+        <div class="details">
+          <div class="categories">
+            <div>${loc_filter} ·  ${loc_loc}</div>
+          </div>
+          <div class="btns">
+            <button style="float: left;" onclick="openModal()" class="addmemo100">메모추가</button>
+            <button style="margin-left: 70px;" onclick="openMoneyModal()" class="addmoney">가계부추가</button>
+          </div>
+        </div>
+      `;
 
-                var plusUl = document.createElement("ul");
-                var newLi =          "<li>" 
-                    + "<div class='listtitlewrap'>"
-                    +"    <div class='listtitle' id='hoianresort'>"                      
-                    +    name
-                    +    "</div>"
-                    +    "<div class='listremove' onclick='removeListItem(this)'>"
-                    +    "삭제"
-                    +    "</div>"
-                    +    "</div>"
-                    +    "<div class='details'>"
-                    +        "<div class='memos'>"
-                    +          "<ul>"
-                    +         "</ul>"
-                    +        "</div>"
-                    +        "<div class='btns'>"
-                    +         "<button id='addmemo1' onclick='openModal()'>메모추가</button>"
-                    +"<div id='memo-modal' class='modal'>"
-                    +"    <div class='modal-content'>"
-                    +"                 <label for='memo-textarea' style ='font-size : 15px;'>메모</label>"
-                    +"                  <textarea id='memo-textarea' style='margin : 0 10px 10px 10px;'></textarea>"
-                    +"                   <div class ='confirmnclose'>"
-                    +"                        <div class='close' onclick='addMemo()' style='float : left;'>확인</div>"
-                    +"                        <div class='close' onclick='closeModal()' style = 'float:right;'>취소</div>"
-                    +"                    </div>"
-                    +"              </div>"
-                    +"        </div> "
-                    +         "<button class = 'addmoney' style ='margin-left : 70px;' id='moneymodal' onclick='openMoneyModal()'>가계부추가</button>"
-                    +        "</div>"
-                    +    "</div>"
-                    +"</li>   "
-                plusUl.innerHTML = newLi;
-                console.log(plusUl);
-                //console.log(document.getElementById("schlist"));
-                document.getElementById("schlist").appendChild(plusUl);
+      // memos 안의 li 요소 삭제
+      var memos = newItem.querySelector(".memos");
+      if (memos) {
+        memos.remove();
+      }
 
-          $(document).on('click', '.memo', function() {
-                var memo_id = $(this).data('id');
-                var memo_title = $(this).find('.memo-title').text();
-                var memo_content = $(this).find('.memo-content').text();
-  
-                 $('#modal-memo-id').val(memo_id);
-                 $('#modal-memo-title').val(memo_title);
-                 $('#modal-memo-content').val(memo_content);
-  
-                $('#modal-memos').modal('show');
-                    });
-            }
+      var list = document.querySelector("#schlist ul");
+      list.appendChild(newItem);
+
+      $(document).on("click", ".memo", function() {
+        var memo_id = $(this).data("id");
+        var memo_title = $(this).find(".memo-title").text();
+        var memo_content = $(this).find(".memo-content").text();
+
+        $("#modal-memo-id").val(memo_id);
+        $("#modal-memo-title").val(memo_title);
+        $("#modal-memo-content").val(memo_content);
+
+        $("#modal-memos").modal("show");
+      });
+    }
+  });
+}
+
+
+//            function addlist(name){
+//
+//                var plusUl = document.createElement("ul");
+//                var newLi =          "<li>" 
+//                    + "<div class='listtitlewrap'>"
+//                    +"    <div class='listtitle' id='hoianresort'>"                      
+//                    +    name
+//                    +    "</div>"
+//                    +    "<div class='listremove' onclick='removeListItem(this)'>"
+//                    +    "삭제"
+//                    +    "</div>"
+//                    +    "</div>"
+//                    +    "<div class='details'>"
+//                    +        "<div class='memos'>"
+//                    +          "<ul>"
+//                    +         "</ul>"
+//                    +        "</div>"
+//                    +        "<div class='btns'>"
+//                    +         "<button id='addmemo1' onclick='openModal()'>메모추가</button>"
+//                    +"<div id='memo-modal' class='modal'>"
+//                    +"    <div class='modal-content'>"
+//                    +"                 <label for='memo-textarea' style ='font-size : 15px;'>메모</label>"
+//                    +"                  <textarea id='memo-textarea' style='margin : 0 10px 10px 10px;'></textarea>"
+//                    +"                   <div class ='confirmnclose'>"
+//                    +"                        <div class='close' onclick='addMemo()' style='float : left;'>확인</div>"
+//                    +"                        <div class='close' onclick='closeModal()' style = 'float:right;'>취소</div>"
+//                    +"                    </div>"
+//                    +"              </div>"
+//                    +"        </div> "
+//                    +         "<button class = 'addmoney' style ='margin-left : 70px;' id='moneymodal' onclick='openMoneyModal()'>가계부추가</button>"
+//                    +        "</div>"
+//                    +    "</div>"
+//                    +"</li>   "
+//                plusUl.innerHTML = newLi;
+//                console.log(plusUl);
+//                //console.log(document.getElementById("schlist"));
+//                document.getElementById("schlist").appendChild(plusUl);
+//
+//          $(document).on('click', '.memo', function() {
+//                var memo_id = $(this).data('id');
+//                var memo_title = $(this).find('.memo-title').text();
+//                var memo_content = $(this).find('.memo-content').text();
+//  
+//                 $('#modal-memo-id').val(memo_id);
+//                 $('#modal-memo-title').val(memo_title);
+//                 $('#modal-memo-content').val(memo_content);
+//  
+//                $('#modal-memos').modal('show');
+//                    });
+//            }
+
+
+
 
             function removedivs(button){
                 const divToRemove = button.parentNode;
@@ -69,9 +124,7 @@
 
                  }
             }
-            
-
-
+           
 
 
             function removeListItem(el) {
@@ -79,7 +132,10 @@
                     li.parentNode.removeChild(li); // 부모 노드에서 해당 li를 삭제
                 }
 
-                 function openModal() {
+
+
+
+            function openModal() {
                 var modal = document.getElementById("memo-modal");
                 modal.style.display = "block";
                 }

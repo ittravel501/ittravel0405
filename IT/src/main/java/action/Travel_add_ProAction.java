@@ -1,10 +1,22 @@
-<%@ page import="java.util.Date" %>
-<%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="java.util.concurrent.TimeUnit" %>
-<%@ page language="java" contentType="text/html;charset=utf-8"
-	pageEncoding="UTf-8"%>
-<% request.setCharacterEncoding("utf-8"); %>
-<%@page import="java.sql.*"%>
+package action;
+
+import java.io.PrintWriter;
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+
+import vo.ActionForward;
+import 
+
+public class Travel_add_ProAction implements Action{
+
+}
+
+
+
 
 <script>
 function addDays() {
@@ -34,9 +46,9 @@ sessionStorage.setItem("cityName", cityName);
 <%
 
 	String city_name = request.getParameter("coouncity");
-	Connection conn=null;
-	Statement stmt = null;
-	String result ="OK";
+   Connection conn=null;
+   Statement stmt = null;
+   String result ="OK";
 
    try {
       Class.forName("com.mysql.jdbc.Driver");
@@ -75,20 +87,22 @@ sessionStorage.setItem("cityName", cityName);
   // 선택한 날짜를 session 객체에 저장
   
   String destination = request.getParameter("coouncity");
+  
   String smalltravel1 = request.getParameter("smalltravel1");
   String smalltravel2 = request.getParameter("smalltravel2");
+  
+  session.setAttribute("smalltravel1", smalltravel1);
+  session.setAttribute("smalltravel2", smalltravel2);
+  
   String fromDate1 = request.getParameter("depdate");
   String toDate1 = request.getParameter("arrdate");
-  int howmany = Integer.parseInt(request.getParameter("howmany")); // input의 value 값 가져오기
   
-  session.setAttribute("howmany", howmany);
-  session.setAttribute("smalltravel1", smalltravel1);
-  session.setAttribute("smalltravel2", smalltravel2);  
+  
+  
   session.setAttribute("fromDate", fromDate1);
   session.setAttribute("toDate", toDate1);
   session.setAttribute("coouncity", destination);
   session.setAttribute("diff",(int)diff); 
-  session.setAttribute("howmany", howmany);
   response.sendRedirect("travel_sch_mng.jsp");
   %>
    

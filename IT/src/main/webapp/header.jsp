@@ -131,7 +131,7 @@
 					          <a href="">소셜 홈</a>
 					      </li>
 					      <li>
-					         <a href="">글 작성</a>
+					         <a href="soc_boardWrite.jsp">글 작성</a>
 					     </li>
 					     <li>
 					         <a href="">내 피드</a>

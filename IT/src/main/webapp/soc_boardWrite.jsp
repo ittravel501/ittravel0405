@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="java.util.Date"%>
+<%@page import="java.text.SimpleDateFormat"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,82 +14,178 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
     <script src="./slick-1.8.1/slick/slick.min.js"></script>
 </head>
+<script>
+function openmodal(){
+	
+	$('#background').fadeIn(200);
+	$('#front').fadeIn(200);
+	$('body').addClass('modal-open');
+	
+// 	$.ajax({
+// 		url: "soc_modaldata.jsp",
+// 		type: "get",
+// 		data: {
+// 			city_eng: city_eng,		
+// 		},
+// 		success: function(data){
+// 			console.log(city_name);
+// 			 var city_name = data.split(',')[0];
+// 			document.getElementById("photo2").style.backgroundImage = "url('./travelplanimgs/" + city_eng + ".jpg')",	
+//  			document.getElementById("smallcity1").innerText = city_name,
+//  			document.getElementById("smallcity2").innerText = city_eng.toUpperCase()
+ 			
+//  		}
+// 	});
+
+};
+
+
+
+function closemodal(){
+
+	$('#background').fadeOut(200);
+	$('#front').fadeOut(200);	
+	$('body').removeClass('modal-open');
+}
+
+function close(){
+	 $('#background').fadeOut(200);
+	 $('#front').fadeOut(200);
+	 $('body').removeClass('modal-open');
+}
+
+
+$(document).keyup(function(e) {
+	  if (e.key === "Escape") { // ESC 키를 눌렀을 때
+	    // 모달 팝업 닫기
+	    $('#background').fadeOut(200);
+	    $('#front').fadeOut(200);
+		$('body').removeClass('modal-open');
+	  }
+	}); 
+	
+
+</script>
+
+
+<%  String fromDate = (String) session.getAttribute("fromDate");
+String toDate = (String) session.getAttribute("toDate"); %>
 
 <body>
 <form action="soc_writearrange.jsp" method ="post"> 
+
+<div class ='gray_layer' id='background' onclick="closemodal()"></div>
+ <div class="Wrap" id= 'front' style="display:none;">
+  	<div class = "chooseplan">일정 선택하기</div>
+  	<div class="planlist">
+  		<h4 style="text-align:left; cursor : pointer;">방콕 <% out.println(fromDate); %> ~ <% out.println(toDate); %></h4>
+  	</div>
+  </div>
+
+
 	<div class="wrap">
 		<!-- 최상단 -->
 		<div class="top_wrap">
-			<div style="width:30%;">
-			<img src="imgs/board/icon_pack.png">
+			<div style="width:30%; display:flex;">
+			<a><img src="imgs/board/icon_pack.png" onclick="openmodal()"></a>
 <!-- 			<input id="img-selector" type="file" accept="image/*" style="display:none;"> -->
 			<a href="#"><img src="imgs/board/gallery_icon.png" id="uploadimg" style="cursor : pointer;"></a>
-			<a href="#"><img src="imgs/board/movie_icon.png"></a>
-			<a href="#"><img src="imgs/board/pick_icon.png"></a>
-					
-		<table border="1">
-    <tr>
-      <th align="center" bgcolor="orange" width="500px">첨부파일</th>
-    </tr>
-    <tr>
-      <td align="center">
-        <input type="file" name="uploadFile" id="uploadFile" multiple>
-        <div id="preview"></div>
-      </td>
-    </tr>
-  </table>
-			</div>
+<!-- 			<a href="#"><img src="imgs/board/movie_icon.png"></a> -->
+<!-- 			<a href="#"><img src="imgs/board/pick_icon.png"></a> -->
+			
+					<table style="margin-top:35px;">
+						<tr>
+							<td align="center"><input type="file" name="uploadFile"
+								id="uploadFile" multiple>
+								<div id="preview"></div></td>
+						</tr>
+					</table>
+				
+				</div>
 			<div style="width:40%;"></div>
 			<div class="title">잇로그 글쓰기</div>
 		</div>
 		<div style="display:flex; justify-content:center;">
 		<div class="travel_plan">
-			<div class="day_plan">
-				<div>2023/04/22</div>
-				<h4>스케줄1</h4>
-					<h5>설명1</h5>
-				<h4>스케줄1</h4>
-				<h5>설명1</h5>
-				<h4>스케줄1</h4>
-				<h5>설명1</h5>
-				<h4>스케줄1</h4>
-				<h5>설명1</h5>
-				<h4>스케줄1</h4>
-				<h5>설명1</h5>				
-			</div>
-			<div class="day_plan">
-				<div>2023/04/23</div>
-				<h4>스케줄1</h4>
-					<h5>설명1</h5>
-				<h4>스케줄1</h4>
-				<h5>설명1</h5>
-				<h4>스케줄1</h4>
-				<h5>설명1</h5>
-				<h4>스케줄1</h4>
-				<h5>설명1</h5>
-				<h4>스케줄1</h4>
-				<h5>설명1</h5>				
-			</div>
-			<div class="day_plan">
-				<div>2023/04/24</div>
-				<h4>스케줄1</h4>
-					<h5>설명1</h5>
-				<h4>스케줄1</h4>
-				<h5>설명1</h5>
-				<h4>스케줄1</h4>
-				<h5>설명1</h5>
-				<h4>스케줄1</h4>
-				<h5>설명1</h5>
-				<h4>스케줄1</h4>
-				<h5>설명1</h5>				
-			</div>
-		</div></div>
+		
+<%
+    // 세션에서 가는 날과 오는 날 정보를 가져옴
+    
+
+  				
+  	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+  	Date fromdate = dateFormat.parse(fromDate);
+  	Date todate = dateFormat.parse(toDate);
+  				
+  
+    // 해당 범위 내의 날짜에 해당하는 일정만 출력
+    for (Date date = fromdate; date.compareTo(todate) <= 0; date = new Date(date.getTime() + (24 * 60 * 60 * 1000))) {
+        %>
+        <div class="day_plan">
+            <div><%= dateFormat.format(date) %></div>
+            <%-- 해당 날짜에 맞는 일정을 출력 --%>
+            <%-- 예시로 스케줄1과 설명1을 두 개씩 출력하는 코드 작성 --%>
+            <% for (int i = 1; i <= 2; i++) { %>
+                <h4>스케줄<%= i %></h4>
+                <h5>설명<%= i %></h5>
+                 <h4>스케줄<%= i %></h4>
+                <h5>설명<%= i %></h5>
+            <% } %>
+        </div>
+    <% } %>
+		<%-- startDate와 endDate 사이의 날짜를 하나씩 순회 --%>
+
+    </div>
+
+<!-- 			<div class="day_plan"> -->
+<!-- 				<div>2023/04/22</div> -->
+<!-- 				<h4>스케줄1</h4> -->
+<!-- 					<h5>설명1</h5> -->
+<!-- 				<h4>스케줄1</h4> -->
+<!-- 				<h5>설명1</h5> -->
+<!-- 				<h4>스케줄1</h4> -->
+<!-- 				<h5>설명1</h5> -->
+<!-- 				<h4>스케줄1</h4> -->
+<!-- 				<h5>설명1</h5> -->
+<!-- 				<h4>스케줄1</h4> -->
+<!-- 				<h5>설명1</h5>				 -->
+<!-- 			</div> -->
+<!-- 			<div class="day_plan"> -->
+<!-- 				<div>2023/04/23</div> -->
+<!-- 				<h4>스케줄1</h4> -->
+<!-- 					<h5>설명1</h5> -->
+<!-- 				<h4>스케줄1</h4> -->
+<!-- 				<h5>설명1</h5> -->
+<!-- 				<h4>스케줄1</h4> -->
+<!-- 				<h5>설명1</h5> -->
+<!-- 				<h4>스케줄1</h4> -->
+<!-- 				<h5>설명1</h5> -->
+<!-- 				<h4>스케줄1</h4> -->
+<!-- 				<h5>설명1</h5>				 -->
+<!-- 			</div> -->
+<!-- 			<div class="day_plan"> -->
+<!-- 				<div>2023/04/24</div> -->
+<!-- 				<h4>스케줄1</h4> -->
+<!-- 					<h5>설명1</h5> -->
+<!-- 				<h4>스케줄1</h4> -->
+<!-- 				<h5>설명1</h5> -->
+<!-- 				<h4>스케줄1</h4> -->
+<!-- 				<h5>설명1</h5> -->
+<!-- 				<h4>스케줄1</h4> -->
+<!-- 				<h5>설명1</h5> -->
+<!-- 				<h4>스케줄1</h4> -->
+<!-- 				<h5>설명1</h5>				 -->
+<!-- 			</div> -->
+		</div>
 		<!-- 텍스트박스 -->
-		<div>
-		<textarea placeholder="내용을 입력하세요."  name ="soc_con" id="soc_con" style="overflow:scroll;"></textarea>
+		<div >
+		<textarea placeholder="내용을 입력하세요."  name ="soc_con" id="soc_con"></textarea>
+		<br>
 		<a href="soc_basicboard.jsp"><input type="button" value="취소"></a><input type="button" value="등록">
 		</div>
+		
 	</div>
+
 	</form>
 </body>
 <script>
