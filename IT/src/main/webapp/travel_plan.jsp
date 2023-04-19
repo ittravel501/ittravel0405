@@ -41,9 +41,14 @@
 		$('body').removeClass('modal-open');
 	}
 
-	function add() {
+	function add() { //모달창에서 여행지추가하기를 눌렀을 때, input text에 도시 이름을 넣기
 		var smallcity1 = $('#smallcity1').text(); // smallcity1의 내용을 가져옴
-		$('input[name=coouncity]').smallcity1; // cooncity 텍스트 창에 smallcity1의 내용을 넣음
+		$('#background').fadeOut(200);
+		$('#front').fadeOut(200);
+		$('body').removeClass('modal-open');
+		$('input[name=coouncity]').focus();
+		var coouncityInput = $('input[name=coouncity]');
+		coouncityInput.val(smallcity1);
 		console.log(smallcity1);
 	};
 	
@@ -62,7 +67,7 @@
 // 	}
 	
 
-$(document).ready(function() {
+$(document).ready(function() { //인원 추가하기
   $('#addp').click(function() {
     var howmany = $('.howmany');
     howmany.val(parseInt(howmany.val()) + 1);
@@ -77,7 +82,7 @@ $(document).ready(function() {
   });
 });
 
-$(document).ready(function() {
+$(document).ready(function() { //인원 빼기
 	  $('#subtractp').click(function() {
 	    var howmany = $('.howmany');
 	    howmany.val(parseInt(howmany.val()) - 1);
@@ -96,7 +101,7 @@ $(document).ready(function() {
 
 
 	
-function inputnum(){
+function inputnum(){ //인원 직접 입력하기
 	var howmany = $('.howmany');
 	
 	if(howmany.val() == 8){
@@ -147,7 +152,7 @@ function inputnum(){
 								easy" You're always riding in the backseat Now I'm smiling from
 								the stage while You were clapping in the nosebleeds</div>
 							<div>
-								<button type="button" id="modalchoose" onclick="add">여행지 추가하기</button>
+								<button type="button" id="modalchoose" onclick="add()">여행지 추가하기</button>
 							</div>
 
 <!--					 cityexplain2 -->
@@ -175,7 +180,7 @@ function inputnum(){
 					<div class="depdatewrap">
 						<ul>
 							<li><input type="text" size="50" name="coouncity"
-								class="inputdes" placeholder="여행지를 입력해주세요" required></li>
+								class="inputdes" style="padding-left: 10px;" placeholder="여행지를 입력해주세요" required></li>
 							<li><input type="button" class="btn" value="가는날"
 								style="font-family: TheJamsil2Light;"> <input
 								type="date" name="depdate" required></li>

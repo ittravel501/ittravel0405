@@ -69,9 +69,9 @@
 	          <div class="menuwrap1">
 		          <ul>
 		              <div id="menulist_all" >
-			              <li class="menulist2"> <a href="travel_plan.jsp" class="menu"> 여행지추가</a> </li>
-			              <li class="menulist3"> <a href="./trave_scg_mng.html" class="menu"> 일정짜기 </a> </li>
-			              <li class="menulist4"> <a href="./flight.html" class="menu"> 항공예약 </a></li>
+			              <li class="menulist2"> <a href="./travel_plan.jsp" class="menu"> 여행지추가</a> </li>
+			              <li class="menulist3"> <a href="./travel_sch_mng.jsp" class="menu"> 일정짜기 </a> </li>
+			              <li class="menulist4"> <a href="./flight.jsp" class="menu"> 항공예약 </a></li>
 			              <li class="menulist5"> <a href="./tour002.html"  class="menu" > 투어예약 </a></li>
 			              <li class="menulist6"> <a href="#" class="menu"> 소셜 </a></li>
 			              <li class="menulist7"> <a href="shopping001.jsp"  class="menu"  > 쇼핑 </a></li>
@@ -92,19 +92,19 @@
 			      
 				       <ul class="m_place">
 				         <li>
-				             <a href="travelplan.jsp" >여행지 추가</a>
+				             <a href="./travel_plan.jsp" >여행지 추가</a>
 				         </li>		        
 				      </ul>
 			
 				     <ul class="m_plan">
 				         <li>
-				             <a href="./trave_scg_mng.html">일정짜기</a>
+				             <a href="./travel_sch_mng.jsp">일정짜기</a>
 				         </li>
 				
 				     </ul>
 				     <ul class="m_flight">
 					      <li>
-					          <a href="./flight.html">항공 홈</a>
+					          <a href="./flight.jsp">항공 홈</a>
 					      </li>
 					      <li>
 					          <a href=""> 항공권 예매</a>
