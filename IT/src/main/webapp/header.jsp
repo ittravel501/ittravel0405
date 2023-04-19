@@ -54,7 +54,7 @@
                         	 out.println(mem_nick+"님 접속&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp");
                          %>
                          
-                        <a href="header_logout_success.jsp">로그아웃</a>
+                        <a href="header_logout_success.jsp" style="cursor: pointer;">로그아웃</a>
                         
                        <%} %>
                        
@@ -75,7 +75,7 @@
 			              <li class="menulist5"> <a href="./tour002.html"  class="menu" > 투어예약 </a></li>
 			              <li class="menulist6"> <a href="#" class="menu"> 소셜 </a></li>
 			              <li class="menulist7"> <a href="shopping001.jsp"  class="menu"  > 쇼핑 </a></li>
-			              <li class="menulist8"><a href="com_list.jsp" class="menu"> 커뮤니티 </a></li>
+			              <li class="menulist8"> <a href="com_list.jsp" class="menu"> 커뮤니티 </a></li>
 		              </div>
 		              
 	              </ul>
