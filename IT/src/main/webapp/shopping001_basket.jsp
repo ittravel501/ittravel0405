@@ -5,6 +5,8 @@
     <%@page import="dto.N_MD" %>
     <%@page import="dto.QNA_MD" %>
     <%@page import="dto.PROD_MD" %>
+    
+    <%@page import="vo.ProdInfo" %>
     <%@page import="dao.N_controller" %>
 
 
@@ -72,9 +74,9 @@
 				<script src="script.js"></script>
 				<%
 
-				PROD_MD pr = new PROD_MD();
+				ProdInfo pr = new ProdInfo();
 				
-				int prod_quantity = Integer.parseInt(request.getParameter("quantity_opt[]"));
+				int prod_quantity = Integer.parseInt(request.getParameter("quantity_opt"));
 				String prod_bigct = request.getParameter("prod_bigct");
 				String prod_smallct = request.getParameter("prod_smallct");
 				String prod_name = request.getParameter("prod_name");
@@ -89,7 +91,7 @@
 				pr.setProd_price(prod_price);
 				pr.setProd_total_price(prod_total_price);
 				
-				PROD_MD prod_info = user.Prod_order_info(pr);
+				ProdInfo prod_info = user.Prod_order_info(pr);
 		
 		//out.println(prod_quantity);
 

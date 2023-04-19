@@ -30,9 +30,7 @@ public ActionForward execute(HttpServletRequest request,HttpServletResponse resp
 		//String page = request.getParameter("page");
 		
 		
-		
 		ProdInfo prodinfo = new ProdInfo();
-		prodinfo.setProd_num(prod_num1);
 		prodinfo.setProd_name(prod_name);
 		prodinfo.setProd_mem_id(prod_mem_id);
 		prodinfo.setProd_quantity(prod_quantity);
