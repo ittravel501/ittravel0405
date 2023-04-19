@@ -15,7 +15,9 @@ import java.util.Date;
 import dto.FAQ_MD;
 import dto.Join_MD;
 import dto.N_MD;
+import dto.PROD_MD;
 import dto.QNA_MD;
+import vo.ProdInfo;
 
 public class N_controller {
 	
@@ -401,6 +403,61 @@ return N_list;
 
 }
 
+public ArrayList<QNA_MD> Q_select_by_date(String start_date, String end_date) throws SQLException {
+	
+    //Connection conn = null;
+    PreparedStatement pstmt = null;
+    ResultSet rs = null;
+    ArrayList<QNA_MD> Q_date = new ArrayList<QNA_MD>();
+
+    try {
+    	
+        conn();
+        
+        String sql = "SELECT * FROM qna_info WHERE qna_date BETWEEN ? AND ?";
+        //sql에는 " select*from ~~ " 위 문장 자체가 들어가 있다. 결과값 들어가있는 거 아님. mbc님과 지금까지 해왔던 거랑 다른 구조(?)임.
+        //System.out.println(sql); //이해안되면 주석풀어서 확인해봐.
+        
+        pstmt = conn.prepareStatement(sql);
+        // 'prepareStatement()'는 SQL 쿼리문을 미리 컴파일하여 PreparedStatement 객체를 생성하는 메소드입니다. 
+        //아래는 pstmt에 저장된 값.
+        
+        //com.mysql.jdbc.JDBC42PreparedStatement@7d5e9eab: SELECT * FROM qna_info WHERE qna_date BETWEEN ** NOT SPECIFIED ** AND ** NOT SPECIFIED **
+        
+        System.out.println(pstmt);
+        
+        pstmt.setString(1, start_date);
+        pstmt.setString(2, end_date);
+        
+        rs = pstmt.executeQuery(); 
+        
+        while (rs.next()) {
+        	
+            QNA_MD qna = new QNA_MD();
+            qna.setQna_num(rs.getInt("qna_num"));
+            qna.setQna_fil(rs.getString("qna_fil"));
+            qna.setQna_title(rs.getString("qna_title"));
+            qna.setQna_con(rs.getString("qna_con"));
+            qna.setQna_date(rs.getString("qna_date"));
+            qna.setQna_mem_id(rs.getString("qna_mem_id"));
+            qna.setQna_open(rs.getString("qna_open"));
+            qna.setQna_reply(rs.getString("qna_reply"));
+            
+            Q_date.add(qna);
+        }
+        
+    } catch (SQLException e) {
+    	
+        e.printStackTrace();
+        
+    } finally {
+    	
+    	diconn();
+    }
+    return Q_date;
+}
+
+
 public QNA_MD Q_selectone(String i) { /*N_view에서 받아온 String iii 값을 새로 정의한다. 똑같이 맞춰줘도 되는데, 값을 새로 정의할 수 있다는 걸 표시하기 위해서 일부러 다르게 줬다. 
 											값은 이동이 되지만 변수명은 그 메소드 안에서만 활용된다. 그래서 다르게 줘도 됨. !값은 이동된거임! */
 //num을 받아와서 String i라는 변수로 다시 정했다. 
@@ -707,6 +764,148 @@ public Join_MD login(String mem_id, String mem_pw) {
 	return md;	
 }
 
+///////////////////////////////////////끝///////////////////////////////////////
 
+public ArrayList<ProdInfo> Prod_info() { //페이지에서 각 제품을 선택하면 보여지는 상세페이지의 데이터들.
+
+	conn();
+	ArrayList<ProdInfo> P_list = new ArrayList<> ();
+	
+	try {
+		
+		//ResultSet rs = stmt.executeQuery("select faq_title,faq_con from faq_info;");
+		//faq에 제목이랑 내용만 셀렉한다.
+		
+		// 검색어를 포함한 faq_title 또는 faq_con을 검색하는 쿼리입니다.
+			String query = "SELECT * from prod_info ";
+			
+			ResultSet rs = stmt.executeQuery(query);
+		
+		while(rs.next()) {
+			
+			ProdInfo p_list = new ProdInfo();
+			
+			p_list.setProd_num(rs.getInt("prod_num"));
+			p_list.setProd_bigct(rs.getString("prod_bigct"));;
+			p_list.setProd_smallct(rs.getString("prod_smallct"));
+			p_list.setProd_quantity(rs.getInt("prod_quantity"));
+			p_list.setProd_price(rs.getInt("prod_price"));
+			p_list.setProd_total_price(rs.getInt("prod_total_price"));
+			p_list.setProd_img(rs.getString("prod_img"));
+			p_list.setProd_review(rs.getString("prod_review"));
+			p_list.setProd_qna(rs.getString("prod_qna"));
+			p_list.setProd_avg(rs.getInt("prod_avg"));
+			p_list.setProd_cou(rs.getInt("prod_cou"));
+			p_list.setProd_postdate(rs.getString("prod_postdate"));
+			p_list.setProd_name(rs.getString("prod_name"));
+			p_list.setProd_opbct(rs.getString("prod_opbct"));
+			p_list.setProd_opsct(rs.getString("prod_opsct"));
+			p_list.setProd_check(rs.getString("prod_check"));
+			p_list.setProd_mem_id(rs.getString("prod_mem_id"));
+			
+			P_list.add(p_list);
+			
+		}
+		
+	}catch (Exception e) {
+		System.out.println("외않되");
+		
+		// TODO: handle exception
+		
+	}finally {
+		
+		diconn();
+		
+	}
+	return P_list;
+
+}
+
+public ProdInfo Prod_order_info(ProdInfo pr) { //상세페이지에서 수량, 옵션 등등..을 선택하고 장바구니, 결제하기 페이지로 보낼 데이터들.
+	
+	conn();
+	ProdInfo p_list = new ProdInfo();
+	
+	try {
+		
+		String query = "SELECT * from prod_info ";
+		
+		ResultSet rs = stmt.executeQuery(query);
+		
+		while(rs.next()) {
+					
+			
+			p_list.setProd_num(rs.getInt("prod_num"));
+			p_list.setProd_bigct(rs.getString("prod_bigct"));;
+			p_list.setProd_smallct(rs.getString("prod_smallct"));
+			p_list.setProd_quantity(rs.getInt("prod_quantity"));
+			p_list.setProd_price(rs.getInt("prod_price"));
+			p_list.setProd_total_price(rs.getInt("prod_total_price"));
+			p_list.setProd_img(rs.getString("prod_img"));
+			//p_list.setProd_review(rs.getString("prod_review"));
+			//p_list.setProd_qna(rs.getString("prod_qna"));
+			//p_list.setProd_avg(rs.getInt("prod_avg"));
+			//p_list.setProd_cou(rs.getInt("prod_cou"));
+			//p_list.setProd_postdate(rs.getString("prod_postdate"));
+			p_list.setProd_name(rs.getString("prod_name"));
+			p_list.setProd_opbct(rs.getString("prod_opbct"));
+			p_list.setProd_opsct(rs.getString("prod_opsct"));
+			p_list.setProd_check(rs.getString("prod_check"));
+			p_list.setProd_mem_id(rs.getString("prod_mem_id"));
+			
+		}
+		
+		
+	}catch (Exception e) {
+		System.out.println("외않되");
+		
+		// TODO: handle exception
+		
+	}finally {
+		
+		diconn();
+		
+	}
+	return p_list;
+	
+}
+
+//public ArrayList<PROD_MD> Prod_qnacount(String qnacon) {
+//
+//	conn();
+//	ArrayList<PROD_MD> P_list = new ArrayList<> ();
+//	
+//	try {
+//		
+//		//ResultSet rs = stmt.executeQuery("select faq_title,faq_con from faq_info;");
+//		//faq에 제목이랑 내용만 셀렉한다.
+//		
+//		// 검색어를 포함한 faq_title 또는 faq_con을 검색하는 쿼리입니다.
+//			String query = "SELECT prod_qna FROM prod_info" ;
+//			ResultSet rs = stmt.executeQuery(query);
+//		
+//		while(rs.next()) {
+//			
+//			PROD_MD p_list = new PROD_MD();
+//
+//			p_list.setProd_qna(rs.getString("prod_qna"));
+//			
+//			P_list.add(p_list); 	
+//	
+//		}
+//		
+//	}catch (Exception e) {
+//		System.out.println("외않되");
+//		
+//		// TODO: handle exception
+//		
+//	}finally {
+//		
+//		diconn();
+//		
+//	}
+//	return P_list;
+//
+//}
 
 }

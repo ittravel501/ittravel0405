@@ -37,6 +37,10 @@ section div#s_order ul li{
 	
 }
 
+section div#s_order ul li:nth-child(2), div#s_order ul li:nth-child(3) {
+	opacity: 70%;
+}
+
 section div#s_basketwrap {
 	width: 1136px;
 	height: 500px;
@@ -54,5 +58,15 @@ section div#s_basket ul{
 
 section div#s_basket ul li{
 	height: 30px;
+}
+
+section div.s_basket_prod ul{
+	display: flex;
+	justify-content: space-around;
+	
+}
+section div.s_basket_prod ul li{
+	height: 30px;
+	line-height: 30px;
 }
 

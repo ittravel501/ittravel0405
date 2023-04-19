@@ -26,7 +26,7 @@
 
 </head>
 
-	<jsp:useBean id="user" class="dao.ProdDao"/> 
+	<jsp:useBean id="user" class="dao.N_controller"/> 
 
 <body>
 
