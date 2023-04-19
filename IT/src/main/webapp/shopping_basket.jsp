@@ -74,7 +74,7 @@
 
 				PROD_MD pr = new PROD_MD();
 				
-				int prod_quantity = Integer.parseInt(request.getParameter("quantity_opt[]"));
+				int prod_quantity = Integer.parseInt(request.getParameter("quantity_opt"));
 				String prod_bigct = request.getParameter("prod_bigct");
 				String prod_smallct = request.getParameter("prod_smallct");
 				String prod_name = request.getParameter("prod_name");

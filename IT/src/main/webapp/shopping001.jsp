@@ -32,34 +32,30 @@
 	<header>
 	   <jsp:include page="header.jsp" />
 	</header> 
-    
-
 	
+	<div id="section_wrap">
 
 	<section>
 	
-	<div id="shopping_quickmenu_wrap" >
-		<ul>
+		<div id="shopping_quickmenu_wrap" >
+			<ul>
+			
+				<li class="s_quickmenu" >
+				<a href="shopping001_basket.jsp" >장바구니</a>
+				</li>
+				
+				<li class="s_quickmenu">
+				<a href="" >찜 목록</a>
+				</li>
+				
+				<li class="s_quickmenu">
+				<a href="" >결제하기</a>
+				</li>
+				
+			</ul>
+		</div>
 		
-			<li class="s_quickmenu" >
-			<a href="shopping001_basket.jsp" >장바구니</a>
-			</li>
-			
-			<li class="s_quickmenu">
-			<a href="" >찜 목록</a>
-			</li>
-			
-			<li class="s_quickmenu">
-			<a href="" >결제하기</a>
-			</li>
-			
-		</ul>
-	</div>
 	
-	
-
-		
-
 		 <div class="slideshow-container"> <!--광고배너 이미지 3개 -->
 
 		     <div class="mySlideDiv fade active">
@@ -94,18 +90,18 @@
 					<ul class="img_ul">
 
 						<li>
-							<a href="#"><img style="width: 240px; height: 240px; " src="./shopimg/8333838875811647-0b0324b6-4469-4cb2-afaf-fe18192679ac.jpg"></a>
+							<a href="shopping_prod.do"><img style="width: 240px; height: 240px; " src="./shopimg/8333838875811647-0b0324b6-4469-4cb2-afaf-fe18192679ac.jpg"></a>
 						</li>
 
 						<li>
-							<a href="#"><img style="width: 240px; height: 240px;" src="./shopimg/캐리어4.jpg"></a>
+							<a href="shopping_prod.do"><img style="width: 240px; height: 240px;" src="./shopimg/캐리어4.jpg"></a>
 						</li>
 						<li>
-							<a href="#"><img style="width: 240px; height: 240px;" src="./shopimg/캐리어10.jpg"></a>
+							<a href="shopping_prod.do"><img style="width: 240px; height: 240px;" src="./shopimg/캐리어10.jpg"></a>
 						</li>
 
 						<li>
-							<a href="#"><img style="width: 240px; height: 240px;" src="./shopimg/db972b0e08c7e2484bff82d75c1469fe.jpg"></a>
+							<a href="shopping_prod.do"><img style="width: 240px; height: 240px;" src="./shopimg/db972b0e08c7e2484bff82d75c1469fe.jpg"></a>
 						</li>
 
 					</ul>
@@ -433,23 +429,20 @@
 
 
 			
-
-				
 		
 
 
 		 <!-- allmenu 끝-->
 
 	</section>
+	
+	</div>
 
 
 
 	<footer>
     	<jsp:include page="footer.jsp"/>
 	</footer>
-
-
-</div>
 </body>
 
 </html>
