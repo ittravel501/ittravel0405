@@ -19,7 +19,7 @@
          throw new Exception("데이터베이스에 연결할 수 없습니다");
 
       stmt = conn.createStatement();
-      ResultSet rs = stmt.executeQuery("SELECT loc2_name, loc2_filter, loc2_name_lang, loc2_exp, loc2_addr, loc2_webp, loc2_hour, loc2_phone FROM loc_info2 WHERE loc2_name = '" + loc2_name + "';");
+      ResultSet rs = stmt.executeQuery("SELECT loc2_name, loc2_filter, loc2_name_lang, loc2_exp, loc2_addr, loc2_webp, loc2_hour, loc2_phone, loc2_loc, loc2_lat, loc2_lng FROM loc_info2 WHERE loc2_name = '" + loc2_name + "';");
 
       if(rs.next()){
           String loc2_filter = rs.getString("loc2_filter");
@@ -35,7 +35,12 @@
 		  	if(loc2_phone == null){
 		  		loc2_phone="";
 		  	}
-          result2 = loc2_name + "#$%" + loc2_filter + "#$%" + loc2_name_lang + "#$%" + loc2_exp + "#$%" + loc2_addr + "#$%" + loc2_webp + "#$%" + loc2_hour + "#$%" + loc2_phone;
+		  String loc2_loc = rs.getString("loc2_loc");
+		  String loc2_lat = rs.getString("loc2_lat");
+		  String loc2_lng = rs.getString("loc2_lng");
+		  	result2 = loc2_name + "#$%" + loc2_filter + "#$%" + loc2_name_lang + "#$%" + loc2_exp + "#$%" + loc2_addr + "#$%" + loc2_webp + "#$%" + loc2_hour + "#$%" + loc2_phone + "#$%" + loc2_loc + "#$%"
+		  			+ loc2_lat + "#$%"+ loc2_lng;
+          
           out.println(result2);
       } else {
           result = "NOT_FOUND";

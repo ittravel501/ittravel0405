@@ -6,6 +6,22 @@
 
 //             }
 
+var map;
+
+function initMap() {
+    var danang = { lat: 16.0544563 , lng: 108.0717219};
+  	map = new google.maps.Map( document.getElementById('map'), {
+      zoom: 12,
+      center: danang
+    });
+
+  new google.maps.Marker({
+    position: danang,
+    map: map,
+    label: "다낭 중심 좌표"
+  });
+}
+
 
 function addlist(name) {
   $.ajax({
@@ -216,3 +232,154 @@ function addlist(name) {
 //        document.getElementById("memo-textarea").focus();
 //          });
 //    
+
+//var button = document.getElementById('button');
+//button.addEventListener('click', danangcathedral);
+//function danangcathedral(){
+//	
+//}
+
+function locinfo(loc_name_param) {
+	
+//			$('#background').fadeIn(200);
+			$('#front').fadeIn(200);
+			$('body').addClass('modal-open');
+			
+//			var map = new google.maps.Map(document.getElementById("map"), {});
+//			var marker = new google.maps.Marker({});
+				// 지도 중심 위치 설정
+//			var la = { lat: 15.914063931543422, lng: 108.34152270739828 };
+//			map.panTo(la);
+//			map.setZoom(14);
+//	
+//			// 마커 생성
+//			var marker = new google.maps.Marker({
+//				position: la,
+//				map: map,
+//				label: "라플라주"
+//			});
+
+ 			
+//  			
+//  			var markerDiv = document.createElement('div');
+//			markerDiv.className = 'over-layer';
+
+			
+//			var infowindow = new google.maps.InfoWindow({
+//			});
+//			infowindow.open(map, marker);
+
+
+		var map = new google.maps.Map(document.getElementById("map"), {});
+		var marker = new google.maps.Marker({});
+
+			$.ajax({
+				url : "travel_sch_mng2.jsp",
+				type : "get",
+				data : {
+						loc_name_param : loc_name_param,
+						},
+				success : function(result2) {
+					var loc_name1 = result2.split('#$%')[0].trim();
+					var loc_filter = result2.split('#$%')[1];
+					var loc_name_lang = result2.split('#$%')[2];
+					var loc_exp = result2.split('#$%')[3];
+					var loc_addr = result2.split('#$%')[4];
+					var loc_webp = result2.split('#$%')[5];
+					var loc_hour = result2.split('#$%')[6];
+					var loc_phone = result2.split('#$%')[7];
+					var loc_loc = result2.split('#$%')[8];
+					var loc_lat = parseFloat(result2.split("#$%")[9]); // 실수형으로 변환
+					var loc_lng = parseFloat(result2.split("#$%")[10]); // 실수형으로 변환
+					var hours = loc_hour.split(',');					
+					var mon = hours[0];
+					var tue = hours[1];
+					var wed = hours[2];
+					var thur = hours[3];
+					var fri = hours[4];
+					var sat = hours[5];
+					var sun = hours[6];
+													
+			            document.getElementById("photo2").style.backgroundImage = "url('./schmngimgs/"+ loc_name1 + ".jpg')";
+			            document.getElementById("loc1").innerText = loc_name1;
+			            document.getElementById("loc2").innerText = loc_name_lang;
+			            document.getElementById("description").innerText = loc_exp;
+			            	if(loc_filter == 1)
+					            document.getElementById("category").innerText = "식당";			            		
+			            	else if(loc_filter ==2)
+					            document.getElementById("category").innerText = "카페";
+			            	else if(loc_filter ==3)
+					            document.getElementById("category").innerText = "관광";
+			            	else if(loc_filter ==4)
+					            document.getElementById("category").innerText = "쇼핑";
+			            	else if(loc_filter ==5)
+					            document.getElementById("category").innerText = "숙소";			            		
+			            document.getElementById("addr").innerText = loc_addr;
+			            document.getElementById("mon").innerText = mon;
+			            document.getElementById("tue").innerText = tue;
+			            document.getElementById("wed").innerText = wed;
+			            document.getElementById("thur").innerText = thur;
+			            document.getElementById("fri").innerText = fri;
+			            document.getElementById("sat").innerText = sat;
+			            document.getElementById("sun").innerText = sun;
+			            document.getElementById("webp").innerText = loc_webp;
+			            document.getElementById("phone").innerText = loc_phone;
+						
+						console.log(loc_lat);
+						
+						var la = { lat: loc_lat, lng: loc_lng };
+						map.panTo(la);
+						map.setZoom(14);	
+						
+						var marker = new google.maps.Marker({
+							position: la,
+							map: map,
+							 title: loc_name1
+						});					
+						
+				}
+			});
+		};
+
+	//화면에 표시된 배경 레이어를 클릭한 경우
+	function closemodal() {
+
+		$('#background').fadeOut(200);
+		$('#front').fadeOut(200);
+		$('body').removeClass('modal-open');
+	}
+
+	$(document).keyup(function(e) {
+		if (e.key === "Escape") { // ESC 키를 눌렀을 때
+			// 모달 팝업 닫기
+			$('#background').fadeOut(200);
+			$('#front').fadeOut(200);
+			$('body').removeClass('modal-open');
+		}
+	});
+
+	function x() { //X표시 눌렀을 때 닫히도록 하는 기능
+		$('#background').fadeOut(200);
+		$('#front').fadeOut(200);
+		$('body').removeClass('modal-open');
+	}
+
+
+//왼쪽 사이드바를 접는 함수
+$(document).ready(function() {
+  $(".hidesidebar").click(function() {
+    $(".leftsidebar").toggleClass("active");
+    $(".leftarrow").toggleClass("rotate");
+  });
+});
+
+//오른쪽 사이드바를 접는 함수	
+$(document).ready(function() {
+  $(".hidesidebar-right").click(function() {
+    $(".rightsidebar").toggleClass("active");
+    $(".leftarrow").toggleClass("rotate");
+  });
+});	
+//마우스로 front레이어를 옮길 수 있게 만드는 함수
+
+//마우스로 front레이어를 옮길 수 있게 만드는 함수
