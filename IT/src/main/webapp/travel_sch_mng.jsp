@@ -26,7 +26,7 @@
 	</header>
 
 	<section>
-
+<% String destination = (String) session.getAttribute("coouncity"); %>
 
 
 <!-- /////////////메모팝업 시작	/////////////			 -->
@@ -177,7 +177,7 @@
 				<div class="titleanaddate">
 					<div class="destitle">
 						<% // 세션 객체에서 저장된 날짜 값을 가져옴
-  						String destination = (String) session.getAttribute("coouncity");
+  						;
     			 		out.println(destination);%>
 					</div>
 					<div class="destitle2">

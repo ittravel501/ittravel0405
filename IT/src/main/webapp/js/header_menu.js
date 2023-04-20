@@ -189,5 +189,6 @@ $("div[class=menuwrap16]").mouseleave(function(){
   
   
   
-  
+  //여행지추가, 일정짜기 눌렀을 때 로그인 화면으로 전환
+
 

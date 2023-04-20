@@ -106,12 +106,15 @@ a {
     font-size: 16px;
     float: left;
     margin-left: 20px;
-}
-
-.menuwrap1 ul li a{
     display: inline-block;
     padding: 10px 20px;
 }
+
+/* .menuwrap1 ul li a{ */
+
+/* 	display: inline-block; */
+/*     padding: 10px 20px; */
+/* } */
 
 .all_menu{
 	position:absolute;
