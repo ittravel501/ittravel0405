@@ -4,6 +4,7 @@
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.concurrent.TimeUnit" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,11 +12,13 @@
 <title>일정짜기</title>
 <link rel="stylesheet" href="css/travel_sch_mng.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
 </head>
 
 <script>
 	var cityName = sessionStorage.getItem("cityName");
 
+	
 </script>
 
 
@@ -26,7 +29,7 @@
 	</header>
 
 	<section>
-
+<% String destination = (String) session.getAttribute("coouncity"); %>
 
 
 <!-- /////////////메모팝업 시작	/////////////			 -->
@@ -116,14 +119,14 @@
 			<div class='over_layer' id='front'>
 				<div class="photocity" style="display: flex;">
 					<div class="photo" style="display: flex;">
-						<div class="photo2" id="photo2" style="z-index: 1500; width: 300px; height: 400px; background-size: cover; overflow: hidden;"></div>
+						<div class="photo2" id="photo2" style="z-index: 1500; width: 200px; height: 300px; background-size: cover; overflow: hidden;"></div>
 <!-- 				photo -->
 					</div>
 					<div class="cityexplain">
-						<div class="cityexplain2" style="padding: 30px; width: 340px;">
-							<h2 style="letter-spacing: 2px; font-size:24px; font-weight: bold; color: #222222; display:block;" id="loc1">다낭</h2>
-							<h3	style="margin-top: 10px; font-family: arial; font-weight: 400; letter-spacing: 2px;"id="loc2">BANGKOK</h3>
-							<div class="fknexp" style="font-family: TheJamsil2Light; color: grey; font-size: 15px; margin-top: 15px;">
+						<div class="cityexplain2" style="padding: 15px;">
+							<h2 style="letter-spacing: 2px; font-size:20px; font-weight: bold; color: #222222; display:block;" id="loc1">다낭</h2>
+							<h3	style="margin-top: 5px; font-size: 12px; font-family: arial; font-weight: 400; letter-spacing: 2px;"id="loc2">BANGKOK</h3>
+							<div class="fknexp" style="font-family: TheJamsil2Light; color: grey; font-size: 15px; margin-top: 5px;">
 								<ul>
 									<li id=description>떤딘 성당은 분홍색 예쁜 성당입니다.</li>
 									<li id="category">투어</li>
@@ -135,7 +138,7 @@
 										<div>운영시간</div>
 										<div class="hours">
 											<ul>
-												<li id="mon">월</li>
+												<li id="mon" style="font-size: 10px;">월</li>
 												<li id="tue">화</li>
 												<li id="wed">수</li>
 												<li id="thur">목</li>
@@ -157,10 +160,11 @@
 							</div>
 						<div>
 								<button type="button" id="modalchoose" onclick="add">일정 추가하기</button>
+								<div class="x" onclick="x()">X</div>
 						</div>
 <!--					 cityexplain2 -->
 						</div>
-						<div class="x" onclick="x()">X</div>
+						
 <!-- 				cityexplain -->
 					</div>
 <!--			 photocity				 -->
@@ -177,7 +181,7 @@
 				<div class="titleanaddate">
 					<div class="destitle">
 						<% // 세션 객체에서 저장된 날짜 값을 가져옴
-  						String destination = (String) session.getAttribute("coouncity");
+  						;
     			 		out.println(destination);%>
 					</div>
 					<div class="destitle2">
@@ -198,7 +202,6 @@
 <!-- 			titleanddate -->
 				</div>
 
-						
 				
 				<div class="daysandedit">
 					<div class="dayeditwiden">
@@ -261,6 +264,13 @@
 				</div>
 		<!-- leftsidebar -->
 			</div>
+				
+			<div class="hideleft">
+				<button class="hidesidebar" onclick="hidebar()">
+					<img src="./schmngimgs/arrow_left_1x (1).png" class="leftarrow">
+				</button>
+			</div>		
+				
 <!--///////////// 왼쪽 사이드 바 끝 ////////// 	 -->			
 			
 <!--///////////// 오른쪽 사이드 바 시작 ////////// 	 -->			
@@ -268,23 +278,23 @@
 				<div class="rightsearchwrap">
 					<div class="searchex">가고 싶은 장소를 검색해보세요</div>
 					<div class="searchtnbtn">
-						<input type="text" class="searcht" size="20">
-						<button id="searchbtn">검색</button>
+						<input type="text" id="searchvalue" class="searcht" size="20">
+						<button id="searchbtn" onclick="filter()">검색</button>
 <!-- 				searchnbtn	 -->
 					</div>
 <!-- 			rightsearchwrap -->
 				</div>
-				
+
 				<div class="rectitle">추천장소</div>
 				<div class="recpicswrap">
 					<ul>
 						<li>
 							<div class="recpicntwrap">
-								<div class="locnameandpic" onclick="locinfo('다낭대성당')">
+								<div class="locnameandpic" id = "danangcathedral" onclick="locinfo('다낭대성당')">
 									<img src="./schmngimgs/다낭대성당.jpg">
 									<div class="recinfo" name="다낭대성당">다낭 대성당</div>
+									<button onclick="addlist('다낭대성당')" class="addbtn">추가하기</button>
 								</div>	
-								<button onclick="addlist('다낭대성당')" class="addbtn">추가하기</button>
 							</div>
 						</li>
 						<li>
@@ -292,8 +302,8 @@
 								<div class="locnameandpic" onclick="locinfo('라플라주')">
 									<img src="./schmngimgs/라플라주.jpg">
 									<div class="recinfo" name="라플라주">라플라주</div>
-								</div>
-								<button onclick="addlist('라플라주')" class="addbtn">추가하기</button>
+									<button onclick="addlist('라플라주')" class="addbtn">추가하기</button>
+								</div>								
 							</div>
 						</li>
 
@@ -302,17 +312,17 @@
 								<div class="locnameandpic" onclick="locinfo('바나힐')">
 									<img src="./schmngimgs/바나힐.jpg">
 									<div class="recinfo" name="바나힐">바나힐</div>
-								</div>
-								<button onclick="addlist('바나힐')" class="addbtn">추가하기</button>
+									<button onclick="addlist('바나힐')" class="addbtn">추가하기</button>
+								</div>								
 							</div>
 						</li>
 						<li>
 							<div class="recpicntwrap">
-								<div class="locnameandpic" onclick="locinfo('올드타운')">							
-									<img src="./schmngimgs/oldtown.jpg">
-									<div class="recinfo" name="올드타운">올드타운</div>
-								</div>
-								<button onclick="addlist('올드타운')" class="addbtn">추가하기</button>
+								<div class="locnameandpic" onclick="locinfo('로지스카페')">							
+									<img src="./schmngimgs/로지스카페.jpg">
+									<div class="recinfo" name="로지스카페">로지스카페</div>
+									<button onclick="addlist('로지스카페')" class="addbtn">추가하기</button>
+								</div>								
 							</div>
 						</li>
 						<li>
@@ -320,8 +330,26 @@
 								<div class="locnameandpic" onclick="locinfo('마담콴')">							
 									<img src="./schmngimgs/마담콴.jpg">
 									<div class="recinfo" name="마담콴">마담콴</div>
-								</div>
-								<button onclick="addlist('마담콴')" class="addbtn">추가하기</button>
+									<button onclick="addlist('마담콴')" class="addbtn">추가하기</button>
+								</div>								
+							</div>
+						</li>
+						<li>
+							<div class="recpicntwrap">
+								<div class="locnameandpic" onclick="locinfo('목해산물식당')">							
+									<img src="./schmngimgs/목해산물식당.jpg">
+									<div class="recinfo" name="목해산물식당">목해산물식당</div>
+									<button onclick="addlist('목해산물식당')" class="addbtn">추가하기</button>
+								</div>								
+							</div>
+						</li>
+						<li>
+							<div class="recpicntwrap">
+								<div class="locnameandpic" onclick="locinfo('푸라마리조트')">							
+									<img src="./schmngimgs/푸라마리조트.jpg">
+									<div class="recinfo" name="푸라마리조트">푸라마리조트</div>
+									<button onclick="addlist('푸라마리조트')" class="addbtn">추가하기</button>
+								</div>								
 							</div>
 						</li>
 					</ul>
@@ -332,104 +360,25 @@
 <!-- 	mainwrap -->
 		</div>
 <!--///////////// 오른쪽 사이드 바 끝 ////////// 	 -->
+			<div class="hideright">
+				<button class="hidesidebar-right" onclick="hidebar-right()">
+					<img src="./schmngimgs/arrow_left_1x (1).png" class="leftarrow">
+				</button>
+			</div>	
+
 
 <!--///////////// 구글지도 시작 ////////// 	 -->
-		<div class="gogolmaps">
-			<iframe
-				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3833.9314130894713!2d108.22039202795808!3d16.069048553316968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314218321ae9468b%3A0x7f3c3d5f44588746!2zQ-G7mW5nIEPDoCBQaMOq!5e0!3m2!1sen!2skr!4v1677225856072!5m2!1sen!2skr"
-				width="100%" height="100%" style="border: 0;" allowfullscreen=""
-				loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-		</div>
+		<div id = "map" style="width: 100%; height: 100vh; z-index:0;"></div>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuNMOuY4ydQhCxU3_i4uMSs_jxhb1Qxk0&callback=initMap&region=kr"></script>
+		<script src="js/travel_sch_mng.js"></script>
+
+
+		
 <!--///////////// 구글지도 끝 ////////// 	 -->		
 	</section>
 </body>
-<script src="js/travel_sch_mng.js"></script>
 <script>
-		
-		function locinfo(loc_name_param) {
-	
-			$('#background').fadeIn(200);
-			$('#front').fadeIn(200);
-			$('body').addClass('modal-open');
-	
-			$.ajax({
-				url : "travel_sch_mng2.jsp",
-				type : "get",
-				data : {
-						loc_name_param : loc_name_param,
-						},
-				success : function(result2) {
-					var loc_name1 = result2.split('#$%')[0].trim();
-					var loc_filter = result2.split('#$%')[1];
-					var loc_name_lang = result2.split('#$%')[2];
-					var loc_exp = result2.split('#$%')[3];
-					var loc_addr = result2.split('#$%')[4];
-					var loc_webp = result2.split('#$%')[5];
-					var loc_hour = result2.split('#$%')[6];
-					var loc_phone = result2.split('#$%')[7];
-					var hours = loc_hour.split(',');					
-					var mon = hours[0];
-					var tue = hours[1];
-					var wed = hours[2];
-					var thur = hours[3];
-					var fri = hours[4];
-					var sat = hours[5];
-					var sun = hours[6];
 
-					console.log(mon);
-
-					
-			            document.getElementById("photo2").style.backgroundImage = "url('./schmngimgs/"+ loc_name1 + ".jpg')";
-			            document.getElementById("loc1").innerText = loc_name1;
-			            document.getElementById("loc2").innerText = loc_name_lang;
-			            document.getElementById("description").innerText = loc_exp;
-			            	if(loc_filter == 1)
-					            document.getElementById("category").innerText = "식당";			            		
-			            	else if(loc_filter ==2)
-					            document.getElementById("category").innerText = "카페";
-			            	else if(loc_filter ==3)
-					            document.getElementById("category").innerText = "관광";
-			            	else if(loc_filter ==4)
-					            document.getElementById("category").innerText = "쇼핑";
-			            	else if(loc_filter ==5)
-					            document.getElementById("category").innerText = "숙소";			            		
-			            document.getElementById("addr").innerText = loc_addr;
-			            document.getElementById("mon").innerText = mon;
-			            document.getElementById("tue").innerText = tue;
-			            document.getElementById("wed").innerText = wed;
-			            document.getElementById("thur").innerText = thur;
-			            document.getElementById("fri").innerText = fri;
-			            document.getElementById("sat").innerText = sat;
-			            document.getElementById("sun").innerText = sun;
-			            document.getElementById("webp").innerText = loc_webp;
-			            document.getElementById("phone").innerText = loc_phone;
-						
-				}
-			});
-		};
-
-	//화면에 표시된 배경 레이어를 클릭한 경우
-	function closemodal() {
-
-		$('#background').fadeOut(200);
-		$('#front').fadeOut(200);
-		$('body').removeClass('modal-open');
-	}
-
-	$(document).keyup(function(e) {
-		if (e.key === "Escape") { // ESC 키를 눌렀을 때
-			// 모달 팝업 닫기
-			$('#background').fadeOut(200);
-			$('#front').fadeOut(200);
-			$('body').removeClass('modal-open');
-		}
-	});
-
-	function x() { //X표시 눌렀을 때 닫히도록 하는 기능
-		$('#background').fadeOut(200);
-		$('#front').fadeOut(200);
-		$('body').removeClass('modal-open');
-	}
 </script>
 
 </html>

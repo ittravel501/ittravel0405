@@ -69,15 +69,31 @@
 	          <div class="menuwrap1">
 		          <ul>
 		              <div id="menulist_all" >
-			              <li class="menulist2"> <a href="./travel_plan.jsp" class="menu"> 여행지추가</a> </li>
-			              <li class="menulist3"> <a href="./travel_sch_mng.jsp" class="menu"> 일정짜기 </a> </li>
+			              <li class="menulist2">  
+			              	<% if(mem_nick != null){%>
+			              		<a href="./travel_plan.jsp" class="menu">여행지추가</a>
+			              	<% }else{%>
+			              		<a href="#" class="menu" onclick="alert('로그인이 필요합니다!'); location.href='./login001.jsp';">여행지추가</a>
+			              	<% }%>
+			              </li>
+			              <li class="menulist3">
+			              <% String destination = (String) session.getAttribute("coouncity");%>
+			              	<% if(mem_nick != null){
+			              		if(destination != null){%>
+			              		<a href="./travel_sch_mng.jsp" class="menu">일정짜기</a><%}
+			              		else{%>
+			              		<a href="#" class="menu" onclick="alert('여행지를 먼저 추가해주세요'); location.href='./travel_plan.jsp';">일정짜기</a>
+			              		<%} %>
+			              	<% }else{%>
+			              		<a href="#" class="menu" onclick="alert('로그인이 필요합니다!'); location.href='./login001.jsp';">일정짜기</a>
+			              	<% }%>
+			              </li>
 			              <li class="menulist4"> <a href="./flight.jsp" class="menu"> 항공예약 </a></li>
-			              <li class="menulist5"> <a href="./tour002.html"  class="menu" > 투어예약 </a></li>
-			              <li class="menulist6"> <a href="#" class="menu"> 소셜 </a></li>
+			              <li class="menulist5"> <a href="tour002.jsp"  class="menu" > 투어예약 </a></li>
+			              <li class="menulist6"> <a href="soc_basicboard.jsp" class="menu"> 소셜 </a></li>
 			              <li class="menulist7"> <a href="shopping001.jsp"  class="menu"  > 쇼핑 </a></li>
 			              <li class="menulist8"> <a href="com_list.jsp" class="menu"> 커뮤니티 </a></li>
-		              </div>
-		              
+		              </div>		              
 	              </ul>
 	        </div>
 	      </div>
@@ -92,13 +108,25 @@
 			      
 				       <ul class="m_place">
 				         <li>
-				             <a href="./travel_plan.jsp" >여행지 추가</a>
+				           <% if(mem_nick != null){%>
+			              <a href="./travel_plan.jsp" class="menu">여행지추가</a>
+			              <% }else{%>
+			              <a href="#" class="menu" onclick="alert('로그인이 필요합니다!'); location.href='./login001.jsp';">여행지추가</a>
+			              <% }%>
 				         </li>		        
 				      </ul>
 			
 				     <ul class="m_plan">
 				         <li>
-				             <a href="./travel_sch_mng.jsp">일정짜기</a>
+			              	<% if(mem_nick != null){
+			              		if(destination != null){%>
+			              		<a href="./travel_sch_mng.jsp" class="menu">일정짜기</a><%}
+			              		else{%>
+			              		<a href="#" class="menu" onclick="alert('여행지를 먼저 추가해주세요'); location.href='./travel_plan.jsp';">일정짜기</a>
+			              		<%} %>
+			              	<% }else{%>
+			              		<a href="#" class="menu" onclick="alert('로그인이 필요합니다!'); location.href='./login001.jsp';">일정짜기</a>
+			              	<% }%>
 				         </li>
 				
 				     </ul>
@@ -116,7 +144,7 @@
 			  
 					  <ul class="m_tour">
 					      <li>
-					          <a href="./tour002.html">투어 홈</a>
+					          <a href="./tour002.jsp">투어 홈</a>
 					      </li>
 					      <li>
 					          <a href="">국내</a>
@@ -128,13 +156,13 @@
 			
 					  <ul class="m_social">
 					      <li>
-					          <a href="">소셜 홈</a>
+					          <a href="soc_basicboard.jsp">소셜 홈</a>
 					      </li>
 					      <li>
 					         <a href="soc_boardWrite.jsp">글 작성</a>
 					     </li>
 					     <li>
-					         <a href="">내 피드</a>
+					         <a href="soc_board_my.jsp">내 피드</a>
 					     </li>
 					  </ul>
 					

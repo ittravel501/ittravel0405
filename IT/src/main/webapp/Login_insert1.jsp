@@ -27,8 +27,8 @@
    
          <form action="Login_insert2.jsp">
          
-            <div> <p>ID</p>  <input type="text" name="mem_id"></div>
-            <div> <p>PW</p>  <input type="password" name="mem_pw"> </div>
+            <div> <p>ID</p>  <input type="text" name="mem_id" style = "cursor : pointer;"></div>
+            <div> <p>PW</p>  <input type="password" name="mem_pw" style = "cursor : pointer;"> </div>
             
             <input type="submit" name="loginbt" value="로그인">
             
