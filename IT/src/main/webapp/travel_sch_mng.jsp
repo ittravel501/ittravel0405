@@ -138,7 +138,7 @@
 										<div>운영시간</div>
 										<div class="hours">
 											<ul>
-												<li id="mon">월</li>
+												<li id="mon" style="font-size: 10px;">월</li>
 												<li id="tue">화</li>
 												<li id="wed">수</li>
 												<li id="thur">목</li>
@@ -338,7 +338,7 @@
 							<div class="recpicntwrap">
 								<div class="locnameandpic" onclick="locinfo('목해산물식당')">							
 									<img src="./schmngimgs/목해산물식당.jpg">
-									<div class="recinfo" name="목해산물식당">마담콴</div>
+									<div class="recinfo" name="목해산물식당">목해산물식당</div>
 								</div>
 								<button onclick="addlist('목해산물식당')" class="addbtn">추가하기</button>
 							</div>

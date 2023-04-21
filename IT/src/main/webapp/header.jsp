@@ -144,7 +144,7 @@
 			  
 					  <ul class="m_tour">
 					      <li>
-					          <a href="./tour002.html">투어 홈</a>
+					          <a href="./tour002.jsp">투어 홈</a>
 					      </li>
 					      <li>
 					          <a href="">국내</a>

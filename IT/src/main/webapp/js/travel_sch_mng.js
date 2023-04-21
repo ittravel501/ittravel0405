@@ -329,7 +329,7 @@ function locinfo(loc_name_param) {
 						
 						var la = { lat: loc_lat, lng: loc_lng };
 						map.panTo(la);
-						map.setZoom(14);	
+						map.setZoom(18);	
 						
 						var marker = new google.maps.Marker({
 							position: la,
