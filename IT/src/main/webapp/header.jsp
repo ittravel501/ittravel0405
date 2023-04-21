@@ -89,8 +89,8 @@
 			              	<% }%>
 			              </li>
 			              <li class="menulist4"> <a href="./flight.jsp" class="menu"> 항공예약 </a></li>
-			              <li class="menulist5"> <a href="./tour002.html"  class="menu" > 투어예약 </a></li>
-			              <li class="menulist6"> <a href="#" class="menu"> 소셜 </a></li>
+			              <li class="menulist5"> <a href="tour002.jsp"  class="menu" > 투어예약 </a></li>
+			              <li class="menulist6"> <a href="soc_basicboard.jsp" class="menu"> 소셜 </a></li>
 			              <li class="menulist7"> <a href="shopping001.jsp"  class="menu"  > 쇼핑 </a></li>
 			              <li class="menulist8"> <a href="com_list.jsp" class="menu"> 커뮤니티 </a></li>
 		              </div>		              
@@ -156,13 +156,13 @@
 			
 					  <ul class="m_social">
 					      <li>
-					          <a href="">소셜 홈</a>
+					          <a href="soc_basicboard.jsp">소셜 홈</a>
 					      </li>
 					      <li>
 					         <a href="soc_boardWrite.jsp">글 작성</a>
 					     </li>
 					     <li>
-					         <a href="">내 피드</a>
+					         <a href="soc_board_my.jsp">내 피드</a>
 					     </li>
 					  </ul>
 					
