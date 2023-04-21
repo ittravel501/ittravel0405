@@ -48,7 +48,6 @@
     
 </head>
 
-
 <jsp:useBean id="user" class="dao.N_controller"/> 
 
 
@@ -94,6 +93,11 @@
 				</div>
 							
 		</div>
+		
+		<%
+        String start_date = (String) session.getAttribute("start_date");
+        String end_date = (String) session.getAttribute("end_date");
+        %>
 
 <form action="cscenter_qna_list_date.jsp">
     <div class="board_wrap">
@@ -109,12 +113,10 @@
                 
 	        	<input type="date"  name="start_date" >
 				<input type="date" name="end_date" >
-				<input type="submit" value="조회하기" >
+				<input type="submit" value="설정하기" >
         
         	</div>
         </div>
-
-        
         
         <div class="board_list_wrap">
             <div class="board_list">
@@ -125,20 +127,19 @@
                     <div class="writer">질문자</div>
                     <div class="count">답변상황</div>
                     <div class="date">문의일</div>
-                </div>
-                
+                </div>        
                
                 <div >
+                
                <%
                
-               ArrayList<QNA_MD> N_arr = user.Q_select();
+               ArrayList<QNA_MD> N_arr = user.Q_select_by_date(start_date, end_date);
                
-               
+               out.print(N_arr);
                
                int i = N_arr.size();
                
                 for(i= i-1 ; i >=0; i = i-1) {  
-                	
      
                 	%>
                 	
@@ -169,15 +170,12 @@
                 
             </div>
             
+           <!-- <%=start_date %><%=end_date %> -->
             
-       
             <div class="bt_wrap">
                 <a href="cscenter_qna_write.jsp" class="on" style="margin-top: 50px;" >등록</a>
                 <!--<a href="#">수정</a>-->
             </div>
-            
-            
-          
             
         </div>
     </div>
