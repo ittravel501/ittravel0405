@@ -318,11 +318,11 @@
 						</li>
 						<li>
 							<div class="recpicntwrap">
-								<div class="locnameandpic" onclick="locinfo('올드타운')">							
-									<img src="./schmngimgs/oldtown.jpg">
-									<div class="recinfo" name="올드타운">올드타운</div>
+								<div class="locnameandpic" onclick="locinfo('로지스카페')">							
+									<img src="./schmngimgs/로지스카페.jpg">
+									<div class="recinfo" name="로지스카페">로지스카페</div>
 								</div>
-								<button onclick="addlist('올드타운')" class="addbtn">추가하기</button>
+								<button onclick="addlist('로지스카페')" class="addbtn">추가하기</button>
 							</div>
 						</li>
 						<li>
@@ -332,6 +332,15 @@
 									<div class="recinfo" name="마담콴">마담콴</div>
 								</div>
 								<button onclick="addlist('마담콴')" class="addbtn">추가하기</button>
+							</div>
+						</li>
+						<li>
+							<div class="recpicntwrap">
+								<div class="locnameandpic" onclick="locinfo('목해산물식당')">							
+									<img src="./schmngimgs/목해산물식당.jpg">
+									<div class="recinfo" name="목해산물식당">마담콴</div>
+								</div>
+								<button onclick="addlist('목해산물식당')" class="addbtn">추가하기</button>
 							</div>
 						</li>
 					</ul>
