@@ -278,13 +278,13 @@
 				<div class="rightsearchwrap">
 					<div class="searchex">가고 싶은 장소를 검색해보세요</div>
 					<div class="searchtnbtn">
-						<input type="text" class="searcht" size="20">
-						<button id="searchbtn">검색</button>
+						<input type="text" id="searchvalue" class="searcht" size="20">
+						<button id="searchbtn" onclick="filter()">검색</button>
 <!-- 				searchnbtn	 -->
 					</div>
 <!-- 			rightsearchwrap -->
 				</div>
-				
+
 				<div class="rectitle">추천장소</div>
 				<div class="recpicswrap">
 					<ul>
@@ -293,8 +293,8 @@
 								<div class="locnameandpic" id = "danangcathedral" onclick="locinfo('다낭대성당')">
 									<img src="./schmngimgs/다낭대성당.jpg">
 									<div class="recinfo" name="다낭대성당">다낭 대성당</div>
+									<button onclick="addlist('다낭대성당')" class="addbtn">추가하기</button>
 								</div>	
-								<button onclick="addlist('다낭대성당')" class="addbtn">추가하기</button>
 							</div>
 						</li>
 						<li>
@@ -302,8 +302,8 @@
 								<div class="locnameandpic" onclick="locinfo('라플라주')">
 									<img src="./schmngimgs/라플라주.jpg">
 									<div class="recinfo" name="라플라주">라플라주</div>
-								</div>
-								<button onclick="addlist('라플라주')" class="addbtn">추가하기</button>
+									<button onclick="addlist('라플라주')" class="addbtn">추가하기</button>
+								</div>								
 							</div>
 						</li>
 
@@ -312,8 +312,8 @@
 								<div class="locnameandpic" onclick="locinfo('바나힐')">
 									<img src="./schmngimgs/바나힐.jpg">
 									<div class="recinfo" name="바나힐">바나힐</div>
-								</div>
-								<button onclick="addlist('바나힐')" class="addbtn">추가하기</button>
+									<button onclick="addlist('바나힐')" class="addbtn">추가하기</button>
+								</div>								
 							</div>
 						</li>
 						<li>
@@ -321,8 +321,8 @@
 								<div class="locnameandpic" onclick="locinfo('로지스카페')">							
 									<img src="./schmngimgs/로지스카페.jpg">
 									<div class="recinfo" name="로지스카페">로지스카페</div>
-								</div>
-								<button onclick="addlist('로지스카페')" class="addbtn">추가하기</button>
+									<button onclick="addlist('로지스카페')" class="addbtn">추가하기</button>
+								</div>								
 							</div>
 						</li>
 						<li>
@@ -330,8 +330,8 @@
 								<div class="locnameandpic" onclick="locinfo('마담콴')">							
 									<img src="./schmngimgs/마담콴.jpg">
 									<div class="recinfo" name="마담콴">마담콴</div>
-								</div>
-								<button onclick="addlist('마담콴')" class="addbtn">추가하기</button>
+									<button onclick="addlist('마담콴')" class="addbtn">추가하기</button>
+								</div>								
 							</div>
 						</li>
 						<li>
@@ -339,8 +339,17 @@
 								<div class="locnameandpic" onclick="locinfo('목해산물식당')">							
 									<img src="./schmngimgs/목해산물식당.jpg">
 									<div class="recinfo" name="목해산물식당">목해산물식당</div>
-								</div>
-								<button onclick="addlist('목해산물식당')" class="addbtn">추가하기</button>
+									<button onclick="addlist('목해산물식당')" class="addbtn">추가하기</button>
+								</div>								
+							</div>
+						</li>
+						<li>
+							<div class="recpicntwrap">
+								<div class="locnameandpic" onclick="locinfo('푸라마리조트')">							
+									<img src="./schmngimgs/푸라마리조트.jpg">
+									<div class="recinfo" name="푸라마리조트">푸라마리조트</div>
+									<button onclick="addlist('푸라마리조트')" class="addbtn">추가하기</button>
+								</div>								
 							</div>
 						</li>
 					</ul>

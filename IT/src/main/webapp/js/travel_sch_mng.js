@@ -245,29 +245,6 @@ function locinfo(loc_name_param) {
 			$('#front').fadeIn(200);
 			$('body').addClass('modal-open');
 			
-//			var map = new google.maps.Map(document.getElementById("map"), {});
-//			var marker = new google.maps.Marker({});
-				// 지도 중심 위치 설정
-//			var la = { lat: 15.914063931543422, lng: 108.34152270739828 };
-//			map.panTo(la);
-//			map.setZoom(14);
-//	
-//			// 마커 생성
-//			var marker = new google.maps.Marker({
-//				position: la,
-//				map: map,
-//				label: "라플라주"
-//			});
-
- 			
-//  			
-//  			var markerDiv = document.createElement('div');
-//			markerDiv.className = 'over-layer';
-
-			
-//			var infowindow = new google.maps.InfoWindow({
-//			});
-//			infowindow.open(map, marker);
 
 
 		var map = new google.maps.Map(document.getElementById("map"), {});
@@ -340,6 +317,24 @@ function locinfo(loc_name_param) {
 				}
 			});
 		};
+
+ function filter() {
+    var searchvalue, name, item, i;
+
+    searchvalue = document.getElementById("searchvalue").value;
+    item = document.getElementsByClassName("recpicntwrap");
+
+    for (i = 0; i < item.length; i++) {
+      name = item[i].querySelectorAll(".recinfo");
+      if (name[0].innerHTML.indexOf(searchvalue) > -1) {
+        item[i].style.display = "flex";
+      } else {
+        item[i].style.display = "none";
+      }
+    }
+  }
+
+
 
 	//화면에 표시된 배경 레이어를 클릭한 경우
 	function closemodal() {

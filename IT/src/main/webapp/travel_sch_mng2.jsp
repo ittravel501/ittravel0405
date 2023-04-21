@@ -31,6 +31,9 @@
        			loc2_webp = ""; 	  
       	    }
           String loc2_hour = rs.getString("loc2_hour");
+          	if(loc2_hour == null){
+          		loc2_hour="";
+          	}
 		  String loc2_phone = rs.getString("loc2_phone");
 		  	if(loc2_phone == null){
 		  		loc2_phone="";
