@@ -7,14 +7,40 @@ public class Joininfo {
 	private String mem_nick;
 	private String mem_email1;
 	private String mem_email2;
+	
+	private String mem_addr;
+	private String mem_mobile;
+	
+	public String getMem_addr() {
+		return mem_addr;
+	}
+	public void setMem_addr(String mem_addr) {
+		this.mem_addr = mem_addr;
+	}
+	public String getMem_mobile() {
+		return mem_mobile;
+	}
+	public void setMem_mobile(String mem_mobile) {
+		this.mem_mobile = mem_mobile;
+	}
 	private String mem_addr1;
 	private String mem_addr2;
+	public String getMem_mobile0() {
+		return mem_mobile0;
+	}
+	public void setMem_mobile0(String mem_mobile0) {
+		this.mem_mobile0 = mem_mobile0;
+	}
 	private String mem_addr3;
 	private String mem_addr4;
 	private String mem_addr5;
+	
+	
+	private String mem_mobile0;
 	private String mem_mobile1;
 	private String mem_mobile2;
 	private String mem_mobile3;
+	
 	private String mem_sex;
 	private String mem_birth1;
 	private String mem_birth2;

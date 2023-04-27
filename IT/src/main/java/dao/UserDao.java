@@ -20,7 +20,7 @@ public class UserDao {
 			Class.forName("com.mysql.jdbc.Driver");
 			String dbURL = "jdbc:mysql://localhost:3306/teamproject?useUnicode=true&characterEncoding=utf8";
 			String dbID = "root";
-			String dbPW = "eogkrrksek!1";
+			String dbPW = "1234";
 			conn = DriverManager.getConnection(dbURL, dbID, dbPW);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -51,13 +51,19 @@ public class UserDao {
 	}
 	
 	//닉네임을 헤더에 세션 저장
-	public String loginsession(String mem_id) {
+	public Joininfo loginsession(String mem_id) {
 		
-		String nick = "";
 		
-		String SQL = "select mem_nick from mem_account where mem_id= ? ";  //이 전체 문장 자체를 저장한거임. 
+		Joininfo joininfo = new Joininfo() ;
+		
+//		String nick = "";
+//		String name = "";
+		
+
+		String SQL = "select mem_nick, mem_name, mem_mobile, mem_addr  from mem_account where mem_id= ? ";  //이 전체 문장 자체를 저장한거임. 
 		
 		try {
+			
 			PreparedStatement pstat = conn.prepareStatement(SQL);
 			pstat.setString(1, mem_id);
 			
@@ -65,38 +71,65 @@ public class UserDao {
 			
 			if(rs.next()) {
 				
-				nick = rs.getString("mem_nick"); //그래서 rs에 mem_nick을 nick으로 저장함.
+				String nick = rs.getString("mem_nick"); //그래서 rs에 mem_nick을 nick으로 저장함.
+				String name = rs.getString("mem_name");
+				String mobile = rs.getString("mem_mobile");
+				String addr = rs.getString("mem_addr");
+				
+				joininfo.setMem_nick(nick);
+				joininfo.setMem_name(name);
+				joininfo.setMem_mobile(mobile);
+				joininfo.setMem_addr(addr);
+				
+				
+//				System.out.println(mobile);
+//				System.out.println(addr);
 				
 			}
 			
 		} catch (SQLException e) {
-			 
+			
 			e.printStackTrace();
 		}
-		return nick; 
+		return joininfo; 
 	}
 	
 	// 회원가입 insert 정보입력
 	public int join(Joininfo info) {
+		
+		int rowNum = 0;
+		
 		String SQL = "insert into mem_account values(?,?,?,?,?,?,?,?,?,?,NOW())"; 
+		
 		try {
-			PreparedStatement pstat = conn.prepareStatement(SQL);
-			pstat.setString(1,info.getMem_id());
-			pstat.setString(2,info.getMem_pw());
-			pstat.setString(3,info.getMem_name());
-			pstat.setString(4,info.getMem_nick());
-			pstat.setString(5,info.getMem_email1()+info.getMem_email2());
-			pstat.setString(6,"우편번호 : "+ info.getMem_addr1()+", 도로명 주소 : "+info.getMem_addr2()+", 상세 주소 : "+info.getMem_addr3() + ",(참고 :" + info.getMem_addr4() +")");
-			pstat.setString(7,info.getMem_mobile1()+info.getMem_mobile2()+info.getMem_mobile3());
-			pstat.setString(8,info.getMem_sex());
-			pstat.setString(9,info.getMem_birth1()+info.getMem_birth2()+info.getMem_birth3());
-			pstat.setString(10,info.getMem_news());
 			
-			return pstat.executeUpdate();
+			PreparedStatement pstat = conn.prepareStatement(SQL);
+			
+			pstat.setString(1, info.getMem_id()); //아이디
+			pstat.setString(2, info.getMem_pw()); //비번
+			pstat.setString(3, info.getMem_name()); //이름
+			pstat.setString(4, info.getMem_nick()); //닉네임
+			pstat.setString(5, info.getMem_email1()+info.getMem_email2()); //이메일
+			pstat.setString(6,"우편번호 : "+ info.getMem_addr1()+" / 도로명 주소 : "+ info.getMem_addr2()+" / 상세 주소 : "+ info.getMem_addr3() + " /(참고 :" + info.getMem_addr4() +")"); //주소
+			pstat.setString(7, info.getMem_mobile0()+" / "+info.getMem_mobile1()+ " - "+info.getMem_mobile2()+ " - "+info.getMem_mobile3()); //전화번호
+			pstat.setString(8, info.getMem_sex()); //성별
+			pstat.setString(9, info.getMem_birth1()+ info.getMem_birth2()+ info.getMem_birth3()); //생년월일
+			pstat.setString(10, info.getMem_news()); //소식받기
+			
+			System.out.println(info.getMem_mobile1());
+			
+			rowNum = pstat.executeUpdate();
+			
+			if(rowNum > 0) {
+				
+				throw new Exception("signup success");
+			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return -1;
+			
+		return rowNum;
 	}
 	
 	// 아이디 중복확인
