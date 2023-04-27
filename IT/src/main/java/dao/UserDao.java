@@ -29,20 +29,29 @@ public class UserDao {
 	
 	// 로그인 가능 유무
 	public int login(String mem_id, String mem_pw) {
+		
 	    String SQL = "select mem_pw from mem_account where mem_id = ? ";
 	 
 	    try {
+	    	
 	        PreparedStatement pstat = conn.prepareStatement(SQL);
 	        pstat.setString(1, mem_id);
+	        
 	        rs = pstat.executeQuery();
 
 	        if(rs.next()) {
-	        	if(rs.getString(1).equals(mem_pw)) {
+	        	
+	        	if(rs.getString(1).equals(mem_pw)) { //rs.getString(1)는 mem_id를 넣고 셀렉된 mem_pwd이다.
+	        		
 	        		return 1; // 로그인 성공
+	        		
 	        	} else
+	        		
 	        		return 0;
 	        }
+	        
 	        return -1;
+	        
 	    } catch (Exception e) {
 	        e.printStackTrace();
 	    }
