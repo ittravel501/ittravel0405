@@ -93,7 +93,7 @@
 			if(mem_nick.length<=8 && mem_nick.length>=2) {
 				$.ajax({
 					type : "post",
-					url :"join003.jsp",
+					url :"join004.jsp",
 					data : { "mem_nick" : mem_nick },
 					dataType : "html",
 					success : function(result) {
@@ -283,6 +283,7 @@
 						</select>
 					</tr>
 					<tr>
+					
 						<td>주소</td>
 						<td><input type="text" name="mem_addr1"
 							id="sample6_postcode" placeholder="우편번호" readonly><br>
@@ -300,22 +301,27 @@
 				
 					<tr>
 						<td>휴대폰</td>
-						<td><select name="mem_mobile" class="formal" required>
+						
+						<td>
+						<select name="mem_mobile0" class="formal" required>
 								<option>통신사</option>
 								<option value="kt">kt</option>
 								<option value="skt">skt</option>
 								<option value="lg u+">lg u+</option>
 								<option value="알뜰폰">알뜰폰</option>
-						</select> <input type="text" class="formal" name="mem_mobile1" id = "phone1" value="${mem_mobile1}"
-							size="3" required> - <input type="text" id = "phone2" class="formal"
-							name="mem_mobile2" value="${mem_mobile2}" size="4" required> - <input
-							type="text" class="formal" name="mem_mobile3" id = "phone3" value="${mem_mobile3}" size="4"
-							required></td>
+						</select> 
+						
+						<input type="text" class="formal" name="mem_mobile1" id = "phone1" value="${mem_mobile1}" size="3" maxlength="3" required> - 
+						<input type="text" class="formal" name="mem_mobile2" id = "phone2" value="${mem_mobile2}" size="4" maxlength="4" required> - 
+						<input type="text" class="formal" name="mem_mobile3" id = "phone3" value="${mem_mobile3}" size="4" maxlength="4" required>
+						</td>
 							
 						<!-- 인증번호 구간은 기능에 맞춰 수정했습니다 -->
 						<td> <button type = "button" id ="numiden" class="dupcheck" onclick="identify()" style="width : 115px; background-color: #7E7DCB; color: white; border-radius: 5px;"><font color ="white">인증번호 받기</font></button>
 						</td>
-							</tr>
+					</tr>
+							
+							
 					<tr class="idenwrap" style ="width: 500px">
 							
 									<td><input type="text" id="numbox" size="10" class="idenbox"></input></td>
@@ -379,7 +385,7 @@
 				<div class="line01" style="background-color: #7E7DCB;"></div>
 
 				<input class="but" type="submit" onclick="btn()" value="회원가입 완료"
-					onclick=location.href="Mainindex.jsp">
+					onclick=location.href="tour002.jsp">
 			</div>
 		</form>
 

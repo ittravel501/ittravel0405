@@ -1,10 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="dao.UserDao" %>
+    
+<%@ page import="dao.UserDao" %> 
+
 <%@ page import="java.io.PrintWriter" %>
+
 <% request.setCharacterEncoding("UTF-8"); %>
-<jsp:useBean id="user" class="dto.Joininfo" scope="page"></jsp:useBean>
+
+<jsp:useBean id="user" class="dto.Joininfo"></jsp:useBean>
+
 <jsp:setProperty property="*" name="user"/>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,21 +19,22 @@
 </head>
 <body>
 <% 
-UserDao ud = new UserDao();
-int result = ud.join(user);
-
-if(result >= 0){
-	 PrintWriter script = response.getWriter();
-	 script.println("<script>");
-	 script.println("location.href = 'Mainindex.jsp'");
-	 script.println("</script>");
-} else if(result == -1){
-	 PrintWriter script = response.getWriter();
-	 script.println("<script>");
-	 script.println("alert('이미 존재하는 아이디입니다.')");
-	 script.println("history.back()");
-	 script.println("</script>");
-}
+	UserDao ud = new UserDao();
+	int result = ud.join(user);
+	if(result >= 1){
+		 PrintWriter script = response.getWriter();
+		 script.println("<script>");
+		 script.println("alert('회원가입이 완료되었습니다.')");
+		 script.println("location.href = 'Mainindex.jsp'");
+		 script.println("</script>");
+		 
+	} else if(result == 0){
+		 PrintWriter script = response.getWriter();
+		 script.println("<script>");
+		 script.println("alert('이미 존재하는 아이디입니다.')");
+		 script.println("history.back()");
+		 script.println("</script>");
+	}
 
 %>
 </body>
