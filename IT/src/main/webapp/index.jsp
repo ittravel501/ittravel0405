@@ -2,15 +2,16 @@
 <!DOCTYPE html>
 <%@ page language="java" contentType="text/html;charset=utf-8" pageEncoding="UTf-8"%>
 <% request.setCharacterEncoding("utf-8"); %>
-<link rel="stylesheet" href="css/mainindex.css">
-  <link rel="stylesheet" href="./slick-1.8.1/slick/slick.css">
-        <link rel="stylesheet" href="./slick-1.8.1/slick/slick-theme.css">
 
 <html>
 <head>
    <meta charset="utf-8">
    <title> it 로그인 </title>
 </head>
+
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="./slick-1.8.1/slick/slick.css">
+<link rel="stylesheet" href="./slick-1.8.1/slick/slick-theme.css">
 
 <body> 
 

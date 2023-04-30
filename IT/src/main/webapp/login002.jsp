@@ -45,9 +45,10 @@
  			session.setAttribute("mem_mobile", mem_mobile);
  			session.setAttribute("mem_addr", mem_addr);
  			
-			response.sendRedirect("Mainindex.jsp");
+			response.sendRedirect("index.jsp");
 			
  		} else if(result ==0){
+ 			
  		%>	
  		<script>
 			alert("패스워드가 틀립니다.");
@@ -55,19 +56,25 @@
 			history.back();
 		</script>	
 		<%
+		
  		} else if(result == -1){
+ 			
 		%>
+		
 		<script>
 			alert("존재하지 않는 아이디입니다.");
 			history.back();
 		</script>	
+		
 		<%
  		}else if(result == -2){
 		%>
+		
 		<script>
 			alert("데이터베이스 오류입니다.");
 			history.back();
 		</script>
+		
 		<% 
  		}
 		%>

@@ -13,7 +13,6 @@
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
    <script src="js/slick-1.8.1/slick/slick.min.js"></script>
   <script src="js/header_menu.js"></script>
-   <script src="js/header.js"></script>
  
 
 
@@ -22,7 +21,7 @@
     <header >
             
             <div class="hdwrap1">
-                <div class="ftwrap1"><a href="Mainindex.jsp"><img src="mainindeximgs/logo.png" height="90px"style="padding-left: 20px; margin-top: 22px;"  ></a>
+                <div class="ftwrap1"><a href="index.jsp"><img src="mainindeximgs/logo.png" height="90px"style="padding-left: 20px; margin-top: 22px;"  ></a>
                     <div class="ftwrap2"></div>
                     <div class="search-wrapper active">
                       <div class="input-holder">
@@ -33,7 +32,7 @@
                     </div>
                     <div class="topwrap1">
                       <ul>
-                        <li><a href="cscenter_not_list.jsp">고객센터</a></li>
+                        <li><a href="cscenter_faq.jsp">고객센터</a></li>
                         <li class="login_false">
                         
                         <%
@@ -51,15 +50,19 @@
                         
                          <%} else{ 
                         	 
-                        	 out.println(mem_nick+"님 접속&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp");
-                         %>
+                        	 %>
+                        	 
+                        <a href="#" style="cursor: pointer;" > <%=mem_nick %>님 접속 </a>
                          
-                        <a href="header_logout_success.jsp" style="cursor: pointer;">로그아웃</a>
+                        <a href="logout.jsp" style="cursor: pointer; margin-left: 30px; ">로그아웃</a>
                         
                        <%} %>
                        
                         </li>
-                        <li class="login_true"></li>
+                        <li class="login_true">
+                        
+                        </li>
+                        
                       </ul>
                     </div>
                  </div> 
@@ -69,6 +72,7 @@
 	          <div class="menuwrap1">
 		          <ul>
 		              <div id="menulist_all" >
+		              
 			              <li class="menulist2">  
 			              	<% if(mem_nick != null){%>
 			              		<a href="./travel_plan.jsp" class="menu">여행지추가</a>
@@ -76,6 +80,7 @@
 			              		<a href="#" class="menu" onclick="alert('로그인이 필요합니다!'); location.href='./login001.jsp';">여행지추가</a>
 			              	<% }%>
 			              </li>
+			              
 			              <li class="menulist3">
 			              <% String destination = (String) session.getAttribute("coouncity");%>
 			              	<% if(mem_nick != null){
@@ -88,10 +93,11 @@
 			              		<a href="#" class="menu" onclick="alert('로그인이 필요합니다!'); location.href='./login001.jsp';">일정짜기</a>
 			              	<% }%>
 			              </li>
+			              
 			              <li class="menulist4"> <a href="./flight.jsp" class="menu"> 항공예약 </a></li>
 			              <li class="menulist5"> <a href="tour002.jsp"  class="menu" > 투어예약 </a></li>
 			              <li class="menulist6"> <a href="soc_basicboard.jsp" class="menu"> 소셜 </a></li>
-			              <li class="menulist7"> <a href="shopping001.jsp"  class="menu"  > 쇼핑 </a></li>
+			              <li class="menulist7"> <a href="shoppingmain.jsp"  class="menu"  > 쇼핑 </a></li>
 			              <li class="menulist8"> <a href="com_list.jsp" class="menu"> 커뮤니티 </a></li>
 		              </div>		              
 	              </ul>
@@ -169,7 +175,7 @@
 					  
 					  <ul class="m_shopping">
 					      <li>
-					          <a href="shopping001.jsp">쇼핑 홈</a>
+					          <a href="shoppingmain.jsp">쇼핑 홈</a>
 					      </li>
 					      <li>
 					          <a href="">캐리어</a>

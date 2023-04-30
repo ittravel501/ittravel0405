@@ -15,9 +15,7 @@ request.setCharacterEncoding("utf-8");
 
 session.invalidate();
 
-response.sendRedirect("Mainindex.jsp");
-
-
+response.sendRedirect("index.jsp");
 
 %>
 

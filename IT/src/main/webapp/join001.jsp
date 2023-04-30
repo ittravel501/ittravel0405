@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<link rel="stylesheet" href="css/join_001.css">
+<link rel="stylesheet" href="css/join001.css">
 <title>잇트 회원가입</title>
 </head>
 <script
@@ -15,7 +15,11 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
 
+
+
 <script>
+
+	//우편번호 검색 기능
     function sample6_execDaumPostcode() {
         new daum.Postcode({
             oncomplete: function(data) {
@@ -66,6 +70,8 @@
 </script>
 
 <script>
+
+	//아이디 중복 체크 
 	$(document).ready(function(){
 		
 		$("#idbtn").click(function(){
@@ -73,7 +79,7 @@
 			if(mem_id.length >=5 && mem_id.length <=15) {
 				$.ajax({
 					type : "post",
-					url : "join002.jsp",
+					url : "join_id_check.jsp",
 					data : {"mem_id" : mem_id},
 					dataType : "html",
 					success : function(result) {
@@ -88,12 +94,15 @@
 			} else {
 				alert("5~12자 내의 아이디를 입력하세요.");
 			}
-		});$("#mem_nickbtn").click(function(){
+		});
+		
+		//닉네임 중복 체크
+		$("#mem_nickbtn").click(function(){
 			var mem_nick=$("#mem_nick").val();
 			if(mem_nick.length<=8 && mem_nick.length>=2) {
 				$.ajax({
 					type : "post",
-					url :"join004.jsp",
+					url :"join_nick_check.jsp",
 					data : { "mem_nick" : mem_nick },
 					dataType : "html",
 					success : function(result) {
@@ -218,13 +227,11 @@
 
 <body>
 
-	<!--헤더-->
-	<header> </header>
-
 	<div id="wrap" style="text-align: center;">
+	
 		<!--회원가입폼-->
 		<form style="margin-top: 100px;" method="post"
-			action="Join_insert2.jsp">
+			action="join002.jsp">
 			<h2>회원가입</h2>
 			<div class="line01" style="background-color: #7E7DCB;"></div>
 			<div id="joinwrap">
@@ -390,7 +397,6 @@
 		</form>
 
 	</div>
-	<!--푸터-->
 
 
 </body>

@@ -90,11 +90,13 @@ a {
 	float: left;;
 }
 
+/*
 #menulist_all .menu:hover{
 	background-color:  #7E7DCB;
 	color: white;
 	
 }
+*/
 
 
 .menuwrap1 ul{
@@ -109,6 +111,11 @@ a {
     display: inline-block;
     padding: 10px 20px;
 }
+
+.menuwrap1 ul li:hover{
+	background-color:  #7E7DCB;
+}
+
 
 /* .menuwrap1 ul li a{ */
 
@@ -532,7 +539,7 @@ width: 990px;
 float: left;
 margin-left : 10px;
 }
-p { 
+#inform02 p { 
 float:left; 
 margin-top: 5px;font-size:13px;
 

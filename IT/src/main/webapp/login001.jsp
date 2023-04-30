@@ -18,7 +18,7 @@
 
 	<div class="loginBox01">
 	<div class="loginBox_line">
-		<form action="Login_insert2.jsp" method="post">
+		<form action="login002.jsp" method="post">
 		<div class="loginBox02">
 		<div class="logoimg"><a href="#"><img src="mainindeximgs/logo.png"></a></div>
 		<div class="form-group">
